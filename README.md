@@ -1,98 +1,59 @@
-# 🚌 Inter-District Bus Fleet, 10 Counters & Financial Accounting System
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-HTML এবং Tailwind CSS দিয়ে তৈরি একটি প্রফেশনাল, আধুনিক এবং সম্পূর্ণ পৃথক **Admin Dashboard**, **Sales Dashboard** এবং **Company Income & Expense (আয়-ব্যয় অডিট ও ক্যাশবুক)** সমৃদ্ধ বাস সার্ভিস ও টার্মিনাল ম্যানেজমেন্ট সিস্টেম।
+<p align="center">
+<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+</p>
 
----
+## About Laravel
 
-## 🌟 প্রধান মডিউল ও ফিচারসমূহ (Key Features)
+Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-### ১. পৃথক ড্যাশবোর্ড ও ভূমিকা (Role-Based Dashboards)
+- [Simple, fast routing engine](https://laravel.com/docs/routing).
+- [Powerful dependency injection container](https://laravel.com/docs/container).
+- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
+- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
+- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
+- [Robust background job processing](https://laravel.com/docs/queues).
+- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-| ড্যাশবোর্ড | ফাইল | উদ্দেশ্য ও বৈশিষ্ট্য |
-|---|---|---|
-| **Super Admin Dashboard** | [`admin-dashboard.html`](file:///e:/Rayhan/Practice/demo-bus-panel/admin-dashboard.html) | • সারাদেশের **১০টি টার্মিনাল কাউন্টার** লাইভ মনিটরিং<br>• কোন কাউন্টার থেকে কোন বাস ছাড়লো, গন্তব্য ও ছাড়া সময়<br>• কোন বাসে কতটি সিট খালি আছে তার লাইভ অডিট<br>• ১০টি কাউন্টারের অকুপেন্সি হার ও মোট রেভিনিউ রিপোর্ট<br>• **কোম্পানি সার্বিক আয়-ব্যয় অডিট (Financial Audit & Profit Margin)** |
-| **Terminal Sales Dashboard** | [`sales-dashboard.html`](file:///e:/Rayhan/Practice/demo-bus-panel/sales-dashboard.html) | • লগইনকৃত নির্দিষ্ট কাউন্টারের জন্য কাস্টমাইজড ডেস্ক<br>• নতুন বাস ট্রিপ যোগ করা (**Add Bus**), এডিট ও ডিলিট (**CRUD**)<br>• লাইভ ২x২ বাসের সিট প্ল্যান ও খালি সিটে ক্লিক করে **যাত্রীর টিকেট বুকিং**<br>• স্বয়ংক্রিয় **Printable Ticket Receipt** তৈরি<br>• প্যাসেঞ্জার বুকিং হিস্ট্রি ও ম্যানিফেস্ট<br>• **কাউন্টার দৈনিক ক্যাশবুক (Daily Fuel, Toll & Cash in Hand)** |
+Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
----
+## Learning Laravel
 
-### ২. কোম্পানি আয়-ব্যয় ও একাউন্টিং মডিউল (Company Income & Expense Module)
+Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
 
-একটি ট্রান্সপোর্ট কোম্পানির আর্থিক শৃঙ্খলা ও স্বচ্ছতার জন্য সম্পূর্ণ নতুন আর্থিক হিসাব ব্যবস্থা যুক্ত করা হয়েছে:
+If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-1. **সেন্ট্রাল হেডকোয়ার্টার আয়-ব্যয় অডিট (Super Admin Finance Audit)**:
-   - **মোট রাজস্ব আয় (Total Revenue)**: ১০টি কাউন্টারের টিকেট বিক্রয়, পার্সেল কুরিয়ার চার্জ ও বাস রিজার্ভেশন ইনকাম।
-   - **মোট পরিচালন ব্যয় (Operating Expenses)**: ফিলিং স্টেশনের ডিজেল বিল, যমুনা/পদ্মা সেতু টোল, চালক-হেলপার খোরাকি, বাস ওয়ার্কশপ মেইনটেন্যান্স ও টার্মিনাল ভাড়া।
-   - **সার্বিক নীট প্রফিট ও মার্জিন (Net Profit & Margin %)**: কোম্পানির নীট মুনাফা ও শতকরা লাভ লাইভ ক্যালকুলেশন।
-   - **টার্মিনালভিত্তিক প্রফিট্যাবিলিটি সামারি**: ১০টি কাউন্টারের মধ্যে কোন কাউন্টার কত টাকা রাজস্ব আনলো এবং কত খরচ করলো তার পাশাপাশি তুলনামূলক ছক।
-   - **ভাউচার এন্ট্রি ও অডিট প্রিন্ট**: নতুন ডেবিট/ক্রেডিট ভাউচার যুক্ত করা এবং ১-ক্লিকে অডিট লেজার প্রিন্ট করার সুযোগ।
+## Laravel Sponsors
 
-2. **কাউন্টার দৈনিক ক্যাশবুক (Counter Daily Cashbook)**:
-   - **কাউন্টার মোট ইনকাম**: টিকেট কালেকশন + লোকাল পার্সেল বা অতিরিক্ত লাগেজ ফি।
-   - **কাউন্টার খরচ এন্ট্রি**: লোকাল ফিলিং স্টেশন থেকে ডিজেল স্লিপ, হাইওয়ে ও ব্রিজ টোল, চালকের খোরাকি ও অফিস নাস্তা খরচ।
-   - **কাউন্টার ক্যাশ ইন হ্যান্ড (Cash in Hand)**: দিনশেষে কাউন্টার ক্যাশবাক্সে কত টাকা জমা রইলো এবং প্রধান কার্যালয়ে কত টাকা পাঠাতে হবে তার নির্ভুল হিসেব।
+We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
 
----
+### Premium Partners
 
-## 🔑 ১০টি কাউন্টারের আলাদা লগইন ক্রেডেনশিয়ালস (10 Counters Login Credentials)
+- **[Vehikl](https://vehikl.com)**
+- **[Tighten Co.](https://tighten.co)**
+- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
+- **[64 Robots](https://64robots.com)**
+- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
+- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
+- **[Redberry](https://redberry.international/laravel-development)**
+- **[Active Logic](https://activelogic.com)**
 
-লগইন পেইজে ([`login.html`](file:///e:/Rayhan/Practice/demo-bus-panel/login.html)) প্রতিটি কাউন্টারের জন্য রয়েছে পৃথক ইউজার অ্যাকাউন্ট ও পাসওয়ার্ড:
+## Contributing
 
-### 🛡️ Super Admin একাউন্ট:
-- **ইমেইল**: `admin@buscentral.com`
-- **পাসওয়ার্ড**: `admin123`
-- **ড্যাশবোর্ড**: `admin-dashboard.html`
+Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-### 🎫 ১০টি কাউন্টার সেলস একাউন্টস:
+## Code of Conduct
 
-| # | কাউন্টার নাম ও অবস্থান | সেলস ম্যানেজার | ইমেইল (Login Email) | পাসওয়ার্ড |
-|---|---|---|---|---|
-| **১** | **গাবতলী কাউন্টার (Dhaka)** | রফিকুল ইসলাম | `gabtoli@buscentral.com` | `gabtoli123` |
-| **২** | **সায়েদাবাদ কাউন্টার (Dhaka)** | কামাল হোসেন | `sayedabad@buscentral.com` | `sayedabad123` |
-| **৩** | **মহাখালী কাউন্টার (Dhaka)** | ফারুক আহমেদ | `mohakhali@buscentral.com` | `mohakhali123` |
-| **৪** | **উত্তরা কাউন্টার (Dhaka)** | তানভীর আহমেদ | `uttara@buscentral.com` | `uttara123` |
-| **৫** | **চট্টগ্রাম জিইসি কাউন্টার** | নাসির উদ্দিন | `chittagong@buscentral.com` | `chittagong123` |
-| **৬** | **কক্সবাজার ঝাউতলা কাউন্টার** | জাহাঙ্গীর আলম | `coxsbazar@buscentral.com` | `coxsbazar123` |
-| **৭** | **সিলেট কদমতলী কাউন্টার** | দেলোয়ার হোসেন | `sylhet@buscentral.com` | `sylhet123` |
-| **৮** | **রাজশাহী রেলগেট কাউন্টার** | সোহেল রানা | `rajshahi@buscentral.com` | `rajshahi123` |
-| **৯** | **বগুড়া সাতমাথা কাউন্টার** | আনোয়ার পারভেজ | `bogura@buscentral.com` | `bogura123` |
-| **১০** | **খুলনা সোনাডাঙ্গা কাউন্টার** | তরিকুল ইসলাম | `khulna@buscentral.com` | `khulna123` |
+In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
 
-> 💡 **টিপ**: [`login.html`](file:///e:/Rayhan/Practice/demo-bus-panel/login.html) পেইজে ড্রপডাউন সিলেক্টর এবং **১-ক্লিক ডিরেক্ট টেস্ট বাটন** দেওয়া আছে, যার মাধ্যমে কোনো কিছু টাইপ না করেও যেকোনো কাউন্টারে এক ক্লিকে লগইন করা যাবে।
+## Security Vulnerabilities
 
----
+If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
-## 🚀 কিভাবে চালু করে দেখবেন (How to Run)
+## License
 
-১. ফোল্ডারে থাকা [`login.html`](file:///e:/Rayhan/Practice/demo-bus-panel/login.html) ফাইলটি ব্রাউজারে ডাবল ক্লিক করে ওপেন করুন।
-২. **Admin** সিলেক্ট করে লগইন করলে সরাসরি `admin-dashboard.html`-এ নিয়ে যাবে এবং সাইডবার থেকে **"কোম্পানি আয়-ব্যয় অডিট"** দেখতে পারবেন।
-৩. **কাউন্টার সেলস** থেকে যেকোনো কাউন্টার (যেমন: সায়েদাবাদ বা খুলনা) সিলেক্ট করে লগইন করলে `sales-dashboard.html`-এ নিয়ে যাবে এবং সাইডবার থেকে **"কাউন্টার আয়-ব্যয় ক্যাশবুক"** দেখতে পারবেন।
-৪. সেলস ড্যাশবোর্ডে গিয়ে সিট বুকিং করুন এবং প্রিন্টেবল টিকেট রিসিট ও ক্যাশবুক এন্ট্রি দেখুন।
-
----
-
-## 📁 ফাইল স্ট্রাকচার (File Structure)
-```
-demo-bus-panel/
-├── Central_Bus_Management_System_Presentation.pptx # ১২ স্লাইডের পূর্ণাঙ্গ প্রফেশনাল প্রেজেন্টেশন (Income & Expense, 10 Counters, Timeline সহ)
-├── presentation_assets/    # প্রতিটি পেইজ ও আয়-ব্যয় মডিউলের হাই-রেজোলিউশন স্ক্রিনশট ইমেজসমূহ
-├── login.html              # ১০টি কাউন্টারের আলাদা ক্রেডেনশিয়াল সহ আধুনিক লগইন পোর্টাল
-├── admin-dashboard.html    # সুপার অ্যাডমিনের সেন্ট্রাল মনিটরিং ও আয়-ব্যয় অডিট ড্যাশবোর্ড
-├── admin.js                # অ্যাডমিন ড্যাশবোর্ডের লজিক, ১০ কাউন্টার অডিট ও ফাইন্যান্সিয়াল লেজার
-├── sales-dashboard.html    # কাউন্টার সেলস এক্সিকিউটিভদের ডেডিকেটেড ড্যাশবোর্ড ও ক্যাশবুক
-├── sales.js                # সেলস ড্যাশবোর্ডের টিকেট বুকিং, বাস CRUD ও দৈনিক ক্যাশবুক
-├── data.js                 # ১০টি কাউন্টার, অ্যাকাউন্ট ক্রেডেনশিয়ালস, ট্রিপ ও লেনদেন (Transactions) স্টোর
-├── index.html              # স্মার্ট গেটওয়ে রাউটার
-└── README.md               # প্রজেক্ট ডকুমেন্টেশন
-```
-
----
-
-## ⏱️ সম্পূর্ণ প্রজেক্ট ডেভেলপমেন্ট টাইমলাইন (২-৩ মাস / ১০-১২ সপ্তাহ)
-
-| পর্যায় (Phase) | সময়কাল | প্রধান মাইলস্টোন ও কাজের বিবরণ |
-|---|---|---|
-| **Phase 1** | **Week 1 - 3 (১ম মাস)** | **UI/UX ও রেসপন্সিভ ফ্রন্টএন্ড**: Tailwind CSS ডিজাইন সিস্টেম, মোবাইল ও ডেস্কটপ লেআউট, ২x২ সিট ম্যাপ কম্পোনেন্ট ও ফর্ম ভ্যালিডেশন |
-| **Phase 2** | **Week 4 - 6 (১.৫ মাস)** | **ব্যাকএন্ড ও ডাটাবেস**: PostgreSQL রিলেশনাল স্কিমা, RESTful APIs, ডাবল বুকিং রোধে Seat Concurrency Locking লজিক, JWT সিকিউরিটি |
-| **Phase 3** | **Week 7 - 9 (২য় মাস)** | **রোল ম্যানেজমেন্ট (RBAC) ও ফাইন্যান্সিয়াল ক্যাশবুক**: সুপার অ্যাডমিন বনাম ১০ কাউন্টার পারমিশন, থার্মাল প্রিন্ট ইঞ্জিন, ফুয়েল/টোল/পার্সেল ট্র্যাকিং ও অডিট লেজার |
-| **Phase 4** | **Week 10 - 12 (৩য় মাস)** | **টেস্টিং ও লাইভ ডেপ্লয়মেন্ট**: লোড টেস্টিং, SMS গেটওয়ে ইন্টিগ্রেশন, Docker/NGINX ক্লাউড সার্ভার সেটআপ ও ১০ কাউন্টার পাইলট হ্যান্ডওভার |
-
+The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
