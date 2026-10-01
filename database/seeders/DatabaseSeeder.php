@@ -16,6 +16,15 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        User::updateOrCreate(
+            ['email' => 'admin@gmail.com'],
+            [
+                'name' => 'Super Admin',
+                'password' => Hash::make('admin123'),
+                'email_verified_at' => now(),
+            ]
+        );
+
         User::firstOrCreate(
             ['email' => 'admin@buscentral.com'],
             [
@@ -48,5 +57,7 @@ class DatabaseSeeder extends Seeder
                 ]
             );
         }
+
+        $this->call(ProjectPlanSeeder::class);
     }
 }

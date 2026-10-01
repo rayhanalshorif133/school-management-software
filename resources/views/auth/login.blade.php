@@ -173,6 +173,17 @@
         </div>
       @endif
 
+      <!-- Auto-Set Credentials Notice Badge -->
+      <div class="mb-4 p-3 rounded-2xl bg-indigo-50 border border-indigo-100 flex items-center justify-between text-xs text-indigo-900 shadow-xs">
+        <div class="flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          <span class="font-bold text-[11px]">অটো-সেট ডেমো ক্রেডেনশিয়াল:</span>
+        </div>
+        <div class="font-mono text-[11px] font-bold text-indigo-700 bg-white px-2.5 py-1 rounded-lg border border-indigo-200 shadow-2xs">
+          admin@gmail.com / admin123
+        </div>
+      </div>
+
       <!-- Main Login Form -->
       <form method="POST" action="{{ route('login') }}" class="space-y-4">
         @csrf
@@ -190,7 +201,7 @@
               required
               autofocus
               autocomplete="username"
-              value="{{ old('email') }}"
+              value="{{ old('email', 'admin@gmail.com') }}"
               placeholder="e.g. admin@gmail.com"
               class="w-full text-xs font-semibold pl-10 pr-4 py-3 bg-slate-50 border border-slate-300 rounded-xl outline-none focus:border-indigo-600 focus:bg-white transition text-slate-800"
             />
@@ -220,6 +231,7 @@
               id="inputPassword"
               required
               autocomplete="current-password"
+              value="admin123"
               placeholder="••••••••"
               class="w-full text-xs font-semibold pl-10 pr-10 py-3 bg-slate-50 border border-slate-300 rounded-xl outline-none focus:border-indigo-600 focus:bg-white transition text-slate-800"
             />
@@ -240,7 +252,7 @@
         <!-- Remember Me Checkbox -->
         <div class="flex items-center justify-between text-xs">
           <label class="inline-flex items-center gap-2 cursor-pointer text-slate-600 hover:text-slate-800 select-none">
-            <input type="checkbox" name="remember" class="w-4 h-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500">
+            <input type="checkbox" name="remember" checked class="w-4 h-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500">
             <span>মনে রাখুন (Remember me)</span>
           </label>
         </div>
@@ -291,6 +303,17 @@
       document.getElementById('inputEmail').value = 'admin@gmail.com';
       document.getElementById('inputPassword').value = 'admin123';
     }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const emailInput = document.getElementById('inputEmail');
+      const passInput = document.getElementById('inputPassword');
+      if (emailInput && !emailInput.value) {
+        emailInput.value = 'admin@gmail.com';
+      }
+      if (passInput && !passInput.value) {
+        passInput.value = 'admin123';
+      }
+    });
   </script>
 </body>
 </html>
