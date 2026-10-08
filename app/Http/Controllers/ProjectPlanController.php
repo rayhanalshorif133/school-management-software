@@ -8,7 +8,9 @@ use Database\Seeders\ProjectPlanSeeder;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\View\View;
+use Symfony\Component\HttpFoundation\BinaryFileResponse;
 
 class ProjectPlanController extends Controller
 {
@@ -50,11 +52,31 @@ class ProjectPlanController extends Controller
     public function downloadPdf(): View
     {
         $plan = $this->getOrCreatePlan();
-        $details = $plan->details()->get();
+        $details = $plan->details()->orderBy('sort_order')->get();
         $stats = $this->calculateStats($plan);
-        $groupedDetails = $details->groupBy('module_name');
+        $groupedDetails = $details->groupBy('module_code');
 
         return view('project-plan.pdf', compact('plan', 'details', 'stats', 'groupedDetails'));
+    }
+
+    /**
+     * Download the official compiled PDF document file.
+     */
+    public function downloadPdfFile(): BinaryFileResponse|RedirectResponse
+    {
+        $pdfPath = public_path('School-Management-System-Project-Plan.pdf');
+
+        if (! file_exists($pdfPath)) {
+            Artisan::call('project-plan:export-pdf');
+        }
+
+        if (file_exists($pdfPath)) {
+            return response()->download($pdfPath, 'School-Management-System-Project-Plan.pdf', [
+                'Content-Type' => 'application/pdf',
+            ]);
+        }
+
+        return redirect()->route('project-plan.pdf');
     }
 
     /**

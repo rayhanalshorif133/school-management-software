@@ -15,6 +15,7 @@ Route::get('/dashboard', [ProjectPlanController::class, 'dashboard'])
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/project-plan', [ProjectPlanController::class, 'index'])->name('project-plan.index');
     Route::get('/project-plan/pdf', [ProjectPlanController::class, 'downloadPdf'])->name('project-plan.pdf');
+    Route::get('/project-plan/download-pdf', [ProjectPlanController::class, 'downloadPdfFile'])->name('project-plan.download-pdf');
     Route::patch('/project-plan/details/{detail}/status', [ProjectPlanController::class, 'updateStatus'])->name('project-plan.details.status');
     Route::post('/project-plan/details', [ProjectPlanController::class, 'storeDetail'])->name('project-plan.details.store');
 });
