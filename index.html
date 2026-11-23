@@ -1,0 +1,1574 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ABCD Model School & College | এবিসিডি মডেল স্কুল ও কলেজ</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              50: '#eef2ff',
+              100: '#e0e7ff',
+              500: '#6366f1',
+              600: '#4f46e5',
+              700: '#4338ca',
+              800: '#3730a3',
+              900: '#1e1b4b',
+              950: '#0f172a',
+            },
+            academic: {
+              navy: '#0b192c',
+              blue: '#1e3e62',
+              accent: '#00adb5',
+              emerald: '#10b981',
+              amber: '#f59e0b'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'Hind Siliguri', 'sans-serif'],
+            bangla: ['Hind Siliguri', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts: Inter & Hind Siliguri -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    body {
+      font-family: 'Inter', 'Hind Siliguri', sans-serif;
+    }
+    .notice-marquee {
+      display: inline-block;
+      white-space: nowrap;
+      animation: marquee 28s linear infinite;
+    }
+    .notice-marquee:hover {
+      animation-play-state: paused;
+    }
+    @keyframes marquee {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-indigo-600 selection:text-white">
+
+  <!-- ================= TOP BAR ================= -->
+  <div class="bg-primary-950 text-slate-300 text-xs border-b border-primary-900/60 transition-colors">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
+        
+        <!-- Left: Contact info -->
+        <div class="flex items-center flex-wrap gap-4 text-[11px] sm:text-xs">
+          <span class="flex items-center gap-1.5 text-indigo-300 font-medium">
+            <i class="fas fa-graduation-cap text-indigo-400"></i>
+            <span data-en="EIIN: 108422 | College Code: 2315" data-bn="EIIN: ১০৮৪২২ | কলেজ কোড: ২৩১৫">EIIN: 108422 | College Code: 2315</span>
+          </span>
+          <span class="hidden sm:inline-block text-slate-600">|</span>
+          <a href="tel:+8801712345678" class="flex items-center gap-1.5 hover:text-white transition">
+            <i class="fas fa-phone-alt text-emerald-400"></i> +880 1712-345678
+          </a>
+          <span class="hidden sm:inline-block text-slate-600">|</span>
+          <a href="mailto:info@abcd.edu.bd" class="flex items-center gap-1.5 hover:text-white transition">
+            <i class="fas fa-envelope text-sky-400"></i> info@abcd.edu.bd
+          </a>
+          <span class="hidden md:inline-block text-slate-600">|</span>
+          <span class="hidden md:flex items-center gap-1 text-slate-400">
+            <i class="far fa-clock text-amber-400"></i>
+            <span data-en="Sun - Thu: 8:00 AM - 4:00 PM" data-bn="রবি - বৃহঃ সকাল ৮:০০ - বিকাল ৪:০০">Sun - Thu: 8:00 AM - 4:00 PM</span>
+          </span>
+        </div>
+
+        <!-- Right: Social Links & Portal Links -->
+        <div class="flex items-center justify-between md:justify-end gap-3 text-xs">
+          <div class="flex items-center gap-2 text-slate-400">
+            <a href="#" class="w-6 h-6 rounded-full bg-slate-800 hover:bg-indigo-600 hover:text-white flex items-center justify-center transition" title="Facebook"><i class="fab fa-facebook-f text-[10px]"></i></a>
+            <a href="#" class="w-6 h-6 rounded-full bg-slate-800 hover:bg-sky-500 hover:text-white flex items-center justify-center transition" title="Twitter"><i class="fab fa-twitter text-[10px]"></i></a>
+            <a href="#" class="w-6 h-6 rounded-full bg-slate-800 hover:bg-rose-600 hover:text-white flex items-center justify-center transition" title="YouTube"><i class="fab fa-youtube text-[10px]"></i></a>
+            <a href="#" class="w-6 h-6 rounded-full bg-slate-800 hover:bg-blue-600 hover:text-white flex items-center justify-center transition" title="LinkedIn"><i class="fab fa-linkedin-in text-[10px]"></i></a>
+          </div>
+          <span class="text-slate-700">|</span>
+          <a href="#admission" class="text-emerald-400 hover:text-emerald-300 font-semibold text-[11px] flex items-center gap-1">
+            <i class="fas fa-file-signature"></i>
+            <span data-en="Online Admission" data-bn="অনলাইন ভর্তি">Online Admission</span>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= LATEST NOTICE TICKER ================= -->
+  <div class="bg-indigo-900 text-white text-xs border-b border-indigo-800 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-1.5 flex items-center">
+      <div class="flex items-center gap-1.5 bg-rose-600 px-3 py-1 rounded text-[11px] font-bold uppercase tracking-wider shrink-0 z-10 shadow-sm">
+        <i class="fas fa-bullhorn animate-pulse"></i>
+        <span data-en="Notice" data-bn="নোটিশ">Notice</span>
+      </div>
+      <div class="overflow-hidden w-full ml-3 py-0.5">
+        <div class="notice-marquee text-indigo-100 text-xs sm:text-[13px] font-medium flex items-center gap-8">
+          <span class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 inline-block"></span>
+            <span data-en="Admission for Academic Session 2026-2027 is now open from Class 1 to Class 11 (Science, Commerce, Arts)." data-bn="২০২৬-২০২৭ শিক্ষাবর্ষে ১ম থেকে একাদশ শ্রেণিতে (বিজ্ঞান, ব্যবসায় শিক্ষা ও মানবিক) ভর্তি কার্যক্রম শুরু হয়েছে।">Admission for Academic Session 2026-2027 is now open from Class 1 to Class 11 (Science, Commerce, Arts).</span>
+          </span>
+          <span class="text-indigo-400">✦</span>
+          <span class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-amber-400 inline-block"></span>
+            <span data-en="HSC Model Test Examination 2026 routine has been published. Download from notice section." data-bn="এইচএসসি মডেল টেস্ট পরীক্ষা ২০২৬ এর সময়সূচি প্রকাশিত হয়েছে। নোটিশ বোর্ড থেকে ডাউনলোড করুন।">HSC Model Test Examination 2026 routine has been published. Download from notice section.</span>
+          </span>
+          <span class="text-indigo-400">✦</span>
+          <span class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-rose-400 inline-block"></span>
+            <span data-en="Annual Inter-School Sports & Cultural Week will begin on 15th December 2026." data-bn="বার্ষিক আন্তঃস্কুল ক্রীড়া ও সাংস্কৃতিক সপ্তাহ আগামী ১৫ ডিসেম্বর ২০২৬ থেকে শুরু হবে।">Annual Inter-School Sports & Cultural Week will begin on 15th December 2026.</span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= MAIN NAVBAR ================= -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-200 transition-all">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20 gap-2">
+        
+        <!-- Brand Logo -->
+        <a href="index.html" class="flex items-center gap-3 shrink-0 group">
+          <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-gradient-to-tr from-primary-800 to-indigo-600 flex items-center justify-center text-white shadow-lg shadow-indigo-200 group-hover:scale-105 transition-transform shrink-0">
+            <i class="fas fa-graduation-cap text-xl sm:text-2xl text-amber-300"></i>
+          </div>
+          <div>
+            <div class="text-base sm:text-lg font-black text-slate-900 tracking-tight leading-tight group-hover:text-indigo-600 transition whitespace-nowrap">
+              <span data-en="ABCD MODEL" data-bn="এবিসিডি মডেল">ABCD MODEL</span>
+              <span class="text-indigo-600 text-xs sm:text-sm font-bold block" data-en="School & College" data-bn="স্কুল অ্যান্ড কলেজ">School & College</span>
+            </div>
+            <p class="text-[9px] sm:text-[10px] text-slate-400 font-medium tracking-wide whitespace-nowrap" data-en="Excellence • Integrity • Innovation" data-bn="শ্রেষ্ঠত্ব • সততা • উদ্ভাবন">Excellence • Integrity • Innovation</p>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links (Unbreakable with xl:flex, compact spacing, whitespace-nowrap) -->
+        <nav class="hidden xl:flex items-center gap-0.5 2xl:gap-1 text-xs 2xl:text-sm font-semibold text-slate-700 whitespace-nowrap">
+          <a href="#home" class="px-2.5 2xl:px-3 py-2 rounded-lg text-indigo-600 hover:bg-indigo-50 transition whitespace-nowrap" data-en="Home" data-bn="হোম">Home</a>
+          <a href="#about" class="px-2.5 2xl:px-3 py-2 rounded-lg hover:text-indigo-600 hover:bg-slate-100 transition whitespace-nowrap" data-en="About Us" data-bn="আমাদের সম্পর্কে">About Us</a>
+          <a href="#academics" class="px-2.5 2xl:px-3 py-2 rounded-lg hover:text-indigo-600 hover:bg-slate-100 transition whitespace-nowrap" data-en="Academics" data-bn="একাডেমিক">Academics</a>
+          <a href="#notices" class="px-2.5 2xl:px-3 py-2 rounded-lg hover:text-indigo-600 hover:bg-slate-100 transition whitespace-nowrap" data-en="Notices & Events" data-bn="নোটিশ ও ইভেন্ট">Notices & Events</a>
+          <a href="#faculty" class="px-2.5 2xl:px-3 py-2 rounded-lg hover:text-indigo-600 hover:bg-slate-100 transition whitespace-nowrap" data-en="Faculty" data-bn="শিক্ষকমণ্ডলী">Faculty</a>
+          <a href="#gallery" class="px-2.5 2xl:px-3 py-2 rounded-lg hover:text-indigo-600 hover:bg-slate-100 transition whitespace-nowrap" data-en="Campus Life" data-bn="ক্যাম্পাস লাইফ">Campus Life</a>
+          <a href="#admission" class="px-2.5 2xl:px-3 py-2 rounded-lg hover:text-indigo-600 hover:bg-slate-100 transition whitespace-nowrap" data-en="Admission" data-bn="ভর্তি তথ্য">Admission</a>
+          <a href="#contact" class="px-2.5 2xl:px-3 py-2 rounded-lg hover:text-indigo-600 hover:bg-slate-100 transition whitespace-nowrap" data-en="Contact" data-bn="যোগাযোগ">Contact</a>
+        </nav>
+
+        <!-- Right Side Actions: Language Toggle & Admin Login -->
+        <div class="flex items-center gap-2 sm:gap-3 shrink-0">
+          
+          <!-- Bilingual Language Toggle Button -->
+          <button 
+            type="button" 
+            class="lang-toggle-btn inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-slate-300 hover:border-indigo-400 bg-slate-50 hover:bg-indigo-50/50 text-slate-700 text-xs font-bold shadow-xs transition-all cursor-pointer whitespace-nowrap"
+            title="Switch Language / ভাষা পরিবর্তন করুন"
+          >
+            <i class="fas fa-globe text-indigo-600 text-sm"></i>
+            <span class="lang-text">বাংলা</span>
+            <span class="lang-badge text-[10px] px-1.5 py-0.5 rounded bg-indigo-100 text-indigo-800 font-mono">BN</span>
+          </button>
+
+          <!-- Admin Login Button -->
+          <a 
+            href="login.html" 
+            class="hidden sm:inline-flex items-center gap-2 px-3.5 sm:px-4 py-2 rounded-xl bg-primary-900 hover:bg-indigo-700 text-white text-xs sm:text-sm font-bold shadow-md shadow-indigo-900/20 hover:shadow-lg transition-all transform active:scale-95 whitespace-nowrap shrink-0"
+          >
+            <i class="fas fa-lock text-amber-400"></i>
+            <span data-en="Admin Login" data-bn="অ্যাডমিন লগইন">Admin Login</span>
+          </a>
+
+          <!-- Mobile Hamburger Toggle -->
+          <button 
+            type="button" 
+            id="mobileMenuBtn" 
+            class="xl:hidden p-2 rounded-xl text-slate-700 hover:text-indigo-600 hover:bg-slate-100 focus:outline-none transition shrink-0"
+            aria-label="Open mobile menu"
+          >
+            <i class="fas fa-bars text-xl"></i>
+          </button>
+
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown Navigation -->
+    <div id="mobileMenu" class="hidden xl:hidden border-t border-slate-200 bg-white px-4 pt-3 pb-6 shadow-xl space-y-2">
+      <a href="#home" class="mobile-link block px-3 py-2 rounded-lg font-semibold text-slate-800 hover:bg-indigo-50 hover:text-indigo-600" data-en="Home" data-bn="হোম">Home</a>
+      <a href="#about" class="mobile-link block px-3 py-2 rounded-lg font-semibold text-slate-800 hover:bg-indigo-50 hover:text-indigo-600" data-en="About Us" data-bn="আমাদের সম্পর্কে">About Us</a>
+      <a href="#academics" class="mobile-link block px-3 py-2 rounded-lg font-semibold text-slate-800 hover:bg-indigo-50 hover:text-indigo-600" data-en="Academics" data-bn="একাডেমিক">Academics</a>
+      <a href="#notices" class="mobile-link block px-3 py-2 rounded-lg font-semibold text-slate-800 hover:bg-indigo-50 hover:text-indigo-600" data-en="Notices & Events" data-bn="নোটিশ ও ইভেন্ট">Notices & Events</a>
+      <a href="#faculty" class="mobile-link block px-3 py-2 rounded-lg font-semibold text-slate-800 hover:bg-indigo-50 hover:text-indigo-600" data-en="Faculty" data-bn="শিক্ষকমণ্ডলী">Faculty</a>
+      <a href="#gallery" class="mobile-link block px-3 py-2 rounded-lg font-semibold text-slate-800 hover:bg-indigo-50 hover:text-indigo-600" data-en="Campus Life" data-bn="ক্যাম্পাস লাইফ">Campus Life</a>
+      <a href="#admission" class="mobile-link block px-3 py-2 rounded-lg font-semibold text-slate-800 hover:bg-indigo-50 hover:text-indigo-600" data-en="Admission" data-bn="ভর্তি তথ্য">Admission</a>
+      <a href="#contact" class="mobile-link block px-3 py-2 rounded-lg font-semibold text-slate-800 hover:bg-indigo-50 hover:text-indigo-600" data-en="Contact" data-bn="যোগাযোগ">Contact</a>
+      <div class="pt-2 border-t border-slate-100 flex items-center justify-between gap-3">
+        <a href="login.html" class="flex-1 text-center py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-sm shadow">
+          <i class="fas fa-lock mr-2 text-amber-300"></i>
+          <span data-en="Admin Portal" data-bn="অ্যাডমিন পোর্টাল">Admin Portal</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= HERO SECTION ================= -->
+  <section id="home" class="relative overflow-hidden bg-gradient-to-b from-indigo-950 via-slate-900 to-primary-950 text-white py-16 lg:py-24">
+    <!-- Decorative Ambient Glows -->
+    <div class="absolute -top-40 -left-40 w-96 h-96 bg-indigo-500/20 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute -bottom-40 -right-40 w-96 h-96 bg-emerald-500/20 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left Hero Content -->
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-indigo-500/20 border border-indigo-400/30 text-indigo-300 text-xs sm:text-sm font-semibold backdrop-blur-md">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span data-en="Admissions Open for Session 2026-2027" data-bn="২০২৬-২০২৭ শিক্ষাবর্ষে ভর্তি চলছে">Admissions Open for Session 2026-2027</span>
+          </div>
+
+          <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight sm:leading-none">
+            <span data-en="Shaping The Leaders of" data-bn="আগামীর নেতৃত্ব গড়তে">Shaping The Leaders of</span> <br>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-indigo-200 to-emerald-400" data-en="Tomorrow with Wisdom" data-bn="আধুনিক ও নৈতিক শিক্ষা">Tomorrow with Wisdom</span>
+          </h1>
+
+          <p class="text-slate-300 text-sm sm:text-base lg:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal" data-en="ABCD Model School & College provides a world-class academic environment, state-of-the-art digital classrooms, multimedia science labs, and comprehensive co-curricular programs to nurture holistic intellectual excellence." data-bn="এবিসিডি মডেল স্কুল অ্যান্ড কলেজ বিশ্বমানের শিক্ষাঙ্গন, আধুনিক স্মার্ট ক্লাসরুম, মাল্টিমিডিয়া বিজ্ঞানাগার ও সহশিক্ষা কার্যক্রমের মাধ্যমে প্রতিটি শিক্ষার্থীকে মেধা ও নৈতিকতায় সমৃদ্ধ করে গড়ে তোলে।">
+            ABCD Model School & College provides a world-class academic environment, state-of-the-art digital classrooms, multimedia science labs, and comprehensive co-curricular programs to nurture holistic intellectual excellence.
+          </p>
+
+          <!-- CTA Buttons -->
+          <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+            <a href="#admission" class="w-full sm:w-auto px-7 py-3.5 rounded-2xl bg-gradient-to-r from-indigo-500 to-indigo-600 hover:from-indigo-600 hover:to-indigo-700 text-white font-bold text-sm sm:text-base shadow-lg shadow-indigo-600/30 hover:shadow-indigo-600/50 hover:scale-105 active:scale-95 transition flex items-center justify-center gap-2">
+              <i class="fas fa-file-signature text-amber-300"></i>
+              <span data-en="Apply for Admission" data-bn="অনলাইনে ভর্তির আবেদন">Apply for Admission</span>
+            </a>
+            <a href="#academics" class="w-full sm:w-auto px-7 py-3.5 rounded-2xl bg-white/10 hover:bg-white/20 text-white font-semibold text-sm sm:text-base border border-white/20 backdrop-blur-md hover:scale-105 active:scale-95 transition flex items-center justify-center gap-2">
+              <i class="fas fa-book-open text-emerald-400"></i>
+              <span data-en="Explore Academics" data-bn="একাডেমিক প্রোগ্রাম">Explore Academics</span>
+            </a>
+          </div>
+
+          <!-- Feature Tickers -->
+          <div class="grid grid-cols-3 gap-3 pt-6 border-t border-slate-800/80 max-w-lg mx-auto lg:mx-0 text-left">
+            <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+              <div class="text-xl sm:text-2xl font-black text-amber-400">100%</div>
+              <div class="text-[11px] text-slate-300 font-medium" data-en="Board Pass Rate" data-bn="বোর্ড পাসের হার">Board Pass Rate</div>
+            </div>
+            <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+              <div class="text-xl sm:text-2xl font-black text-emerald-400">85+</div>
+              <div class="text-[11px] text-slate-300 font-medium" data-en="Expert Faculty" data-bn="অভিজ্ঞ শিক্ষক">Expert Faculty</div>
+            </div>
+            <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+              <div class="text-xl sm:text-2xl font-black text-sky-400">2,500+</div>
+              <div class="text-[11px] text-slate-300 font-medium" data-en="Active Students" data-bn="নিয়মিত শিক্ষার্থী">Active Students</div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Hero Visual Card -->
+        <div class="lg:col-span-5 relative">
+          <div class="relative mx-auto max-w-md lg:max-w-none">
+            
+            <!-- Main Hero Image Frame -->
+            <div class="relative rounded-3xl overflow-hidden border-4 border-white/10 shadow-2xl shadow-indigo-950/60 group">
+              <img 
+                src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=900&auto=format&fit=crop" 
+                alt="Students in Campus" 
+                class="w-full h-[400px] object-cover group-hover:scale-105 transition-transform duration-700"
+              >
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
+              
+              <!-- Floating Overlay 1: Accreditation Badge -->
+              <div class="absolute top-4 left-4 p-3 rounded-2xl bg-white/90 backdrop-blur-md shadow-xl text-slate-900 border border-white/50 flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center font-black">
+                  <i class="fas fa-award text-lg"></i>
+                </div>
+                <div>
+                  <div class="text-xs font-black" data-en="Govt. Approved EIIN" data-bn="সরকারি অনুমোদিত">Govt. Approved EIIN</div>
+                  <div class="text-[10px] text-slate-500 font-mono">CODE: 108422</div>
+                </div>
+              </div>
+
+              <!-- Floating Overlay 2: GPA 5.0 Highlight -->
+              <div class="absolute bottom-4 left-4 right-4 p-4 rounded-2xl bg-slate-900/85 backdrop-blur-md border border-slate-700/80 text-white">
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-400 border border-amber-500/30 flex items-center justify-center">
+                      <i class="fas fa-trophy text-lg"></i>
+                    </div>
+                    <div>
+                      <div class="text-xs font-bold" data-en="180+ GPA 5.0 Achievers" data-bn="১৮০+ জিপিএ ৫.০ অর্জন">180+ GPA 5.0 Achievers</div>
+                      <div class="text-[11px] text-slate-300" data-en="SSC & HSC Exam 2025" data-bn="এসএসসি ও এইচএসসি ২০২৫">SSC & HSC Exam 2025</div>
+                    </div>
+                  </div>
+                  <span class="text-xs px-2.5 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 font-bold" data-en="Top Tier" data-bn="সেরা মান">Top Tier</span>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= KEY STATS BAR ================= -->
+  <section class="relative -mt-8 z-20 max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 bg-white rounded-3xl shadow-xl border border-slate-200/80 p-6 sm:p-8">
+      
+      <div class="flex items-center gap-4 border-b sm:border-b-0 sm:border-r border-slate-100 pb-4 sm:pb-0 sm:pr-4">
+        <div class="w-14 h-14 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center text-2xl shrink-0">
+          <i class="fas fa-user-graduate"></i>
+        </div>
+        <div>
+          <div class="text-2xl sm:text-3xl font-extrabold text-slate-900 font-mono">2,500+</div>
+          <div class="text-xs font-semibold text-slate-500 uppercase tracking-wider" data-en="Enrolled Students" data-bn="ভর্তিকৃত শিক্ষার্থী">Enrolled Students</div>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-4 border-b sm:border-b-0 lg:border-r border-slate-100 pb-4 sm:pb-0 sm:pr-4">
+        <div class="w-14 h-14 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-2xl shrink-0">
+          <i class="fas fa-chalkboard-teacher"></i>
+        </div>
+        <div>
+          <div class="text-2xl sm:text-3xl font-extrabold text-slate-900 font-mono">85+</div>
+          <div class="text-xs font-semibold text-slate-500 uppercase tracking-wider" data-en="Qualified Teachers" data-bn="দক্ষ শিক্ষকমণ্ডলী">Qualified Teachers</div>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-4 border-b sm:border-b-0 sm:border-r border-slate-100 pb-4 sm:pb-0 sm:pr-4">
+        <div class="w-14 h-14 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center text-2xl shrink-0">
+          <i class="fas fa-star"></i>
+        </div>
+        <div>
+          <div class="text-2xl sm:text-3xl font-extrabold text-slate-900 font-mono">99.4%</div>
+          <div class="text-xs font-semibold text-slate-500 uppercase tracking-wider" data-en="Pass Rate Success" data-bn="পাসের গড় হার">Pass Rate Success</div>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-4">
+        <div class="w-14 h-14 rounded-2xl bg-rose-50 text-rose-600 flex items-center justify-center text-2xl shrink-0">
+          <i class="fas fa-history"></i>
+        </div>
+        <div>
+          <div class="text-2xl sm:text-3xl font-extrabold text-slate-900 font-mono">28+</div>
+          <div class="text-xs font-semibold text-slate-500 uppercase tracking-wider" data-en="Years of Glory" data-bn="গৌরবময় বছর">Years of Glory</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= ABOUT & PRINCIPAL'S MESSAGE ================= -->
+  <section id="about" class="py-20 lg:py-28 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-indigo-600 px-3 py-1 bg-indigo-50 rounded-full" data-en="About Our Institution" data-bn="প্রতিষ্ঠান পরিচিতি">About Our Institution</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight" data-en="Empowering Minds, Inspiring Futures" data-bn="জ্ঞানের আলোয় আলোকিত আগামীর ভবিষ্যৎ">
+          Empowering Minds, Inspiring Futures
+        </h2>
+        <div class="w-16 h-1 bg-indigo-600 mx-auto rounded-full"></div>
+        <p class="text-slate-600 text-sm sm:text-base leading-relaxed" data-en="Established with a resolute commitment to academic brilliance, our institution integrates disciplined ethics, national values, and cutting-edge digital learning standards." data-bn="আধুনিক যুগোপযোগী পাঠ্যক্রম, শৃঙ্খলা ও নৈতিক শিক্ষার সুদৃঢ় মেলবন্ধনে আমাদের প্রতিষ্ঠান শিক্ষার্থীদের আত্মবিশ্বাসী ও দেশপ্রেমিক নাগরিক হিসেবে গড়ে তোলে।">
+          Established with a resolute commitment to academic brilliance, our institution integrates disciplined ethics, national values, and cutting-edge digital learning standards.
+        </p>
+      </div>
+
+      <!-- Grid: Principal Message + Mission/Vision Cards -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        
+        <!-- Left: Principal's Message Box -->
+        <div class="lg:col-span-7 bg-white rounded-3xl p-8 sm:p-10 shadow-lg border border-slate-200/80 relative">
+          <div class="absolute -top-5 right-8 w-12 h-12 bg-indigo-600 text-white rounded-2xl flex items-center justify-center text-xl shadow-md">
+            <i class="fas fa-quote-left"></i>
+          </div>
+
+          <div class="flex flex-col sm:flex-row items-center sm:items-start gap-6 pb-6 border-b border-slate-100">
+            <img 
+              src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=300&auto=format&fit=crop" 
+              alt="Principal Profile" 
+              class="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl object-cover ring-4 ring-indigo-50 shadow-md shrink-0"
+            >
+            <div class="text-center sm:text-left">
+              <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider" data-en="Message from Principal" data-bn="অধ্যক্ষের বাণী">Message from Principal</span>
+              <h3 class="text-xl sm:text-2xl font-black text-slate-900" data-en="Prof. Dr. Mohammad Masud Rana" data-bn="প্রফেসর ড. মোহাম্মদ মাসুদ রানা">Prof. Dr. Mohammad Masud Rana</h3>
+              <p class="text-xs text-slate-500 font-medium" data-en="Ph.D. in Education (DU), Principal & Secretary" data-bn="পিএইচডি (শিক্ষা), অধ্যক্ষ ও সচিব">Ph.D. in Education (DU), Principal & Secretary</p>
+            </div>
+          </div>
+
+          <p class="mt-6 text-slate-700 text-sm sm:text-base leading-relaxed italic" data-en="&ldquo;Welcome to ABCD Model School & College. Education is not merely the acquisition of textbook knowledge; it is the ignition of curiosity, leadership, and unwavering moral integrity. We continuously strive to create an inclusive, innovative environment where every student discovers their innate capabilities and prepares to excel in a globalized society.&rdquo;" data-bn="&ldquo;এবিসিডি মডেল স্কুল অ্যান্ড কলেজে আপনাকে স্বাগতম। প্রকৃত শিক্ষা কেবল পাঠ্যবইয়ের মুখস্থ বিদ্যা নয়; বরং শিক্ষার্থীর অন্তরের সুপ্ত প্রতিভার বিকাশ এবং নৈতিক চরিত্রের উন্মেষ ঘটানোই আমাদের ব্রত। আধুনিক তথ্যপ্রযুক্তি নির্ভর স্মার্ট শ্রেণিকক্ষ ও নিবেদিতপ্রাণ শিক্ষকদের নির্দেশনায় আমরা শিক্ষার্থীদের বৈশ্বিক প্রতিযোগিতার উপযোগী করে গড়ে তুলছি।&rdquo;">
+            &ldquo;Welcome to ABCD Model School & College. Education is not merely the acquisition of textbook knowledge; it is the ignition of curiosity, leadership, and unwavering moral integrity. We continuously strive to create an inclusive, innovative environment where every student discovers their innate capabilities and prepares to excel in a globalized society.&rdquo;
+          </p>
+
+          <div class="mt-6 pt-4 flex items-center justify-between text-xs text-slate-500 font-medium">
+            <span class="flex items-center gap-1.5 text-emerald-600 font-bold">
+              <i class="fas fa-certificate"></i>
+              <span data-en="National Award Winning College" data-bn="জাতীয় পর্যায়ে প্রশংসিত প্রতিষ্ঠান">National Award Winning College</span>
+            </span>
+            <span class="font-mono text-slate-400">ESTD: 1998</span>
+          </div>
+        </div>
+
+        <!-- Right: Mission, Vision & Values -->
+        <div class="lg:col-span-5 space-y-4">
+          
+          <!-- Mission -->
+          <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200/80 hover:border-indigo-400 transition group">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center text-xl shrink-0 group-hover:bg-indigo-600 group-hover:text-white transition">
+                <i class="fas fa-bullseye"></i>
+              </div>
+              <div>
+                <h4 class="text-lg font-bold text-slate-900 mb-1" data-en="Our Mission" data-bn="আমাদের মিশন">Our Mission</h4>
+                <p class="text-slate-600 text-xs sm:text-sm leading-relaxed" data-en="To cultivate academic brilliance, ethical leadership, critical thinking, and technological proficiency across all student cohorts." data-bn="প্রতিটি শিক্ষার্থীর বুদ্ধিবৃত্তিক বিকাশ, মানবিক মূল্যবোধ ও তথ্যপ্রযুক্তিতে পারদর্শিতা অর্জনের মাধ্যমে আগামীর উপযুক্ত মানবসম্পদ সৃষ্টি করা।">
+                  To cultivate academic brilliance, ethical leadership, critical thinking, and technological proficiency across all student cohorts.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Vision -->
+          <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200/80 hover:border-emerald-400 transition group">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-xl shrink-0 group-hover:bg-emerald-600 group-hover:text-white transition">
+                <i class="fas fa-eye"></i>
+              </div>
+              <div>
+                <h4 class="text-lg font-bold text-slate-900 mb-1" data-en="Our Vision" data-bn="আমাদের ভিশন">Our Vision</h4>
+                <p class="text-slate-600 text-xs sm:text-sm leading-relaxed" data-en="To be recognized as a premier benchmark institution that harmonizes cultural heritage with forward-looking 21st-century education." data-bn="একটি আদর্শ ও যুগান্তকারী শিক্ষা প্রতিষ্ঠান হিসেবে প্রতিষ্ঠিত হওয়া যা দেশীয় সংস্কৃতি ও একবিংশ শতাব্দীর বৈশ্বিক শিক্ষার মিলনস্থল।">
+                  To be recognized as a premier benchmark institution that harmonizes cultural heritage with forward-looking 21st-century education.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Core Values -->
+          <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200/80 hover:border-amber-400 transition group">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center text-xl shrink-0 group-hover:bg-amber-600 group-hover:text-white transition">
+                <i class="fas fa-hand-holding-heart"></i>
+              </div>
+              <div>
+                <h4 class="text-lg font-bold text-slate-900 mb-1" data-en="Core Pillars" data-bn="মূল স্তম্ভ">Core Pillars</h4>
+                <p class="text-slate-600 text-xs sm:text-sm leading-relaxed" data-en="Academic Integrity, Disciplined Habit, Respect for Diversity, Empathy, and Lifelong Intellectual Curiosity." data-bn="জ্ঞান অন্বেষণ, শৃঙ্খলাপরায়ণতা, পারস্পরিক শ্রদ্ধাবোধ, দেশপ্রেম এবং সৃজনশীল মুক্তচিন্তা।">
+                  Academic Integrity, Disciplined Habit, Respect for Diversity, Empathy, and Lifelong Intellectual Curiosity.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= ACADEMIC PROGRAMS ================= -->
+  <section id="academics" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-emerald-600 px-3 py-1 bg-emerald-50 rounded-full" data-en="Curriculum & Programs" data-bn="একাডেমিক বিভাগ">Curriculum & Programs</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900" data-en="Comprehensive Academic Disciplines" data-bn="উন্নত ও বৈচিত্র্যময় পাঠদান ব্যবস্থা">
+          Comprehensive Academic Disciplines
+        </h2>
+        <div class="w-16 h-1 bg-emerald-600 mx-auto rounded-full"></div>
+        <p class="text-slate-600 text-sm sm:text-base" data-en="Following the National Curriculum (NCTB) with extended ICT, Spoken English, and STEM laboratories." data-bn="জাতীয় শিক্ষাক্রম ও পাঠ্যপুস্তক বোর্ড (NCTB) অনুমোদিত পাঠ্যসূচির সাথে বিশেষায়িত আইসিটি ও স্পোকেন ইংলিশ ট্রেনিং।">
+          Following the National Curriculum (NCTB) with extended ICT, Spoken English, and STEM laboratories.
+        </p>
+      </div>
+
+      <!-- Programs Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Program 1: Primary Section -->
+        <div class="bg-slate-50 rounded-3xl overflow-hidden border border-slate-200/80 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col group">
+          <div class="relative h-48 overflow-hidden">
+            <img 
+              src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=600&auto=format&fit=crop" 
+              alt="Primary Section" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            >
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 to-transparent"></div>
+            <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-indigo-600 text-white text-xs font-bold" data-en="Play - Class 5" data-bn="প্লে - ৫ম শ্রেণি">Play - Class 5</span>
+            <span class="absolute bottom-3 left-4 text-white font-extrabold text-lg" data-en="Primary Education" data-bn="প্রাথমিক শাখা">Primary Education</span>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+            <p class="text-slate-600 text-sm leading-relaxed" data-en="Activity-based joyful early childhood foundation, sensory motor development, moral habits, and foundational numeracy & literacy in English and Bengali." data-bn="আনন্দময় পরিবেশে হাতে-কলমে শিক্ষা, ছবি আঁকা, নৈতিক শিক্ষা এবং বাংলা ও ইংরেজি ভাষায় মজবুত ভিত্তিমূল তৈরি।">
+              Activity-based joyful early childhood foundation, sensory motor development, moral habits, and foundational numeracy & literacy in English and Bengali.
+            </p>
+            <ul class="space-y-2 text-xs font-medium text-slate-700">
+              <li class="flex items-center gap-2"><i class="fas fa-check-circle text-emerald-500"></i> <span data-en="Smart Kids Interactive Nursery" data-bn="স্মার্ট কিডস ইন্টার‍্যাক্টিভ নার্সারি">Smart Kids Interactive Nursery</span></li>
+              <li class="flex items-center gap-2"><i class="fas fa-check-circle text-emerald-500"></i> <span data-en="Daily Phonics & Mental Math" data-bn="প্রতিদিনের ফোনিক্স ও মেন্টাল ম্যাথ">Daily Phonics & Mental Math</span></li>
+              <li class="flex items-center gap-2"><i class="fas fa-check-circle text-emerald-500"></i> <span data-en="Weekly Arts, Crafts & Storytelling" data-bn="চিত্রাঙ্কন, হস্তশিল্প ও গল্পবলা">Weekly Arts, Crafts & Storytelling</span></li>
+            </ul>
+            <a href="#admission" class="mt-4 block w-full text-center py-2.5 rounded-xl bg-white border border-indigo-200 hover:bg-indigo-600 hover:text-white text-indigo-600 font-bold text-xs transition">
+              <span data-en="Enroll in Primary" data-bn="প্রাথমিকে ভর্তির তথ্য">Enroll in Primary</span> <i class="fas fa-arrow-right ml-1"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Program 2: Secondary Section (SSC) -->
+        <div class="bg-slate-50 rounded-3xl overflow-hidden border border-slate-200/80 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col group">
+          <div class="relative h-48 overflow-hidden">
+            <img 
+              src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?q=80&w=600&auto=format&fit=crop" 
+              alt="Secondary Section" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            >
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 to-transparent"></div>
+            <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-emerald-600 text-white text-xs font-bold" data-en="Class 6 - 10 (SSC)" data-bn="৬ষ্ঠ - ১০ম শ্রেণি (এসএসসি)">Class 6 - 10 (SSC)</span>
+            <span class="absolute bottom-3 left-4 text-white font-extrabold text-lg" data-en="Secondary Education" data-bn="মাধ্যমিক শাখা">Secondary Education</span>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+            <p class="text-slate-600 text-sm leading-relaxed" data-en="Rigorous curriculum delivery aligning with national board exams. Dedicated focus on creative questions, hands-on physics/chemistry/biology labs, and computer programming." data-bn="সৃজনশীল প্রশ্নপদ্ধতিতে নিয়মিত মডেল টেস্ট, আধুনিক বিজ্ঞানাগারে ব্যবহারিক পরীক্ষণ ও তথ্যপ্রযুক্তিতে বিশেষ প্রশিক্ষণ।">
+              Rigorous curriculum delivery aligning with national board exams. Dedicated focus on creative questions, hands-on physics/chemistry/biology labs, and computer programming.
+            </p>
+            <ul class="space-y-2 text-xs font-medium text-slate-700">
+              <li class="flex items-center gap-2"><i class="fas fa-check-circle text-emerald-500"></i> <span data-en="Science & Business Studies Groups" data-bn="বিজ্ঞান ও ব্যবসায় শিক্ষা বিভাগ">Science & Business Studies Groups</span></li>
+              <li class="flex items-center gap-2"><i class="fas fa-check-circle text-emerald-500"></i> <span data-en="Robotics & Coding Club" data-bn="রোবোটিক্স ও কোডিং ক্লাব">Robotics & Coding Club</span></li>
+              <li class="flex items-center gap-2"><i class="fas fa-check-circle text-emerald-500"></i> <span data-en="Scouts & Girls Guide Cadets" data-bn="স্কাউট ও গার্ল গাইড প্রশিক্ষণ">Scouts & Girls Guide Cadets</span></li>
+            </ul>
+            <a href="#admission" class="mt-4 block w-full text-center py-2.5 rounded-xl bg-white border border-emerald-200 hover:bg-emerald-600 hover:text-white text-emerald-600 font-bold text-xs transition">
+              <span data-en="Enroll in Secondary" data-bn="মাধ্যমিকে ভর্তির তথ্য">Enroll in Secondary</span> <i class="fas fa-arrow-right ml-1"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Program 3: Higher Secondary (HSC) -->
+        <div class="bg-slate-50 rounded-3xl overflow-hidden border border-slate-200/80 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col group">
+          <div class="relative h-48 overflow-hidden">
+            <img 
+              src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=600&auto=format&fit=crop" 
+              alt="College Section" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            >
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 to-transparent"></div>
+            <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-amber-600 text-white text-xs font-bold" data-en="Class 11 - 12 (HSC)" data-bn="একাদশ - দ্বাদশ শ্রেণি (এইচএসসি)">Class 11 - 12 (HSC)</span>
+            <span class="absolute bottom-3 left-4 text-white font-extrabold text-lg" data-en="Higher Secondary College" data-bn="উচ্চ মাধ্যমিক কলেজ শাখা">Higher Secondary College</span>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+            <p class="text-slate-600 text-sm leading-relaxed" data-en="Intensive academic mentorship by senior university-pedigree lecturers. Specialized preparation for University Admission (BUET, Medical, DU, IBA)." data-bn="বিশ্ববিদ্যালয় পর্যায়ের অভিজ্ঞ শিক্ষকদের পাঠদান। বোর্ড পরীক্ষায় জিপিএ ৫ অর্জনের পাশাপাশি বুয়েট, মেডিকেল ও ঢাকা বিশ্ববিদ্যালয় ভর্তির আগাম প্রস্তুতি।">
+              Intensive academic mentorship by senior university-pedigree lecturers. Specialized preparation for University Admission (BUET, Medical, DU, IBA).
+            </p>
+            <ul class="space-y-2 text-xs font-medium text-slate-700">
+              <li class="flex items-center gap-2"><i class="fas fa-check-circle text-emerald-500"></i> <span data-en="Science (Pre-Medical & Pre-Engineering)" data-bn="বিজ্ঞান বিভাগ (প্রি-ইঞ্জিনিয়ারিং ও প্রি-মেডিকেল)">Science (Pre-Medical & Pre-Engineering)</span></li>
+              <li class="flex items-center gap-2"><i class="fas fa-check-circle text-emerald-500"></i> <span data-en="Business Studies (Finance & Accounting)" data-bn="ব্যবসায় শিক্ষা (হিসাববিজ্ঞান ও ফিন্যান্স)">Business Studies (Finance & Accounting)</span></li>
+              <li class="flex items-center gap-2"><i class="fas fa-check-circle text-emerald-500"></i> <span data-en="Humanities (Social Work, Logic & Econ)" data-bn="মানবিক বিভাগ (অর্থনীতি, যুক্তিবিদ্যা)">Humanities (Social Work, Logic & Econ)</span></li>
+            </ul>
+            <a href="#admission" class="mt-4 block w-full text-center py-2.5 rounded-xl bg-white border border-amber-200 hover:bg-amber-600 hover:text-white text-amber-600 font-bold text-xs transition">
+              <span data-en="Enroll in College" data-bn="কলেজে ভর্তির তথ্য">Enroll in College</span> <i class="fas fa-arrow-right ml-1"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= DYNAMIC NOTICE BOARD & EVENTS ================= -->
+  <section id="notices" class="py-20 bg-slate-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+        <div>
+          <span class="text-xs font-extrabold uppercase tracking-widest text-indigo-600 px-3 py-1 bg-indigo-50 rounded-full" data-en="Official Announcements" data-bn="জরুরি ঘোষণা">Official Announcements</span>
+          <h2 class="text-3xl font-extrabold text-slate-900 mt-2" data-en="Notice Board & Upcoming Events" data-bn="নোটিশ বোর্ড ও ইভেন্ট ক্যালেন্ডার">
+            Notice Board & Upcoming Events
+          </h2>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="flex items-center gap-2 flex-wrap bg-white p-1.5 rounded-2xl border border-slate-200 shadow-xs">
+          <button class="notice-tab-btn active px-3.5 py-1.5 rounded-xl text-xs font-bold bg-indigo-600 text-white transition cursor-pointer" data-category="all" data-en="All" data-bn="সকল">All</button>
+          <button class="notice-tab-btn px-3.5 py-1.5 rounded-xl text-xs font-bold text-slate-600 hover:bg-slate-100 transition cursor-pointer" data-category="general" data-en="General" data-bn="সাধারণ">General</button>
+          <button class="notice-tab-btn px-3.5 py-1.5 rounded-xl text-xs font-bold text-slate-600 hover:bg-slate-100 transition cursor-pointer" data-category="exam" data-en="Exam" data-bn="পরীক্ষা">Exam</button>
+          <button class="notice-tab-btn px-3.5 py-1.5 rounded-xl text-xs font-bold text-slate-600 hover:bg-slate-100 transition cursor-pointer" data-category="event" data-en="Events" data-bn="ইভেন্ট">Events</button>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        
+        <!-- Notices List Column (8 Cols) -->
+        <div class="lg:col-span-8 space-y-4" id="noticeContainer">
+          
+          <!-- Notice Item 1 -->
+          <div class="notice-card bg-white p-5 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4" data-category="exam">
+            <div class="flex items-start gap-4">
+              <div class="w-14 h-14 rounded-2xl bg-indigo-50 text-indigo-600 flex flex-col items-center justify-center font-bold shrink-0 border border-indigo-100">
+                <span class="text-lg leading-none font-black font-mono">15</span>
+                <span class="text-[10px] uppercase font-semibold">DEC</span>
+              </div>
+              <div>
+                <div class="flex items-center gap-2 mb-1">
+                  <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-md bg-amber-100 text-amber-800" data-en="Exam" data-bn="পরীক্ষা">Exam</span>
+                  <span class="text-xs text-slate-400 font-mono"><i class="far fa-clock mr-1"></i>2026-12-15</span>
+                </div>
+                <h4 class="text-sm sm:text-base font-bold text-slate-900 hover:text-indigo-600 transition cursor-pointer open-notice-modal" data-title="HSC Model Test Examination Routine 2026" data-en="HSC Model Test Examination 2026 Routine & Exam Guidelines" data-bn="এইচএসসি মডেল টেস্ট পরীক্ষা ২০২৬ এর রুটিন ও নির্দেশনাবলী">
+                  HSC Model Test Examination 2026 Routine & Exam Guidelines
+                </h4>
+                <p class="text-xs text-slate-500 mt-1" data-en="All science, commerce, and humanities students must collect admit cards by 10th Dec." data-bn="সকল বিজ্ঞান, ব্যবসায় শিক্ষা ও মানবিক শাখার শিক্ষার্থীদের আগামী ১০ ডিসেম্বরের মধ্যে প্রবেশপত্র সংগ্রহ করতে হবে।">
+                  All science, commerce, and humanities students must collect admit cards by 10th Dec.
+                </p>
+              </div>
+            </div>
+            <button class="open-notice-modal px-3.5 py-2 rounded-xl bg-slate-100 hover:bg-indigo-50 text-indigo-600 font-bold text-xs shrink-0 transition flex items-center gap-1.5" data-title="HSC Model Test Examination Routine 2026">
+              <i class="fas fa-file-pdf text-rose-500"></i> <span data-en="View Notice" data-bn="বিস্তারিত">View Notice</span>
+            </button>
+          </div>
+
+          <!-- Notice Item 2 -->
+          <div class="notice-card bg-white p-5 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4" data-category="general">
+            <div class="flex items-start gap-4">
+              <div class="w-14 h-14 rounded-2xl bg-emerald-50 text-emerald-600 flex flex-col items-center justify-center font-bold shrink-0 border border-emerald-100">
+                <span class="text-lg leading-none font-black font-mono">01</span>
+                <span class="text-[10px] uppercase font-semibold">DEC</span>
+              </div>
+              <div>
+                <div class="flex items-center gap-2 mb-1">
+                  <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-md bg-emerald-100 text-emerald-800" data-en="General" data-bn="সাধারণ">General</span>
+                  <span class="text-xs text-slate-400 font-mono"><i class="far fa-clock mr-1"></i>2026-12-01</span>
+                </div>
+                <h4 class="text-sm sm:text-base font-bold text-slate-900 hover:text-indigo-600 transition cursor-pointer open-notice-modal" data-title="Online Admission Open 2026-2027" data-en="Online Admission Application Open for Classes 1 to 11" data-bn="২০২৬-২০২৭ শিক্ষাবর্ষে ১ম থেকে একাদশ শ্রেণিতে ভর্তির আবেদন সংক্রান্ত বিজ্ঞপ্তি">
+                  Online Admission Application Open for Classes 1 to 11
+                </h4>
+                <p class="text-xs text-slate-500 mt-1" data-en="Apply online or visit the campus admission desk during working hours." data-bn="অনলাইনে ফরম পূরণ করুন অথবা ক্যাম্পাসের ভর্তি তথ্য কেন্দ্র থেকে সরাসরি আবেদনপত্র সংগ্রহ করুন।">
+                  Apply online or visit the campus admission desk during working hours.
+                </p>
+              </div>
+            </div>
+            <button class="open-notice-modal px-3.5 py-2 rounded-xl bg-slate-100 hover:bg-indigo-50 text-indigo-600 font-bold text-xs shrink-0 transition flex items-center gap-1.5" data-title="Online Admission Open 2026-2027">
+              <i class="fas fa-file-pdf text-rose-500"></i> <span data-en="View Notice" data-bn="বিস্তারিত">View Notice</span>
+            </button>
+          </div>
+
+          <!-- Notice Item 3 -->
+          <div class="notice-card bg-white p-5 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4" data-category="event">
+            <div class="flex items-start gap-4">
+              <div class="w-14 h-14 rounded-2xl bg-rose-50 text-rose-600 flex flex-col items-center justify-center font-bold shrink-0 border border-rose-100">
+                <span class="text-lg leading-none font-black font-mono">16</span>
+                <span class="text-[10px] uppercase font-semibold">DEC</span>
+              </div>
+              <div>
+                <div class="flex items-center gap-2 mb-1">
+                  <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-md bg-rose-100 text-rose-800" data-en="Events" data-bn="ইভেন্ট">Events</span>
+                  <span class="text-xs text-slate-400 font-mono"><i class="far fa-clock mr-1"></i>2026-12-16</span>
+                </div>
+                <h4 class="text-sm sm:text-base font-bold text-slate-900 hover:text-indigo-600 transition cursor-pointer open-notice-modal" data-title="Great Victory Day 2026 Celebration" data-en="Celebration of the Great Victory Day and Cultural Festival 2026" data-bn="মহান বিজয় দিবস ও সাংস্কৃতিক উৎসব উদযাপন ২০২৬">
+                  Celebration of the Great Victory Day and Cultural Festival 2026
+                </h4>
+                <p class="text-xs text-slate-500 mt-1" data-en="Flag hoisting at 8:00 AM followed by debate, patriotic songs and award ceremony." data-bn="সকাল ৮:০০ টায় জাতীয় পতাকা উত্তোলন, চিত্রাঙ্কন প্রতিযোগিতা, দেশাত্মবোধক গান ও পুরস্কার বিতরণ।">
+                  Flag hoisting at 8:00 AM followed by debate, patriotic songs and award ceremony.
+                </p>
+              </div>
+            </div>
+            <button class="open-notice-modal px-3.5 py-2 rounded-xl bg-slate-100 hover:bg-indigo-50 text-indigo-600 font-bold text-xs shrink-0 transition flex items-center gap-1.5" data-title="Great Victory Day 2026 Celebration">
+              <i class="fas fa-file-pdf text-rose-500"></i> <span data-en="View Notice" data-bn="বিস্তারিত">View Notice</span>
+            </button>
+          </div>
+
+          <!-- Notice Item 4 -->
+          <div class="notice-card bg-white p-5 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4" data-category="general">
+            <div class="flex items-start gap-4">
+              <div class="w-14 h-14 rounded-2xl bg-sky-50 text-sky-600 flex flex-col items-center justify-center font-bold shrink-0 border border-sky-100">
+                <span class="text-lg leading-none font-black font-mono">20</span>
+                <span class="text-[10px] uppercase font-semibold">NOV</span>
+              </div>
+              <div>
+                <div class="flex items-center gap-2 mb-1">
+                  <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-md bg-sky-100 text-sky-800" data-en="General" data-bn="সাধারণ">General</span>
+                  <span class="text-xs text-slate-400 font-mono"><i class="far fa-clock mr-1"></i>2026-11-20</span>
+                </div>
+                <h4 class="text-sm sm:text-base font-bold text-slate-900 hover:text-indigo-600 transition cursor-pointer open-notice-modal" data-title="Digital Identity Card & RFID Attendance" data-en="Mandatory Smart RFID Student ID Card Distribution" data-bn="শিক্ষার্থীদের জন্য স্মার্ট আরএফআইডি ডিজিটাল পরিচয়পত্র বিতরণ">
+                  Mandatory Smart RFID Student ID Card Distribution
+                </h4>
+                <p class="text-xs text-slate-500 mt-1" data-en="Parents can track entry and exit via SMS notification starting from 1st January." data-bn="১লা জানুয়ারি থেকে সকল শিক্ষার্থীর ক্লাসে প্রবেশ ও প্রস্থানের সময় অভিভাবকদের স্বয়ংক্রিয় এসএমএস প্রদান করা হবে।">
+                  Parents can track entry and exit via SMS notification starting from 1st January.
+                </p>
+              </div>
+            </div>
+            <button class="open-notice-modal px-3.5 py-2 rounded-xl bg-slate-100 hover:bg-indigo-50 text-indigo-600 font-bold text-xs shrink-0 transition flex items-center gap-1.5" data-title="Digital Identity Card & RFID Attendance">
+              <i class="fas fa-file-pdf text-rose-500"></i> <span data-en="View Notice" data-bn="বিস্তারিত">View Notice</span>
+            </button>
+          </div>
+
+        </div>
+
+        <!-- Right Side: Events Calendar Card (4 Cols) -->
+        <div class="lg:col-span-4 space-y-6">
+          <div class="bg-gradient-to-br from-primary-900 to-indigo-900 text-white p-6 rounded-3xl shadow-lg border border-indigo-800">
+            <div class="flex items-center justify-between mb-6 pb-4 border-b border-indigo-700/60">
+              <h3 class="text-lg font-bold flex items-center gap-2">
+                <i class="fas fa-calendar-alt text-amber-400"></i>
+                <span data-en="Upcoming Events" data-bn="আসন্ন ইভেন্টসমূহ">Upcoming Events</span>
+              </h3>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-indigo-800 text-indigo-200">2026-27</span>
+            </div>
+
+            <div class="space-y-4">
+              
+              <!-- Event 1 -->
+              <div class="p-3.5 rounded-2xl bg-white/10 hover:bg-white/15 transition border border-white/10 flex items-start gap-3">
+                <div class="w-12 h-12 rounded-xl bg-amber-400 text-slate-900 flex flex-col items-center justify-center font-bold shrink-0">
+                  <span class="text-sm font-black font-mono">18</span>
+                  <span class="text-[9px] uppercase font-bold">JAN</span>
+                </div>
+                <div>
+                  <h5 class="text-xs sm:text-sm font-bold text-white" data-en="Annual Science Fair & Tech Fest" data-bn="বার্ষিক বিজ্ঞান মেলা ও টেক ফেস্ট">Annual Science Fair & Tech Fest</h5>
+                  <p class="text-[11px] text-indigo-200 mt-0.5"><i class="fas fa-map-marker-alt text-emerald-400 mr-1"></i> <span data-en="Central Auditorium" data-bn="কেন্দ্রীয় অডিটোরিয়াম">Central Auditorium</span></p>
+                </div>
+              </div>
+
+              <!-- Event 2 -->
+              <div class="p-3.5 rounded-2xl bg-white/10 hover:bg-white/15 transition border border-white/10 flex items-start gap-3">
+                <div class="w-12 h-12 rounded-xl bg-emerald-400 text-slate-900 flex flex-col items-center justify-center font-bold shrink-0">
+                  <span class="text-sm font-black font-mono">05</span>
+                  <span class="text-[9px] uppercase font-bold">FEB</span>
+                </div>
+                <div>
+                  <h5 class="text-xs sm:text-sm font-bold text-white" data-en="Inter-College Debate Championship" data-bn="আন্তঃকলেজ বিতর্ক প্রতিযোগিতা">Inter-College Debate Championship</h5>
+                  <p class="text-[11px] text-indigo-200 mt-0.5"><i class="fas fa-map-marker-alt text-emerald-400 mr-1"></i> <span data-en="College Seminar Hall" data-bn="সেমিনার হল">College Seminar Hall</span></p>
+                </div>
+              </div>
+
+              <!-- Event 3 -->
+              <div class="p-3.5 rounded-2xl bg-white/10 hover:bg-white/15 transition border border-white/10 flex items-start gap-3">
+                <div class="w-12 h-12 rounded-xl bg-rose-400 text-slate-900 flex flex-col items-center justify-center font-bold shrink-0">
+                  <span class="text-sm font-black font-mono">21</span>
+                  <span class="text-[9px] uppercase font-bold">FEB</span>
+                </div>
+                <div>
+                  <h5 class="text-xs sm:text-sm font-bold text-white" data-en="International Mother Language Day" data-bn="আন্তর্জাতিক মাতৃভাষা দিবস">International Mother Language Day</h5>
+                  <p class="text-[11px] text-indigo-200 mt-0.5"><i class="fas fa-map-marker-alt text-emerald-400 mr-1"></i> <span data-en="Campus Shaheed Minar" data-bn="শহীদ মিনার প্রাঙ্গণ">Campus Shaheed Minar</span></p>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-indigo-700/60 text-center">
+              <a href="#admission" class="text-xs text-amber-300 hover:text-white font-bold flex items-center justify-center gap-1">
+                <span data-en="Download Academic Calendar 2026" data-bn="বার্ষিক একাডেমিক ক্যালেন্ডার ২০২৬ ডাউনলোড">Download Academic Calendar 2026</span>
+                <i class="fas fa-download"></i>
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= FACULTY & TEACHERS ================= -->
+  <section id="faculty" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-indigo-600 px-3 py-1 bg-indigo-50 rounded-full" data-en="Distinguished Faculty" data-bn="সম্মানিত শিক্ষকমণ্ডলী">Distinguished Faculty</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900" data-en="Meet Our Visionary Mentors" data-bn="অভিজ্ঞ ও নিবেদিতপ্রাণ শিক্ষকবৃন্দ">
+          Meet Our Visionary Mentors
+        </h2>
+        <div class="w-16 h-1 bg-indigo-600 mx-auto rounded-full"></div>
+        <p class="text-slate-600 text-sm sm:text-base" data-en="Passionate educators from top universities dedicated to nurturing intellectual curiosity and character." data-bn="দেশসেরা বিশ্ববিদ্যালয়ের উচ্চ ডিগ্রিধারী এবং পাঠদানে অত্যন্ত আন্তরিক শিক্ষকমণ্ডলী।">
+          Passionate educators from top universities dedicated to nurturing intellectual curiosity and character.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Faculty 1 -->
+        <div class="bg-slate-50 rounded-3xl p-6 border border-slate-200/80 shadow-sm hover:shadow-xl transition-all duration-300 text-center group">
+          <div class="relative w-32 h-32 mx-auto mb-4 rounded-2xl overflow-hidden ring-4 ring-indigo-100 group-hover:ring-indigo-600 transition">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=300&auto=format&fit=crop" alt="Principal" class="w-full h-full object-cover">
+          </div>
+          <h4 class="text-base font-bold text-slate-900" data-en="Prof. Dr. M. Masud Rana" data-bn="প্রফেসর ড. এম. মাসুদ রানা">Prof. Dr. M. Masud Rana</h4>
+          <p class="text-xs text-indigo-600 font-semibold mt-0.5" data-en="Principal & Secretary" data-bn="অধ্যক্ষ ও সচিব">Principal & Secretary</p>
+          <p class="text-[11px] text-slate-500 mt-2" data-en="Ph.D. (DU), M.Sc in Physics, 22+ Years Experience" data-bn="পিএইচডি (ঢাবি), এম.এসসি পদার্থবিজ্ঞান">Ph.D. (DU), M.Sc in Physics, 22+ Years Experience</p>
+          <div class="mt-4 pt-3 border-t border-slate-200/60 flex items-center justify-center gap-3 text-slate-400">
+            <a href="#" class="hover:text-indigo-600"><i class="fas fa-envelope"></i></a>
+            <a href="#" class="hover:text-indigo-600"><i class="fas fa-phone"></i></a>
+            <a href="#" class="hover:text-indigo-600"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+
+        <!-- Faculty 2 -->
+        <div class="bg-slate-50 rounded-3xl p-6 border border-slate-200/80 shadow-sm hover:shadow-xl transition-all duration-300 text-center group">
+          <div class="relative w-32 h-32 mx-auto mb-4 rounded-2xl overflow-hidden ring-4 ring-indigo-100 group-hover:ring-indigo-600 transition">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=300&auto=format&fit=crop" alt="Vice Principal" class="w-full h-full object-cover">
+          </div>
+          <h4 class="text-base font-bold text-slate-900" data-en="Syeda Nasrin Sultana" data-bn="সৈয়দা নাসরিন সুলতানা">Syeda Nasrin Sultana</h4>
+          <p class="text-xs text-indigo-600 font-semibold mt-0.5" data-en="Vice Principal" data-bn="উপাধ্যক্ষ">Vice Principal</p>
+          <p class="text-[11px] text-slate-500 mt-2" data-en="M.A. in English (JU), B.Ed, 18+ Years Experience" data-bn="এম.এ ইংরেজি (জাবি), বি.এড">M.A. in English (JU), B.Ed, 18+ Years Experience</p>
+          <div class="mt-4 pt-3 border-t border-slate-200/60 flex items-center justify-center gap-3 text-slate-400">
+            <a href="#" class="hover:text-indigo-600"><i class="fas fa-envelope"></i></a>
+            <a href="#" class="hover:text-indigo-600"><i class="fas fa-phone"></i></a>
+            <a href="#" class="hover:text-indigo-600"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+
+        <!-- Faculty 3 -->
+        <div class="bg-slate-50 rounded-3xl p-6 border border-slate-200/80 shadow-sm hover:shadow-xl transition-all duration-300 text-center group">
+          <div class="relative w-32 h-32 mx-auto mb-4 rounded-2xl overflow-hidden ring-4 ring-indigo-100 group-hover:ring-indigo-600 transition">
+            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=300&auto=format&fit=crop" alt="Head of Science" class="w-full h-full object-cover">
+          </div>
+          <h4 class="text-base font-bold text-slate-900" data-en="Engr. Rafiqul Islam" data-bn="প্রকৌশলী রফিকুল ইসলাম">Engr. Rafiqul Islam</h4>
+          <p class="text-xs text-indigo-600 font-semibold mt-0.5" data-en="Head, Dept. of Science & ICT" data-bn="বিভাগীয় প্রধান, বিজ্ঞান ও আইসিটি">Head, Dept. of Science & ICT</p>
+          <p class="text-[11px] text-slate-500 mt-2" data-en="B.Sc Engr. (BUET), ICT Lead Trainer" data-bn="বিএসসি ইঞ্জিনিয়ারিং (বুয়েট)">B.Sc Engr. (BUET), ICT Lead Trainer</p>
+          <div class="mt-4 pt-3 border-t border-slate-200/60 flex items-center justify-center gap-3 text-slate-400">
+            <a href="#" class="hover:text-indigo-600"><i class="fas fa-envelope"></i></a>
+            <a href="#" class="hover:text-indigo-600"><i class="fas fa-phone"></i></a>
+            <a href="#" class="hover:text-indigo-600"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+
+        <!-- Faculty 4 -->
+        <div class="bg-slate-50 rounded-3xl p-6 border border-slate-200/80 shadow-sm hover:shadow-xl transition-all duration-300 text-center group">
+          <div class="relative w-32 h-32 mx-auto mb-4 rounded-2xl overflow-hidden ring-4 ring-indigo-100 group-hover:ring-indigo-600 transition">
+            <img src="https://images.unsplash.com/photo-1580894732444-8ecded7900cd?q=80&w=300&auto=format&fit=crop" alt="Head of Commerce" class="w-full h-full object-cover">
+          </div>
+          <h4 class="text-base font-bold text-slate-900" data-en="Afroza Khatun" data-bn="আফরোজা খাতুন">Afroza Khatun</h4>
+          <p class="text-xs text-indigo-600 font-semibold mt-0.5" data-en="Head, Business Studies" data-bn="বিভাগীয় প্রধান, ব্যবসায় শিক্ষা">Head, Business Studies</p>
+          <p class="text-[11px] text-slate-500 mt-2" data-en="M.Com in Accounting (RU), CA (Inter)" data-bn="এম.কম হিসাববিজ্ঞান (রাবি)">M.Com in Accounting (RU), CA (Inter)</p>
+          <div class="mt-4 pt-3 border-t border-slate-200/60 flex items-center justify-center gap-3 text-slate-400">
+            <a href="#" class="hover:text-indigo-600"><i class="fas fa-envelope"></i></a>
+            <a href="#" class="hover:text-indigo-600"><i class="fas fa-phone"></i></a>
+            <a href="#" class="hover:text-indigo-600"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= CAMPUS LIFE & GALLERY ================= -->
+  <section id="gallery" class="py-20 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+        <div>
+          <span class="text-xs font-extrabold uppercase tracking-widest text-indigo-600 px-3 py-1 bg-indigo-50 rounded-full" data-en="Campus Life" data-bn="ক্যাম্পাস জীবন">Campus Life</span>
+          <h2 class="text-3xl font-extrabold text-slate-900 mt-2" data-en="Photo Gallery & Moments" data-bn="ক্যাম্পাস গ্যালারি ও স্মৃতির পাতা">
+            Photo Gallery & Moments
+          </h2>
+        </div>
+
+        <!-- Filter tabs for Gallery -->
+        <div class="flex items-center gap-2 flex-wrap bg-white p-1.5 rounded-2xl border border-slate-200 shadow-xs">
+          <button class="gallery-filter-btn active px-3.5 py-1.5 rounded-xl text-xs font-bold bg-indigo-600 text-white transition cursor-pointer" data-filter="all" data-en="All" data-bn="সব">All</button>
+          <button class="gallery-filter-btn px-3.5 py-1.5 rounded-xl text-xs font-bold text-slate-600 hover:bg-slate-100 transition cursor-pointer" data-filter="academic" data-en="Classrooms & Lab" data-bn="ক্লাসরুম ও ল্যাব">Classrooms & Lab</button>
+          <button class="gallery-filter-btn px-3.5 py-1.5 rounded-xl text-xs font-bold text-slate-600 hover:bg-slate-100 transition cursor-pointer" data-filter="sports" data-en="Sports" data-bn="খেলাধুলা">Sports</button>
+          <button class="gallery-filter-btn px-3.5 py-1.5 rounded-xl text-xs font-bold text-slate-600 hover:bg-slate-100 transition cursor-pointer" data-filter="cultural" data-en="Cultural" data-bn="সাংস্কৃতিক">Cultural</button>
+        </div>
+      </div>
+
+      <!-- Gallery Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="galleryContainer">
+        
+        <!-- Photo 1: Science Lab -->
+        <div class="gallery-item relative rounded-3xl overflow-hidden shadow-md group cursor-pointer" data-category="academic">
+          <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=600&auto=format&fit=crop" alt="Science Lab" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-90 group-hover:opacity-100 transition"></div>
+          <div class="absolute bottom-4 left-4 right-4 text-white">
+            <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-indigo-600/80 backdrop-blur-xs" data-en="STEM Labs" data-bn="বিজ্ঞানাগার">STEM Labs</span>
+            <h5 class="text-sm font-bold mt-1" data-en="High-Tech Chemistry & Physics Laboratory" data-bn="উন্নত পদার্থ ও রসায়ন ল্যাব">High-Tech Chemistry & Physics Laboratory</h5>
+          </div>
+        </div>
+
+        <!-- Photo 2: Library -->
+        <div class="gallery-item relative rounded-3xl overflow-hidden shadow-md group cursor-pointer" data-category="academic">
+          <img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=600&auto=format&fit=crop" alt="Library" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-90 group-hover:opacity-100 transition"></div>
+          <div class="absolute bottom-4 left-4 right-4 text-white">
+            <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-emerald-600/80 backdrop-blur-xs" data-en="Central Library" data-bn="গ্রন্থাগার">Central Library</span>
+            <h5 class="text-sm font-bold mt-1" data-en="20,000+ Books & Digital E-Library" data-bn="২০,০০০+ বই ও ডিজিটাল ই-লাইব্রেরি">20,000+ Books & Digital E-Library</h5>
+          </div>
+        </div>
+
+        <!-- Photo 3: Sports -->
+        <div class="gallery-item relative rounded-3xl overflow-hidden shadow-md group cursor-pointer" data-category="sports">
+          <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=600&auto=format&fit=crop" alt="Sports" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-90 group-hover:opacity-100 transition"></div>
+          <div class="absolute bottom-4 left-4 right-4 text-white">
+            <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-amber-600/80 backdrop-blur-xs" data-en="Athletics" data-bn="ক্রীড়া প্রতিযোগিতা">Athletics</span>
+            <h5 class="text-sm font-bold mt-1" data-en="Annual Football Tournament Finals" data-bn="বার্ষিক ফুটবল টুর্নামেন্ট ফাইনাল">Annual Football Tournament Finals</h5>
+          </div>
+        </div>
+
+        <!-- Photo 4: Cultural -->
+        <div class="gallery-item relative rounded-3xl overflow-hidden shadow-md group cursor-pointer" data-category="cultural">
+          <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=600&auto=format&fit=crop" alt="Auditorium" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-90 group-hover:opacity-100 transition"></div>
+          <div class="absolute bottom-4 left-4 right-4 text-white">
+            <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-rose-600/80 backdrop-blur-xs" data-en="Cultural Fest" data-bn="সাংস্কৃতিক অনুষ্ঠান">Cultural Fest</span>
+            <h5 class="text-sm font-bold mt-1" data-en="Pohela Boishakh & Bangla New Year Gala" data-bn="পহেলা বৈশাখ উদযাপন ও সাংস্কৃতিক অনুষ্ঠান">Pohela Boishakh & Bangla New Year Gala</h5>
+          </div>
+        </div>
+
+        <!-- Photo 5: Classrooms -->
+        <div class="gallery-item relative rounded-3xl overflow-hidden shadow-md group cursor-pointer" data-category="academic">
+          <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=600&auto=format&fit=crop" alt="Smart Class" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-90 group-hover:opacity-100 transition"></div>
+          <div class="absolute bottom-4 left-4 right-4 text-white">
+            <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-indigo-600/80 backdrop-blur-xs" data-en="Smart Classroom" data-bn="স্মার্ট ক্লাসরুম">Smart Classroom</span>
+            <h5 class="text-sm font-bold mt-1" data-en="Interactive Digital Board Smart Class" data-bn="ইন্টারেক্টিভ ডিজিটাল বোর্ড ক্লাসরুম">Interactive Digital Board Smart Class</h5>
+          </div>
+        </div>
+
+        <!-- Photo 6: Cricket Match -->
+        <div class="gallery-item relative rounded-3xl overflow-hidden shadow-md group cursor-pointer" data-category="sports">
+          <img src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?q=80&w=600&auto=format&fit=crop" alt="Cricket" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-90 group-hover:opacity-100 transition"></div>
+          <div class="absolute bottom-4 left-4 right-4 text-white">
+            <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-emerald-600/80 backdrop-blur-xs" data-en="Cricket Playground" data-bn="ক্রিকেট টুর্নামেন্ট">Cricket Playground</span>
+            <h5 class="text-sm font-bold mt-1" data-en="Inter-School Cricket Championship Trophy" data-bn="আন্তঃস্কুল ক্রিকেট চ্যাম্পিয়নশিপ">Inter-School Cricket Championship Trophy</h5>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= ONLINE ADMISSION INQUIRY FORM ================= -->
+  <section id="admission" class="py-20 bg-gradient-to-b from-white via-indigo-50/50 to-white">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="bg-white rounded-3xl shadow-2xl border border-indigo-100 overflow-hidden">
+        <div class="bg-gradient-to-r from-primary-950 via-indigo-900 to-primary-900 p-8 sm:p-10 text-white text-center">
+          <span class="text-xs font-bold uppercase tracking-widest text-amber-300 px-3 py-1 bg-amber-400/20 rounded-full border border-amber-300/30" data-en="Session 2026-2027" data-bn="শিক্ষাবর্ষ ২০২৬-২০২৭">Session 2026-2027</span>
+          <h2 class="text-2xl sm:text-4xl font-extrabold mt-3" data-en="Online Admission Application" data-bn="অনলাইনে ভর্তির আবেদন ফরম">
+            Online Admission Application
+          </h2>
+          <p class="text-indigo-200 text-xs sm:text-sm mt-2 max-w-xl mx-auto" data-en="Fill in the required information accurately. Our admission office will verify and contact you within 24 hours." data-bn="সঠিক তথ্য দিয়ে ফরমটি পূরণ করুন। আমাদের ভর্তি দপ্তর যাচাই করে ২৪ ঘণ্টার মধ্যে আপনার সাথে যোগাযোগ করবে।">
+            Fill in the required information accurately. Our admission office will verify and contact you within 24 hours.
+          </p>
+        </div>
+
+        <form id="admissionForm" class="p-6 sm:p-10 space-y-6">
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            
+            <!-- Student Full Name -->
+            <div>
+              <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
+                <span data-en="Student's Full Name *" data-bn="শিক্ষার্থীর পূর্ণ নাম *">Student's Full Name *</span>
+              </label>
+              <div class="relative">
+                <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center text-slate-400 pointer-events-none">
+                  <i class="fas fa-user"></i>
+                </span>
+                <input 
+                  type="text" 
+                  id="studentName" 
+                  required
+                  placeholder="e.g. Tanvir Ahmed"
+                  data-en-placeholder="e.g. Tanvir Ahmed"
+                  data-bn-placeholder="যেমন: তানভীর আহমেদ"
+                  class="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-indigo-600 focus:border-indigo-600 text-sm outline-none transition"
+                >
+              </div>
+            </div>
+
+            <!-- Guardian Name -->
+            <div>
+              <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
+                <span data-en="Father's / Guardian's Name *" data-bn="পিতা / অভিভাবকের নাম *">Father's / Guardian's Name *</span>
+              </label>
+              <div class="relative">
+                <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center text-slate-400 pointer-events-none">
+                  <i class="fas fa-user-shield"></i>
+                </span>
+                <input 
+                  type="text" 
+                  id="guardianName" 
+                  required
+                  placeholder="e.g. Rafiqul Islam"
+                  data-en-placeholder="e.g. Rafiqul Islam"
+                  data-bn-placeholder="যেমন: রফিকুল ইসলাম"
+                  class="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-indigo-600 focus:border-indigo-600 text-sm outline-none transition"
+                >
+              </div>
+            </div>
+
+            <!-- Contact Mobile Number -->
+            <div>
+              <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
+                <span data-en="Guardian Mobile Number *" data-bn="অভিভাবকের মোবাইল নম্বর *">Guardian Mobile Number *</span>
+              </label>
+              <div class="relative">
+                <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center text-slate-400 pointer-events-none">
+                  <i class="fas fa-phone"></i>
+                </span>
+                <input 
+                  type="tel" 
+                  id="mobileNumber" 
+                  required
+                  pattern="[0-9]{11}"
+                  placeholder="01712345678"
+                  data-en-placeholder="01712345678"
+                  data-bn-placeholder="০১৭১২৩৪৫৬৭৮"
+                  class="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-indigo-600 focus:border-indigo-600 text-sm outline-none transition"
+                >
+              </div>
+            </div>
+
+            <!-- Email Address -->
+            <div>
+              <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
+                <span data-en="Email Address (Optional)" data-bn="ইমেইল ঠিকানা (ঐচ্ছিক)">Email Address (Optional)</span>
+              </label>
+              <div class="relative">
+                <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center text-slate-400 pointer-events-none">
+                  <i class="fas fa-envelope"></i>
+                </span>
+                <input 
+                  type="email" 
+                  id="emailAddress" 
+                  placeholder="name@example.com"
+                  data-en-placeholder="name@example.com"
+                  data-bn-placeholder="name@example.com"
+                  class="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-indigo-600 focus:border-indigo-600 text-sm outline-none transition"
+                >
+              </div>
+            </div>
+
+            <!-- Desired Class / Program -->
+            <div>
+              <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
+                <span data-en="Applying for Class / Program *" data-bn="আবেদনকৃত শ্রেণি / বিভাগ *">Applying for Class / Program *</span>
+              </label>
+              <select 
+                id="targetClass" 
+                required 
+                class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-indigo-600 focus:border-indigo-600 text-sm outline-none transition bg-white"
+              >
+                <option value="" disabled selected data-en="Select Class or Group" data-bn="শ্রেণি বা বিভাগ নির্বাচন করুন">Select Class or Group</option>
+                <option value="Play - KG" data-en="Play / KG (Pre-School)" data-bn="প্লে / কেজি (প্রি-স্কুল)">Play / KG (Pre-School)</option>
+                <option value="Class 1 - 5" data-en="Class 1 to 5 (Primary)" data-bn="১ম - ৫ম শ্রেণি (প্রাথমিক)">Class 1 to 5 (Primary)</option>
+                <option value="Class 6 - 8" data-en="Class 6 to 8 (Junior)" data-bn="৬ষ্ঠ - ৮ম শ্রেণি (জুনিয়র)">Class 6 to 8 (Junior)</option>
+                <option value="Class 9 (Science)" data-en="Class 9 (Science)" data-bn="৯ম শ্রেণি (বিজ্ঞান)">Class 9 (Science)</option>
+                <option value="Class 9 (Business)" data-en="Class 9 (Business Studies)" data-bn="৯ম শ্রেণি (ব্যবসায় শিক্ষা)">Class 9 (Business Studies)</option>
+                <option value="HSC 1st Year (Science)" data-en="Class 11 / HSC (Science)" data-bn="একাদশ শ্রেণি / এইচএসসি (বিজ্ঞান)">Class 11 / HSC (Science)</option>
+                <option value="HSC 1st Year (Business)" data-en="Class 11 / HSC (Business)" data-bn="একাদশ শ্রেণি / এইচএসসি (ব্যবসায় শিক্ষা)">Class 11 / HSC (Business)</option>
+                <option value="HSC 1st Year (Humanities)" data-en="Class 11 / HSC (Humanities)" data-bn="একাদশ শ্রেণি / এইচএসসি (মানবিক)">Class 11 / HSC (Humanities)</option>
+              </select>
+            </div>
+
+            <!-- Previous School & GPA/Grade -->
+            <div>
+              <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
+                <span data-en="Previous School & GPA" data-bn="পূর্ববর্তী বিদ্যালয় ও জিপিএ/গ্রেড">Previous School & GPA</span>
+              </label>
+              <div class="relative">
+                <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center text-slate-400 pointer-events-none">
+                  <i class="fas fa-medal"></i>
+                </span>
+                <input 
+                  type="text" 
+                  id="previousSchoolGpa" 
+                  placeholder="e.g. Dhaka Collegiate School (GPA: 5.00)"
+                  data-en-placeholder="e.g. Dhaka Collegiate School (GPA: 5.00)"
+                  data-bn-placeholder="যেমন: ঢাকা কলেজিয়েট স্কুল (জিপিএ: ৫.০০)"
+                  class="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-indigo-600 focus:border-indigo-600 text-sm outline-none transition"
+                >
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Additional Notes / Address -->
+          <div>
+            <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
+              <span data-en="Present Address & Specific Remarks" data-bn="বর্তমান ঠিকানা ও মন্তব্য">Present Address & Specific Remarks</span>
+            </label>
+            <textarea 
+              id="studentAddress" 
+              rows="3" 
+              placeholder="Full present address and any medical or special requirements..."
+              data-en-placeholder="Full present address and any medical or special requirements..."
+              data-bn-placeholder="পূর্ণ বর্তমান ঠিকানা ও বিশেষ কোনো চাহিদা বা নোট..."
+              class="w-full p-4 rounded-xl border border-slate-300 focus:ring-2 focus:ring-indigo-600 focus:border-indigo-600 text-sm outline-none transition"
+            ></textarea>
+          </div>
+
+          <!-- Submit Button & Disclaimer -->
+          <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 border-t border-slate-100">
+            <p class="text-xs text-slate-500 flex items-center gap-1.5">
+              <i class="fas fa-shield-alt text-emerald-500"></i>
+              <span data-en="Your privacy is 100% protected. No spam." data-bn="আপনার সকল তথ্য সম্পূর্ণ সুরক্ষিত থাকবে।">Your privacy is 100% protected. No spam.</span>
+            </p>
+            <button 
+              type="submit" 
+              class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-sm shadow-lg shadow-indigo-200 hover:shadow-indigo-300 transition flex items-center justify-center gap-2 cursor-pointer"
+            >
+              <i class="fas fa-paper-plane text-amber-300"></i>
+              <span data-en="Submit Application" data-bn="আবেদন জমা দিন">Submit Application</span>
+            </button>
+          </div>
+
+        </form>
+
+        <!-- Success Toast Alert (Hidden by default) -->
+        <div id="admissionSuccessAlert" class="hidden m-6 p-6 rounded-2xl bg-emerald-50 border border-emerald-200 text-emerald-900">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-xl bg-emerald-600 text-white flex items-center justify-center text-2xl shrink-0">
+              <i class="fas fa-check-circle"></i>
+            </div>
+            <div>
+              <h4 class="text-base font-bold" data-en="Application Submitted Successfully!" data-bn="ভর্তির আবেদন সফলভাবে জমা হয়েছে!">Application Submitted Successfully!</h4>
+              <p class="text-xs sm:text-sm text-emerald-800 mt-1" data-en="Thank you! Your application ID is <span class='font-mono font-bold' id='generatedAppId'>APP-9842</span>. Our admission counselor will call your guardian number shortly." data-bn="ধন্যবাদ! আপনার আবেদন আইডি: <span class='font-mono font-bold' id='generatedAppId'>APP-9842</span>। আমাদের ভর্তি কাউন্সিলর অতি শীঘ্রই আপনার অভিভাবকের সাথে যোগাযোগ করবেন।">
+                Thank you! Your application ID is <span class="font-mono font-bold" id="generatedAppId">APP-9842</span>. Our admission counselor will call your guardian number shortly.
+              </p>
+              <div class="mt-3">
+                <button type="button" id="resetAdmissionBtn" class="text-xs font-bold text-emerald-700 underline cursor-pointer" data-en="Submit Another Application" data-bn="অন্য আরেকটি আবেদন জমা দিন">
+                  Submit Another Application
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= CONTACT & MAP ================= -->
+  <section id="contact" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Contact Information (5 Cols) -->
+        <div class="lg:col-span-5 space-y-6">
+          <span class="text-xs font-extrabold uppercase tracking-widest text-indigo-600 px-3 py-1 bg-indigo-50 rounded-full" data-en="Get In Touch" data-bn="যোগাযোগ করুন">Get In Touch</span>
+          <h2 class="text-3xl font-extrabold text-slate-900" data-en="Visit Our Campus or Reach Out Today" data-bn="আমাদের ক্যাম্পাসে সরাসরি আসুন বা যোগাযোগ করুন">
+            Visit Our Campus or Reach Out Today
+          </h2>
+          <p class="text-slate-600 text-sm leading-relaxed" data-en="We welcome prospective students, guardians, and education enthusiasts to explore our world-class campus facilities." data-bn="আমাদের ক্যাম্পাস প্রাঙ্গণ ও আধুনিক শিক্ষা পরিবেশ সরাসরি পরিদর্শন করার জন্য শিক্ষার্থী ও অভিভাবকবৃন্দকে সাদর আমন্ত্রণ।">
+            We welcome prospective students, guardians, and education enthusiasts to explore our world-class campus facilities.
+          </p>
+
+          <div class="space-y-4 pt-2">
+            
+            <div class="flex items-start gap-4 p-4 rounded-2xl bg-slate-50 border border-slate-200/80">
+              <div class="w-12 h-12 rounded-xl bg-indigo-100 text-indigo-600 flex items-center justify-center text-lg shrink-0">
+                <i class="fas fa-map-marked-alt"></i>
+              </div>
+              <div>
+                <h5 class="text-xs font-bold text-slate-900 uppercase" data-en="Campus Location" data-bn="ক্যাম্পাস ঠিকানা">Campus Location</h5>
+                <p class="text-sm text-slate-600 mt-0.5" data-en="House 42, Road 11, Sector 4, Uttara, Dhaka-1230, Bangladesh" data-bn="বাড়ি ৪২, রোড ১১, সেক্টর ৪, উত্তরা, ঢাকা-১২৩০, বাংলাদেশ">
+                  House 42, Road 11, Sector 4, Uttara, Dhaka-1230, Bangladesh
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-4 rounded-2xl bg-slate-50 border border-slate-200/80">
+              <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center text-lg shrink-0">
+                <i class="fas fa-phone-volume"></i>
+              </div>
+              <div>
+                <h5 class="text-xs font-bold text-slate-900 uppercase" data-en="Admission Helpline" data-bn="ভর্তি হেল্পলাইন">Admission Helpline</h5>
+                <p class="text-sm text-slate-600 mt-0.5 font-mono">+880 1712-345678, +880 1987-654321</p>
+                <p class="text-xs text-slate-400" data-en="Sun to Thu (8:00 AM - 5:00 PM)" data-bn="রবি থেকে বৃহস্পতি (সকাল ৮:০০ - বিকাল ৫:০০)">Sun to Thu (8:00 AM - 5:00 PM)</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-4 rounded-2xl bg-slate-50 border border-slate-200/80">
+              <div class="w-12 h-12 rounded-xl bg-sky-100 text-sky-600 flex items-center justify-center text-lg shrink-0">
+                <i class="fas fa-envelope-open-text"></i>
+              </div>
+              <div>
+                <h5 class="text-xs font-bold text-slate-900 uppercase" data-en="Official Inquiry Email" data-bn="অফিসিয়াল ইমেইল">Official Inquiry Email</h5>
+                <p class="text-sm text-slate-600 mt-0.5 font-mono">admission@abcd.edu.bd</p>
+                <p class="text-xs text-slate-400 font-mono">principal@abcd.edu.bd</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Campus Map & Virtual View (7 Cols) -->
+        <div class="lg:col-span-7">
+          <div class="rounded-3xl overflow-hidden border-2 border-slate-200 shadow-xl bg-slate-100 h-[420px] relative">
+            <!-- Simulated High Quality Interactive Map Canvas -->
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14602.700319752316!2d90.3953713!3d23.8656693!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c423cd70e5b9%3A0xe53158c3527e0236!2sUttara%20Sector%204%2C%20Dhaka!5e0!3m2!1sen!2sbd!4v1700000000000!5m2!1sen!2sbd" 
+              class="w-full h-full border-0" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Campus Map Location"
+            ></iframe>
+            
+            <div class="absolute bottom-4 left-4 p-3 rounded-2xl bg-white/95 backdrop-blur-md shadow-lg border border-slate-200 flex items-center gap-3">
+              <div class="w-8 h-8 rounded-lg bg-indigo-600 text-white flex items-center justify-center text-xs">
+                <i class="fas fa-directions"></i>
+              </div>
+              <div>
+                <span class="text-xs font-bold text-slate-900 block" data-en="Campus Gate 1 (Main Entrance)" data-bn="১নং গেট (প্রধান ফটক)">Campus Gate 1 (Main Entrance)</span>
+                <span class="text-[10px] text-slate-500 font-mono">Uttara Model Town, Dhaka</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="bg-primary-950 text-slate-400 pt-16 pb-8 border-t border-primary-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-slate-800">
+        
+        <!-- Col 1: About & Logo (2 Cols on lg) -->
+        <div class="lg:col-span-2 space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-12 h-12 rounded-2xl bg-indigo-600 flex items-center justify-center text-white text-2xl shadow-lg">
+              <i class="fas fa-graduation-cap text-amber-300"></i>
+            </div>
+            <div>
+              <span class="text-lg font-black text-white tracking-tight" data-en="ABCD MODEL" data-bn="এবিসিডি মডেল">ABCD MODEL</span>
+              <span class="text-indigo-400 text-xs font-bold block" data-en="School & College" data-bn="স্কুল অ্যান্ড কলেজ">School & College</span>
+            </div>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-400 leading-relaxed pr-4" data-en="A government-recognized model academic institution committed to producing morally upright, intellectually profound, and technologically capable citizens." data-bn="গণপ্রজাতন্ত্রী বাংলাদেশ সরকার অনুমোদিত একটি ঐতিহ্যবাহী শিক্ষাপ্রতিষ্ঠান, যা শিক্ষার্থীদের মেধা ও সুকুমার বৃত্তির বিকাশ ঘটিয়ে আধুনিক যুগের উপযোগী করে গড়ে তোলে।">
+            A government-recognized model academic institution committed to producing morally upright, intellectually profound, and technologically capable citizens.
+          </p>
+          <div class="text-xs text-indigo-300 font-mono font-medium">
+            EIIN: 108422 | College Code: 2315
+          </div>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div class="space-y-3">
+          <h4 class="text-sm font-bold text-white uppercase tracking-wider" data-en="Quick Links" data-bn="প্রয়োজনীয় লিংক">Quick Links</h4>
+          <ul class="space-y-2 text-xs">
+            <li><a href="#about" class="hover:text-white transition" data-en="About Institution" data-bn="আমাদের পরিচিতি">About Institution</a></li>
+            <li><a href="#academics" class="hover:text-white transition" data-en="Academic Programs" data-bn="একাডেমিক বিভাগ">Academic Programs</a></li>
+            <li><a href="#notices" class="hover:text-white transition" data-en="Notice Board" data-bn="নোটিশ বোর্ড">Notice Board</a></li>
+            <li><a href="#faculty" class="hover:text-white transition" data-en="Faculty Directory" data-bn="শিক্ষকমণ্ডলী">Faculty Directory</a></li>
+            <li><a href="#gallery" class="hover:text-white transition" data-en="Photo Gallery" data-bn="ক্যাম্পাস গ্যালারি">Photo Gallery</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Student & Guardian Portal -->
+        <div class="space-y-3">
+          <h4 class="text-sm font-bold text-white uppercase tracking-wider" data-en="Portals & Access" data-bn="পোর্টাল ও সেবা">Portals & Access</h4>
+          <ul class="space-y-2 text-xs">
+            <li><a href="login.html" class="hover:text-white transition flex items-center gap-1.5"><i class="fas fa-lock text-amber-400 text-[10px]"></i> <span data-en="Admin Portal" data-bn="অ্যাডমিন লগইন">Admin Portal</span></a></li>
+            <li><a href="login.html" class="hover:text-white transition flex items-center gap-1.5"><i class="fas fa-user-tie text-sky-400 text-[10px]"></i> <span data-en="Teacher Portal" data-bn="শিক্ষক পোর্টাল">Teacher Portal</span></a></li>
+            <li><a href="#admission" class="hover:text-white transition flex items-center gap-1.5"><i class="fas fa-user-graduate text-emerald-400 text-[10px]"></i> <span data-en="Admission Portal" data-bn="ভর্তি পোর্টাল">Admission Portal</span></a></li>
+            <li><a href="#notices" class="hover:text-white transition flex items-center gap-1.5"><i class="fas fa-file-invoice text-rose-400 text-[10px]"></i> <span data-en="Exam Routine" data-bn="পরীক্ষার রুটিন">Exam Routine</span></a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Newsletter & Social -->
+        <div class="space-y-3">
+          <h4 class="text-sm font-bold text-white uppercase tracking-wider" data-en="Stay Connected" data-bn="সংযুক্ত থাকুন">Stay Connected</h4>
+          <p class="text-xs text-slate-400" data-en="Subscribe for annual magazine & school updates." data-bn="আমাদের বার্ষিকী ও সকল নোটিশের আপডেট পেতে সাবস্ক্রাইব করুন।">Subscribe for annual magazine & school updates.</p>
+          <div class="flex items-center gap-1">
+            <input 
+              type="email" 
+              placeholder="Your email..." 
+              data-en-placeholder="Your email..."
+              data-bn-placeholder="আপনার ইমেইল..."
+              class="w-full px-3 py-2 text-xs rounded-lg bg-slate-800 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500"
+            >
+            <button class="px-3 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg text-xs font-bold transition">
+              <i class="fas fa-paper-plane"></i>
+            </button>
+          </div>
+          <div class="flex items-center gap-2 pt-2">
+            <a href="#" class="w-8 h-8 rounded-lg bg-slate-800 hover:bg-indigo-600 text-slate-300 hover:text-white flex items-center justify-center transition"><i class="fab fa-facebook-f text-xs"></i></a>
+            <a href="#" class="w-8 h-8 rounded-lg bg-slate-800 hover:bg-sky-500 text-slate-300 hover:text-white flex items-center justify-center transition"><i class="fab fa-twitter text-xs"></i></a>
+            <a href="#" class="w-8 h-8 rounded-lg bg-slate-800 hover:bg-rose-600 text-slate-300 hover:text-white flex items-center justify-center transition"><i class="fab fa-youtube text-xs"></i></a>
+            <a href="#" class="w-8 h-8 rounded-lg bg-slate-800 hover:bg-blue-600 text-slate-300 hover:text-white flex items-center justify-center transition"><i class="fab fa-linkedin-in text-xs"></i></a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Copyright Bar -->
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+        <div>
+          &copy; <span id="currentYear">2026</span> <span class="font-bold text-slate-300">ABCD Model School & College</span>. <span data-en="All rights reserved." data-bn="সর্বস্বত্ব সংরক্ষিত।">All rights reserved.</span>
+        </div>
+        <div class="flex items-center gap-4">
+          <a href="#" class="hover:text-slate-300 transition" data-en="Privacy Policy" data-bn="গোপনীয়তা নীতি">Privacy Policy</a>
+          <span>•</span>
+          <a href="#" class="hover:text-slate-300 transition" data-en="Terms of Service" data-bn="ব্যবহারের শর্তাবলী">Terms of Service</a>
+          <span>•</span>
+          <a href="login.html" class="text-indigo-400 hover:text-indigo-300 font-bold" data-en="Admin Area" data-bn="অ্যাডমিন এরিয়া">Admin Area</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ================= NOTICE DETAILS MODAL ================= -->
+  <div id="noticeModal" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-xl w-full p-6 sm:p-8 shadow-2xl border border-slate-200 space-y-4 animate-scale-up">
+      <div class="flex items-start justify-between border-b border-slate-100 pb-4">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-indigo-100 text-indigo-700 flex items-center justify-center text-lg font-bold">
+            <i class="fas fa-file-alt"></i>
+          </div>
+          <div>
+            <span class="text-[10px] font-bold uppercase tracking-wider text-indigo-600 font-mono" id="modalNoticeDate">2026-12-15</span>
+            <h3 class="text-base sm:text-lg font-bold text-slate-900" id="modalNoticeTitle">Notice Title</h3>
+          </div>
+        </div>
+        <button type="button" id="closeNoticeModal" class="text-slate-400 hover:text-slate-600 p-2 rounded-xl text-lg">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+
+      <div class="text-sm text-slate-600 leading-relaxed space-y-3" id="modalNoticeBody">
+        <p>This is the official notice issued by the Authority of ABCD Model School & College. Students and guardians are requested to follow the instructions properly.</p>
+        <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 text-xs">
+          <strong>Key Highlights:</strong>
+          <ul class="list-disc list-inside mt-1 space-y-1 text-slate-500">
+            <li>Strict adherence to the examination timeline.</li>
+            <li>Admit card verification required at entry gate.</li>
+            <li>Digital devices are strictly prohibited inside the exam hall.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pt-4 border-t border-slate-100 flex items-center justify-end gap-3">
+        <button type="button" onclick="window.print()" class="px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs transition flex items-center gap-1.5">
+          <i class="fas fa-print"></i> <span data-en="Print Notice" data-bn="প্রিন্ট করুন">Print Notice</span>
+        </button>
+        <button type="button" id="closeNoticeModalBtn" class="px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs transition">
+          <span data-en="Close" data-bn="বন্ধ করুন">Close</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= BACK TO TOP BUTTON ================= -->
+  <button 
+    id="backToTopBtn" 
+    class="fixed bottom-6 right-6 z-40 w-12 h-12 rounded-2xl bg-indigo-600 text-white shadow-xl hover:bg-indigo-700 flex items-center justify-center text-lg opacity-0 pointer-events-none transition-all duration-300"
+    title="Back to Top"
+  >
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- ================= JQUERY CDN ================= -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <!-- ================= INTERACTIVE SCRIPTS ================= -->
+  <script>
+    $(document).ready(function() {
+
+      // Set current year
+      $('#currentYear').text(new Date().getFullYear());
+
+      // ================= BILINGUAL TRANSLATION (EN / BN) =================
+      const i18n = {
+        lang: localStorage.getItem('sms_lang') || 'en',
+        
+        apply: function(lang) {
+          this.lang = lang;
+          localStorage.setItem('sms_lang', lang);
+          $('html').attr('lang', lang);
+
+          // Update texts
+          $('[data-en][data-bn]').each(function() {
+            const text = (lang === 'bn') ? $(this).attr('data-bn') : $(this).attr('data-en');
+            $(this).html(text);
+          });
+
+          // Update placeholders
+          $('[data-en-placeholder][data-bn-placeholder]').each(function() {
+            const ph = (lang === 'bn') ? $(this).attr('data-bn-placeholder') : $(this).attr('data-en-placeholder');
+            $(this).attr('placeholder', ph);
+          });
+
+          // Update toggle button states
+          $('.lang-toggle-btn').each(function() {
+            if (lang === 'bn') {
+              $(this).find('.lang-text').text('English');
+              $(this).find('.lang-badge').text('EN');
+            } else {
+              $(this).find('.lang-text').text('বাংলা');
+              $(this).find('.lang-badge').text('BN');
+            }
+          });
+        },
+
+        toggle: function() {
+          const next = (this.lang === 'en') ? 'bn' : 'en';
+          this.apply(next);
+        }
+      };
+
+      // Initialize language
+      i18n.apply(i18n.lang);
+
+      // Language Switcher click event
+      $(document).on('click', '.lang-toggle-btn', function(e) {
+        e.preventDefault();
+        i18n.toggle();
+      });
+
+      // ================= MOBILE MENU TOGGLE =================
+      $('#mobileMenuBtn').on('click', function() {
+        $('#mobileMenu').toggleClass('hidden');
+      });
+
+      $('.mobile-link').on('click', function() {
+        $('#mobileMenu').addClass('hidden');
+      });
+
+      // ================= BACK TO TOP =================
+      $(window).on('scroll', function() {
+        if ($(this).scrollTop() > 300) {
+          $('#backToTopBtn').removeClass('opacity-0 pointer-events-none').addClass('opacity-100');
+        } else {
+          $('#backToTopBtn').addClass('opacity-0 pointer-events-none').removeClass('opacity-100');
+        }
+      });
+
+      $('#backToTopBtn').on('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      // ================= NOTICE TABS FILTER =================
+      $('.notice-tab-btn').on('click', function() {
+        $('.notice-tab-btn').removeClass('active bg-indigo-600 text-white').addClass('text-slate-600 hover:bg-slate-100');
+        $(this).addClass('active bg-indigo-600 text-white').removeClass('text-slate-600 hover:bg-slate-100');
+
+        const category = $(this).data('category');
+        if (category === 'all') {
+          $('.notice-card').fadeIn(200);
+        } else {
+          $('.notice-card').hide();
+          $(`.notice-card[data-category="${category}"]`).fadeIn(200);
+        }
+      });
+
+      // ================= GALLERY FILTER =================
+      $('.gallery-filter-btn').on('click', function() {
+        $('.gallery-filter-btn').removeClass('active bg-indigo-600 text-white').addClass('text-slate-600 hover:bg-slate-100');
+        $(this).addClass('active bg-indigo-600 text-white').removeClass('text-slate-600 hover:bg-slate-100');
+
+        const filter = $(this).data('filter');
+        if (filter === 'all') {
+          $('.gallery-item').fadeIn(200);
+        } else {
+          $('.gallery-item').hide();
+          $(`.gallery-item[data-category="${filter}"]`).fadeIn(200);
+        }
+      });
+
+      // ================= NOTICE DETAILS MODAL =================
+      $(document).on('click', '.open-notice-modal', function() {
+        const title = $(this).closest('.notice-card').find('h4').text().trim();
+        const date = $(this).closest('.notice-card').find('.fa-clock').parent().text().trim();
+        
+        $('#modalNoticeTitle').text(title);
+        $('#modalNoticeDate').text(date);
+        $('#noticeModal').removeClass('hidden').addClass('flex');
+      });
+
+      $('#closeNoticeModal, #closeNoticeModalBtn').on('click', function() {
+        $('#noticeModal').addClass('hidden').removeClass('flex');
+      });
+
+      $('#noticeModal').on('click', function(e) {
+        if (e.target === this) {
+          $(this).addClass('hidden').removeClass('flex');
+        }
+      });
+
+      // ================= ONLINE ADMISSION FORM SUBMISSION =================
+      $('#admissionForm').on('submit', function(e) {
+        e.preventDefault();
+
+        const studentName = $('#studentName').val().trim();
+        const guardianName = $('#guardianName').val().trim();
+        const mobile = $('#mobileNumber').val().trim();
+        const email = $('#emailAddress').val().trim();
+        const targetClass = $('#targetClass').val();
+        const previousSchool = $('#previousSchoolGpa').val().trim();
+        const address = $('#studentAddress').val().trim();
+
+        if (!studentName || !guardianName || !mobile || !targetClass) {
+          alert('Please fill in all mandatory fields.');
+          return;
+        }
+
+        // Generate application ID
+        const randomNum = Math.floor(1000 + Math.random() * 9000);
+        const appId = 'APP-' + randomNum;
+
+        // Store into localStorage so dashboard.html can read it!
+        const existingApps = JSON.parse(localStorage.getItem('sms_admission_requests') || '[]');
+        const newApp = {
+          id: appId,
+          name: studentName,
+          guardian: guardianName,
+          mobile: mobile,
+          email: email || 'N/A',
+          class: targetClass,
+          previous: previousSchool || 'N/A',
+          address: address || 'N/A',
+          date: new Date().toISOString().split('T')[0],
+          status: 'pending'
+        };
+        existingApps.unshift(newApp);
+        localStorage.setItem('sms_admission_requests', JSON.stringify(existingApps));
+
+        // Show success alert
+        $('#generatedAppId').text(appId);
+        $('#admissionForm').slideUp(300);
+        $('#admissionSuccessAlert').removeClass('hidden').hide().slideDown(300);
+      });
+
+      $('#resetAdmissionBtn').on('click', function() {
+        $('#admissionForm')[0].reset();
+        $('#admissionSuccessAlert').slideUp(200);
+        $('#admissionForm').slideDown(200);
+      });
+
+    });
+  </script>
+</body>
+</html>

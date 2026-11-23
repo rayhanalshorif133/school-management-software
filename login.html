@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Portal Login | ABCD Model School & College | এবিসিডি মডেল স্কুল ও কলেজ</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              50: '#eef2ff',
+              100: '#e0e7ff',
+              500: '#6366f1',
+              600: '#4f46e5',
+              700: '#4338ca',
+              800: '#3730a3',
+              900: '#1e1b4b',
+              950: '#0f172a',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'Hind Siliguri', 'sans-serif'],
+            bangla: ['Hind Siliguri', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts: Inter & Hind Siliguri -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    body {
+      font-family: 'Inter', 'Hind Siliguri', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-slate-100 min-h-screen flex items-center justify-center p-4 sm:p-6 lg:p-8 selection:bg-indigo-600 selection:text-white">
+
+  <!-- Main Split-Screen Container -->
+  <div class="max-w-5xl w-full bg-white rounded-3xl shadow-2xl border border-slate-200/80 overflow-hidden grid grid-cols-1 lg:grid-cols-12 min-h-[640px]">
+    
+    <!-- Left Column: Branding, Illustration & School Highlights (5 Cols) -->
+    <div class="lg:col-span-5 bg-gradient-to-br from-primary-950 via-slate-900 to-indigo-950 p-8 sm:p-12 text-white flex flex-col justify-between relative overflow-hidden">
+      <!-- Background Ambient Glow -->
+      <div class="absolute -top-24 -left-24 w-72 h-72 bg-indigo-500/20 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute -bottom-24 -right-24 w-72 h-72 bg-emerald-500/20 rounded-full blur-3xl pointer-events-none"></div>
+
+      <!-- Top Branding -->
+      <div class="relative z-10">
+        <a href="index.html" class="inline-flex items-center gap-3 group">
+          <div class="w-12 h-12 rounded-2xl bg-indigo-600 flex items-center justify-center text-white text-2xl shadow-lg group-hover:scale-105 transition-transform">
+            <i class="fas fa-graduation-cap text-amber-300"></i>
+          </div>
+          <div>
+            <span class="text-base font-black text-white tracking-tight leading-tight block" data-en="ABCD MODEL" data-bn="এবিসিডি মডেল">ABCD MODEL</span>
+            <span class="text-indigo-400 text-xs font-semibold" data-en="School & College" data-bn="স্কুল অ্যান্ড কলেজ">School & College</span>
+          </div>
+        </a>
+
+        <div class="mt-8 space-y-2">
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-500/20 text-indigo-300 text-[11px] font-semibold border border-indigo-400/30">
+            <i class="fas fa-shield-alt text-emerald-400"></i>
+            <span data-en="Authorized Portal Access" data-bn="অনুমোদিত প্রশাসনিক প্রবেশদ্বার">Authorized Portal Access</span>
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight leading-snug" data-en="Integrated School ERP Management System" data-bn="সমন্বিত স্মার্ট শিক্ষাপ্রতিষ্ঠান ব্যবস্থাপনা সিস্টেম">
+            Integrated School ERP Management System
+          </h2>
+          <p class="text-slate-300 text-xs sm:text-sm leading-relaxed" data-en="Streamline student records, biometric RFID attendance, automated fee processing, exams, and digital routine scheduling all in one unified cockpit." data-bn="শিক্ষার্থীর তথ্যভাণ্ডার, ডিজিটাল হাজিরা, স্বয়ংক্রিয় ফি ও একাউন্টিং, পরীক্ষা ও রেজাল্ট প্রসেসিংয়ের একীভূত প্ল্যাটফর্ম।">
+            Streamline student records, biometric RFID attendance, automated fee processing, exams, and digital routine scheduling all in one unified cockpit.
+          </p>
+        </div>
+      </div>
+
+      <!-- Feature Bullet Points -->
+      <div class="relative z-10 my-8 space-y-3 border-y border-slate-800/80 py-6">
+        <div class="flex items-center gap-3 text-xs text-slate-300">
+          <div class="w-7 h-7 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xs shrink-0">
+            <i class="fas fa-check"></i>
+          </div>
+          <span data-en="256-Bit Role-Based Granular Access Control" data-bn="২৫৬-বিট এনক্রিপ্টেড রোল-ভিত্তিক নিরাপত্তা">256-Bit Role-Based Granular Access Control</span>
+        </div>
+        <div class="flex items-center gap-3 text-xs text-slate-300">
+          <div class="w-7 h-7 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center text-xs shrink-0">
+            <i class="fas fa-bolt"></i>
+          </div>
+          <span data-en="Real-time SMS Alert & Biometric Cloud Sync" data-bn="রিয়েল-টাইম অভিভাবক এসএমএস ও ক্লাউড সিঙ্ক">Real-time SMS Alert & Biometric Cloud Sync</span>
+        </div>
+        <div class="flex items-center gap-3 text-xs text-slate-300">
+          <div class="w-7 h-7 rounded-lg bg-sky-500/20 text-sky-400 flex items-center justify-center text-xs shrink-0">
+            <i class="fas fa-print"></i>
+          </div>
+          <span data-en="Automated Transcripts, Invoices & ID Cards" data-bn="স্বয়ংক্রিয় মার্কশিট, রসিদ ও পরিচয়পত্র তৈরি">Automated Transcripts, Invoices & ID Cards</span>
+        </div>
+      </div>
+
+      <!-- Footer Info -->
+      <div class="relative z-10 flex items-center justify-between text-xs text-slate-400">
+        <span class="font-mono">EIIN: 108422</span>
+        <span class="text-indigo-400 font-semibold" data-en="v2.5 Enterprise" data-bn="সংস্করণ ২.৫">v2.5 Enterprise</span>
+      </div>
+    </div>
+
+    <!-- Right Column: Login Card & Forms (7 Cols) -->
+    <div class="lg:col-span-7 p-6 sm:p-10 lg:p-12 flex flex-col justify-between">
+      
+      <!-- Top Action Bar inside Right Column -->
+      <div class="flex items-center justify-between pb-6 border-b border-slate-100">
+        <a href="index.html" class="inline-flex items-center gap-2 text-xs font-bold text-slate-600 hover:text-indigo-600 transition">
+          <i class="fas fa-arrow-left"></i>
+          <span data-en="Back to Website" data-bn="মূল ওয়েবসাইটে ফিরুন">Back to Website</span>
+        </a>
+
+        <!-- Language Switcher Pill -->
+        <button 
+          type="button" 
+          class="lang-toggle-btn inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-slate-300 hover:border-indigo-400 bg-slate-50 hover:bg-indigo-50/50 text-slate-700 text-xs font-bold shadow-xs transition cursor-pointer"
+          title="Switch Language / ভাষা পরিবর্তন করুন"
+        >
+          <i class="fas fa-globe text-indigo-600"></i>
+          <span class="lang-text">বাংলা</span>
+          <span class="lang-badge text-[10px] px-1.5 py-0.5 rounded bg-indigo-100 text-indigo-800 font-mono">BN</span>
+        </button>
+      </div>
+
+      <!-- Center Form Body -->
+      <div class="my-auto py-6 space-y-6">
+        <div>
+          <h3 class="text-2xl font-black text-slate-900 tracking-tight" data-en="Sign In to Admin Portal" data-bn="অ্যাডমিন পোর্টালে সাইন ইন করুন">
+            Sign In to Admin Portal
+          </h3>
+          <p class="text-xs sm:text-sm text-slate-500 mt-1" data-en="Enter your registered credentials to manage institutional operations." data-bn="প্রাতিষ্ঠানিক কার্যক্রম পরিচালনার জন্য আপনার ইউজারনেম ও পাসওয়ার্ড দিন।">
+            Enter your registered credentials to manage institutional operations.
+          </p>
+        </div>
+
+        <!-- Demo Account Quick Selector Buttons -->
+        <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+          <div class="flex items-center justify-between text-[11px] font-bold text-slate-600 uppercase tracking-wider">
+            <span class="flex items-center gap-1.5">
+              <i class="fas fa-key text-amber-500"></i>
+              <span data-en="Quick Demo Logins:" data-bn="ডেমো লগইন অ্যাকাউন্ট নির্বাচন:">Quick Demo Logins:</span>
+            </span>
+            <span class="text-indigo-600 font-semibold" data-en="Click to Auto-fill" data-bn="ক্লিক করলেই পূরণ হবে">Click to Auto-fill</span>
+          </div>
+          <div class="grid grid-cols-3 gap-2">
+            <button type="button" class="demo-credential-btn text-left p-2 rounded-xl bg-white hover:bg-indigo-50 border border-slate-200 hover:border-indigo-300 transition text-xs cursor-pointer group" data-email="admin@school.edu" data-pass="admin123" data-role="Super Admin">
+              <div class="font-bold text-slate-800 group-hover:text-indigo-600 flex items-center justify-between">
+                <span>Super Admin</span>
+                <i class="fas fa-crown text-[10px] text-amber-500"></i>
+              </div>
+              <div class="text-[10px] text-slate-400 font-mono truncate">admin@school.edu</div>
+            </button>
+            <button type="button" class="demo-credential-btn text-left p-2 rounded-xl bg-white hover:bg-emerald-50 border border-slate-200 hover:border-emerald-300 transition text-xs cursor-pointer group" data-email="principal@school.edu" data-pass="principal123" data-role="Principal">
+              <div class="font-bold text-slate-800 group-hover:text-emerald-600 flex items-center justify-between">
+                <span>Principal</span>
+                <i class="fas fa-user-tie text-[10px] text-emerald-500"></i>
+              </div>
+              <div class="text-[10px] text-slate-400 font-mono truncate">principal@school.edu</div>
+            </button>
+            <button type="button" class="demo-credential-btn text-left p-2 rounded-xl bg-white hover:bg-sky-50 border border-slate-200 hover:border-sky-300 transition text-xs cursor-pointer group" data-email="accounts@school.edu" data-pass="accounts123" data-role="Accountant">
+              <div class="font-bold text-slate-800 group-hover:text-sky-600 flex items-center justify-between">
+                <span>Accounts</span>
+                <i class="fas fa-file-invoice-dollar text-[10px] text-sky-500"></i>
+              </div>
+              <div class="text-[10px] text-slate-400 font-mono truncate">accounts@school.edu</div>
+            </button>
+          </div>
+        </div>
+
+        <!-- Alert Notification Box -->
+        <div id="loginAlert" class="hidden p-3.5 rounded-xl text-xs font-semibold border flex items-center gap-2.5">
+          <i class="fas fa-info-circle text-base"></i>
+          <span id="loginAlertText">Alert message goes here</span>
+        </div>
+
+        <!-- Login Form -->
+        <form id="loginForm" class="space-y-4">
+          
+          <!-- Email / Username -->
+          <div>
+            <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+              <span data-en="Email or Username" data-bn="ইমেইল বা ইউজারনেম">Email or Username</span>
+            </label>
+            <div class="relative">
+              <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center text-slate-400 pointer-events-none">
+                <i class="fas fa-envelope"></i>
+              </span>
+              <input 
+                type="text" 
+                id="loginEmail" 
+                required 
+                value="admin@school.edu"
+                placeholder="admin@school.edu" 
+                data-en-placeholder="admin@school.edu"
+                data-bn-placeholder="admin@school.edu"
+                class="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-indigo-600 focus:border-indigo-600 text-sm outline-none transition"
+              >
+            </div>
+          </div>
+
+          <!-- Password with Show/Hide Toggle -->
+          <div>
+            <div class="flex items-center justify-between mb-1.5">
+              <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider">
+                <span data-en="Password" data-bn="পাসওয়ার্ড">Password</span>
+              </label>
+              <a href="#" id="forgotPasswordBtn" class="text-xs font-semibold text-indigo-600 hover:underline" data-en="Forgot Password?" data-bn="পাসওয়ার্ড ভুলে গেছেন?">Forgot Password?</a>
+            </div>
+            <div class="relative">
+              <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center text-slate-400 pointer-events-none">
+                <i class="fas fa-lock"></i>
+              </span>
+              <input 
+                type="password" 
+                id="loginPassword" 
+                required 
+                value="admin123"
+                placeholder="••••••••" 
+                class="w-full pl-10 pr-12 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-indigo-600 focus:border-indigo-600 text-sm outline-none transition font-mono"
+              >
+              <!-- Eye Toggle Button -->
+              <button 
+                type="button" 
+                id="togglePasswordBtn" 
+                class="absolute inset-y-0 right-0 pr-3.5 flex items-center text-slate-400 hover:text-indigo-600 cursor-pointer"
+                title="Toggle password visibility"
+              >
+                <i class="fas fa-eye" id="passwordEyeIcon"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Remember Me Checkbox -->
+          <div class="flex items-center justify-between text-xs pt-1">
+            <label class="flex items-center gap-2 text-slate-600 cursor-pointer select-none">
+              <input type="checkbox" id="rememberMe" checked class="w-4 h-4 rounded text-indigo-600 focus:ring-indigo-500 border-slate-300">
+              <span data-en="Remember me on this browser" data-bn="এই ব্রাউজারে লগইন মনে রাখুন">Remember me on this browser</span>
+            </label>
+            <span class="text-slate-400 font-mono">SSL 256-Bit</span>
+          </div>
+
+          <!-- Submit Button -->
+          <button 
+            type="submit" 
+            id="loginSubmitBtn"
+            class="w-full py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 active:scale-[0.99] text-white font-bold text-sm shadow-lg shadow-indigo-200 hover:shadow-indigo-300 transition flex items-center justify-center gap-2 cursor-pointer"
+          >
+            <span id="btnSpinner" class="hidden"><i class="fas fa-spinner fa-spin mr-1"></i></span>
+            <i class="fas fa-sign-in-alt text-amber-300"></i>
+            <span id="btnText" data-en="Sign In to Dashboard" data-bn="ড্যাশবোর্ডে প্রবেশ করুন">Sign In to Dashboard</span>
+          </button>
+
+        </form>
+      </div>
+
+      <!-- Bottom Security Notice -->
+      <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-400">
+        <span class="flex items-center gap-1.5 text-emerald-600 font-semibold">
+          <i class="fas fa-shield-check"></i>
+          <span data-en="Secure Academic Portal" data-bn="সুরক্ষিত একাডেমিক পোর্টাল">Secure Academic Portal</span>
+        </span>
+        <span>&copy; 2026 ABCD Model</span>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Forgot Password Helper Modal -->
+  <div id="forgotPasswordModal" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 shadow-2xl border border-slate-200 space-y-4">
+      <div class="flex items-start justify-between">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center text-lg">
+            <i class="fas fa-key"></i>
+          </div>
+          <div>
+            <h4 class="text-base font-bold text-slate-900" data-en="Reset Password" data-bn="পাসওয়ার্ড পুনরুদ্ধার">Reset Password</h4>
+            <p class="text-xs text-slate-500" data-en="Contact System Administrator" data-bn="সিস্টেম অ্যাডমিনের সাথে যোগাযোগ করুন">Contact System Administrator</p>
+          </div>
+        </div>
+        <button type="button" id="closeForgotModal" class="text-slate-400 hover:text-slate-600 p-1 rounded-lg">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="text-xs sm:text-sm text-slate-600 leading-relaxed space-y-2">
+        <p data-en="For institutional security, admin password resets must be authorized by the IT Department or Principal's Office." data-bn="প্রাতিষ্ঠানিক নিরাপত্তার স্বার্থে অ্যাডমিন পাসওয়ার্ড রিসেট করতে আইটি বিভাগ বা অধ্যক্ষের কার্যালয়ে যোগাযোগ করুন।">
+          For institutional security, admin password resets must be authorized by the IT Department or Principal's Office.
+        </p>
+        <p class="p-3 bg-slate-50 rounded-xl border border-slate-200 text-xs">
+          <strong>ICT Support Hotline:</strong> +880 1712-345678 (Ext. 102)<br>
+          <strong>Email:</strong> it-support@abcd.edu.bd
+        </p>
+      </div>
+      <button type="button" id="closeForgotModalBtn" class="w-full py-2.5 rounded-xl bg-indigo-600 text-white font-bold text-xs" data-en="Understood" data-bn="ঠিক আছে">
+        Understood
+      </button>
+    </div>
+  </div>
+
+  <!-- jQuery CDN -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <!-- Interactive Logic -->
+  <script>
+    $(document).ready(function() {
+
+      // ================= BILINGUAL TRANSLATION (EN / BN) =================
+      const i18n = {
+        lang: localStorage.getItem('sms_lang') || 'en',
+        
+        apply: function(lang) {
+          this.lang = lang;
+          localStorage.setItem('sms_lang', lang);
+          $('html').attr('lang', lang);
+
+          // Update texts
+          $('[data-en][data-bn]').each(function() {
+            const text = (lang === 'bn') ? $(this).attr('data-bn') : $(this).attr('data-en');
+            $(this).html(text);
+          });
+
+          // Update placeholders
+          $('[data-en-placeholder][data-bn-placeholder]').each(function() {
+            const ph = (lang === 'bn') ? $(this).attr('data-bn-placeholder') : $(this).attr('data-en-placeholder');
+            $(this).attr('placeholder', ph);
+          });
+
+          // Update toggle button states
+          $('.lang-toggle-btn').each(function() {
+            if (lang === 'bn') {
+              $(this).find('.lang-text').text('English');
+              $(this).find('.lang-badge').text('EN');
+            } else {
+              $(this).find('.lang-text').text('বাংলা');
+              $(this).find('.lang-badge').text('BN');
+            }
+          });
+        },
+
+        toggle: function() {
+          const next = (this.lang === 'en') ? 'bn' : 'en';
+          this.apply(next);
+        }
+      };
+
+      // Initialize language
+      i18n.apply(i18n.lang);
+
+      // Toggle click
+      $(document).on('click', '.lang-toggle-btn', function(e) {
+        e.preventDefault();
+        i18n.toggle();
+      });
+
+      // ================= PASSWORD VISIBILITY TOGGLE =================
+      $('#togglePasswordBtn').on('click', function() {
+        const passInput = $('#loginPassword');
+        const eyeIcon = $('#passwordEyeIcon');
+
+        if (passInput.attr('type') === 'password') {
+          passInput.attr('type', 'text');
+          eyeIcon.removeClass('fa-eye').addClass('fa-eye-slash text-indigo-600');
+        } else {
+          passInput.attr('type', 'password');
+          eyeIcon.removeClass('fa-eye-slash text-indigo-600').addClass('fa-eye');
+        }
+      });
+
+      // ================= QUICK DEMO CREDENTIAL BUTTONS =================
+      $('.demo-credential-btn').on('click', function() {
+        const email = $(this).data('email');
+        const pass = $(this).data('pass');
+        const role = $(this).data('role');
+
+        $('#loginEmail').val(email);
+        $('#loginPassword').val(pass);
+
+        // Visual flash feedback
+        $('#loginAlert')
+          .removeClass('hidden bg-rose-50 text-rose-800 border-rose-200')
+          .addClass('bg-indigo-50 text-indigo-800 border-indigo-200')
+          .show();
+        $('#loginAlertText').html(`Selected demo role: <strong>${role}</strong> (${email})`);
+      });
+
+      // ================= FORGOT PASSWORD MODAL =================
+      $('#forgotPasswordBtn').on('click', function(e) {
+        e.preventDefault();
+        $('#forgotPasswordModal').removeClass('hidden').addClass('flex');
+      });
+
+      $('#closeForgotModal, #closeForgotModalBtn').on('click', function() {
+        $('#forgotPasswordModal').addClass('hidden').removeClass('flex');
+      });
+
+      // ================= LOGIN FORM SUBMISSION =================
+      $('#loginForm').on('submit', function(e) {
+        e.preventDefault();
+
+        const email = $('#loginEmail').val().trim();
+        const password = $('#loginPassword').val().trim();
+
+        if (!email || !password) {
+          showAlert('Please enter both email and password.', 'error');
+          return;
+        }
+
+        // Show spinner state
+        $('#btnSpinner').removeClass('hidden');
+        $('#btnText').text(i18n.lang === 'bn' ? 'যাচাই করা হচ্ছে...' : 'Verifying credentials...');
+        $('#loginSubmitBtn').prop('disabled', true);
+
+        // Simulate secure verification
+        setTimeout(function() {
+          // Store active session in localStorage
+          localStorage.setItem('sms_auth_user', JSON.stringify({
+            email: email,
+            name: email.includes('principal') ? 'Prof. Dr. M. Masud Rana' : 'Engr. Rayhan Ahmed',
+            role: email.includes('principal') ? 'Principal' : (email.includes('accounts') ? 'Accountant' : 'Super Admin'),
+            avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&auto=format&fit=crop',
+            loginTime: new Date().toLocaleTimeString()
+          }));
+
+          showAlert(i18n.lang === 'bn' ? 'লগইন সফল! ড্যাশবোর্ডে নিয়ে যাওয়া হচ্ছে...' : 'Login successful! Redirecting to dashboard...', 'success');
+
+          setTimeout(function() {
+            window.location.href = 'dashboard.html';
+          }, 800);
+
+        }, 600);
+      });
+
+      function showAlert(msg, type) {
+        const alertBox = $('#loginAlert');
+        alertBox.removeClass('hidden bg-rose-50 text-rose-800 border-rose-200 bg-emerald-50 text-emerald-800 border-emerald-200');
+
+        if (type === 'error') {
+          alertBox.addClass('bg-rose-50 text-rose-800 border-rose-200');
+          alertBox.find('i').attr('class', 'fas fa-exclamation-triangle text-rose-600 text-base');
+        } else {
+          alertBox.addClass('bg-emerald-50 text-emerald-800 border-emerald-200');
+          alertBox.find('i').attr('class', 'fas fa-check-circle text-emerald-600 text-base');
+        }
+
+        $('#loginAlertText').html(msg);
+        alertBox.slideDown(200);
+      }
+
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,2349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard | ABCD Model School & College</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              50: '#eef2ff',
+              100: '#e0e7ff',
+              500: '#6366f1',
+              600: '#4f46e5',
+              700: '#4338ca',
+              800: '#3730a3',
+              900: '#1e1b4b',
+              950: '#0f172a',
+            },
+            academic: {
+              navy: '#0b192c',
+              blue: '#1e3e62',
+              emerald: '#10b981',
+              amber: '#f59e0b',
+              rose: '#f43f5e'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'Hind Siliguri', 'sans-serif'],
+            bangla: ['Hind Siliguri', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome 6.5.1 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    body {
+      font-family: 'Inter', 'Hind Siliguri', sans-serif;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 9999px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
+    .sidebar-item.active {
+      background: #4f46e5;
+      color: #ffffff;
+      box-shadow: 0 4px 12px rgba(79, 70, 229, 0.25);
+    }
+    .sidebar-item.active i {
+      color: #ffffff !important;
+    }
+    @media print {
+      .no-print {
+        display: none !important;
+      }
+      body {
+        background: #ffffff !important;
+        padding: 0 !important;
+      }
+    }
+  </style>
+</head>
+<body class="bg-slate-100 text-slate-800 antialiased selection:bg-indigo-600 selection:text-white min-h-screen flex flex-col">
+
+  <div class="flex-1 flex overflow-hidden">
+
+    <!-- ================= LEFT SIDEBAR ================= -->
+    <aside id="sidebar" class="w-64 bg-primary-950 text-slate-300 flex flex-col shrink-0 transition-all duration-300 fixed inset-y-0 left-0 z-50 lg:static -translate-x-full lg:translate-x-0 border-r border-primary-900/80">
+      
+      <!-- Sidebar Header / Brand -->
+      <div class="h-20 flex items-center justify-between px-5 border-b border-primary-900/80 bg-primary-950 shrink-0">
+        <a href="index.html" class="flex items-center gap-3 group">
+          <div class="w-10 h-10 rounded-xl bg-indigo-600 flex items-center justify-center text-white text-xl shadow-md group-hover:scale-105 transition-transform">
+            <i class="fas fa-graduation-cap text-amber-300"></i>
+          </div>
+          <div class="sidebar-text">
+            <span class="text-sm font-black text-white tracking-tight block leading-tight">ABCD MODEL</span>
+            <span class="text-[10px] text-indigo-400 font-semibold block" data-en="School & College" data-bn="স্কুল অ্যান্ড কলেজ">School & College</span>
+          </div>
+        </a>
+
+        <!-- Close Sidebar Button (Mobile only) -->
+        <button type="button" id="closeSidebarBtn" class="lg:hidden text-slate-400 hover:text-white p-1.5 rounded-lg">
+          <i class="fas fa-times text-lg"></i>
+        </button>
+      </div>
+
+      <!-- Navigation Menu Items -->
+      <div class="flex-1 overflow-y-auto custom-scrollbar px-3 py-4 space-y-1">
+        
+        <div class="px-3 py-1.5 text-[10px] font-extrabold uppercase tracking-widest text-slate-400 sidebar-text" data-en="Main Navigation" data-bn="মূল মেনু">
+          Main Navigation
+        </div>
+
+        <!-- 1. Dashboard -->
+        <a href="#dashboard" class="sidebar-item active flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-semibold text-slate-300 hover:bg-slate-800/80 hover:text-white transition" data-module="dashboard">
+          <div class="flex items-center gap-3">
+            <i class="fas fa-th-large text-slate-400 w-5 text-center"></i>
+            <span class="sidebar-text" data-en="Dashboard" data-bn="ড্যাশবোর্ড">Dashboard</span>
+          </div>
+          <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-indigo-500/30 text-indigo-200 sidebar-text">Live</span>
+        </a>
+
+        <!-- 2. Students -->
+        <a href="#students" class="sidebar-item flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-semibold text-slate-300 hover:bg-slate-800/80 hover:text-white transition" data-module="students">
+          <div class="flex items-center gap-3">
+            <i class="fas fa-user-graduate text-slate-400 w-5 text-center"></i>
+            <span class="sidebar-text" data-en="Students" data-bn="শিক্ষার্থী ব্যবস্থাপনা">Students</span>
+          </div>
+          <span class="px-1.5 py-0.5 rounded-md text-[10px] font-mono bg-slate-800 text-slate-300 sidebar-text" id="sidebarStudentCount">2,540</span>
+        </a>
+
+        <!-- 3. Teachers & Staff -->
+        <a href="#teachers" class="sidebar-item flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-semibold text-slate-300 hover:bg-slate-800/80 hover:text-white transition" data-module="teachers">
+          <div class="flex items-center gap-3">
+            <i class="fas fa-chalkboard-teacher text-slate-400 w-5 text-center"></i>
+            <span class="sidebar-text" data-en="Teachers & Staff" data-bn="শিক্ষক ও কর্মকর্তা">Teachers & Staff</span>
+          </div>
+          <span class="px-1.5 py-0.5 rounded-md text-[10px] font-mono bg-slate-800 text-slate-300 sidebar-text">112</span>
+        </a>
+
+        <!-- 4. Admission Requests -->
+        <a href="#admissions" class="sidebar-item flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-semibold text-slate-300 hover:bg-slate-800/80 hover:text-white transition" data-module="admissions">
+          <div class="flex items-center gap-3">
+            <i class="fas fa-file-signature text-slate-400 w-5 text-center"></i>
+            <span class="sidebar-text" data-en="Admission Requests" data-bn="ভর্তি আবেদন">Admission Requests</span>
+          </div>
+          <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30 sidebar-text" id="sidebarAdmissionBadge">4 New</span>
+        </a>
+
+        <!-- 5. Academics -->
+        <a href="#academics" class="sidebar-item flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-semibold text-slate-300 hover:bg-slate-800/80 hover:text-white transition" data-module="academics">
+          <div class="flex items-center gap-3">
+            <i class="fas fa-book-reader text-slate-400 w-5 text-center"></i>
+            <span class="sidebar-text" data-en="Academic Classes" data-bn="একাডেমিক ও রুটিন">Academic Classes</span>
+          </div>
+        </a>
+
+        <!-- 6. Attendance -->
+        <a href="#attendance" class="sidebar-item flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-semibold text-slate-300 hover:bg-slate-800/80 hover:text-white transition" data-module="attendance">
+          <div class="flex items-center gap-3">
+            <i class="fas fa-user-check text-slate-400 w-5 text-center"></i>
+            <span class="sidebar-text" data-en="Daily Attendance" data-bn="দৈনিক হাজিরা">Daily Attendance</span>
+          </div>
+          <span class="w-2 h-2 rounded-full bg-emerald-400 sidebar-text animate-pulse"></span>
+        </a>
+
+        <!-- 7. Exams & Results -->
+        <a href="#exams" class="sidebar-item flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-semibold text-slate-300 hover:bg-slate-800/80 hover:text-white transition" data-module="exams">
+          <div class="flex items-center gap-3">
+            <i class="fas fa-award text-slate-400 w-5 text-center"></i>
+            <span class="sidebar-text" data-en="Exams & Results" data-bn="পরীক্ষা ও ফলাফল">Exams & Results</span>
+          </div>
+        </a>
+
+        <!-- 8. Fees & Accounts -->
+        <a href="#fees" class="sidebar-item flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-semibold text-slate-300 hover:bg-slate-800/80 hover:text-white transition" data-module="fees">
+          <div class="flex items-center gap-3">
+            <i class="fas fa-receipt text-slate-400 w-5 text-center"></i>
+            <span class="sidebar-text" data-en="Fees & Accounts" data-bn="ফি ও একাউন্টিং">Fees & Accounts</span>
+          </div>
+        </a>
+
+        <!-- 9. Notice & Events -->
+        <a href="#notices" class="sidebar-item flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-semibold text-slate-300 hover:bg-slate-800/80 hover:text-white transition" data-module="notices">
+          <div class="flex items-center gap-3">
+            <i class="fas fa-bullhorn text-slate-400 w-5 text-center"></i>
+            <span class="sidebar-text" data-en="Notices & Events" data-bn="নোটিশ ও ইভেন্ট">Notices & Events</span>
+          </div>
+        </a>
+
+        <!-- 10. Library, Transport & Hostel -->
+        <a href="#facilities" class="sidebar-item flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-semibold text-slate-300 hover:bg-slate-800/80 hover:text-white transition" data-module="facilities">
+          <div class="flex items-center gap-3">
+            <i class="fas fa-bus-alt text-slate-400 w-5 text-center"></i>
+            <span class="sidebar-text" data-en="Library & Transport" data-bn="গ্রন্থাগার ও পরিবহন">Library & Transport</span>
+          </div>
+        </a>
+
+        <div class="pt-3 pb-1.5 px-3 text-[10px] font-extrabold uppercase tracking-widest text-slate-400 sidebar-text" data-en="System & Profile" data-bn="সিস্টেম সেটিংস">
+          System & Profile
+        </div>
+
+        <!-- 11. Settings -->
+        <a href="#settings" class="sidebar-item flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-semibold text-slate-300 hover:bg-slate-800/80 hover:text-white transition" data-module="settings">
+          <div class="flex items-center gap-3">
+            <i class="fas fa-cog text-slate-400 w-5 text-center"></i>
+            <span class="sidebar-text" data-en="School Settings" data-bn="স্কুল সেটিংস">School Settings</span>
+          </div>
+        </a>
+
+        <!-- Public Website Link -->
+        <a href="index.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-semibold text-slate-400 hover:bg-slate-800/80 hover:text-emerald-400 transition">
+          <i class="fas fa-external-link-alt text-emerald-400 w-5 text-center"></i>
+          <span class="sidebar-text" data-en="Visit Public Website" data-bn="মূল ওয়েবসাইটে যান">Visit Public Website</span>
+        </a>
+
+      </div>
+
+      <!-- Sidebar User Footer -->
+      <div class="p-3.5 border-t border-primary-900/80 bg-primary-950/80 shrink-0">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2.5 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=150&auto=format&fit=crop" alt="Admin Avatar" class="w-9 h-9 rounded-xl object-cover ring-2 ring-indigo-500 shrink-0">
+            <div class="overflow-hidden sidebar-text">
+              <span class="text-xs font-bold text-white block truncate" id="sidebarUserName">Engr. Rayhan Ahmed</span>
+              <span class="text-[10px] text-emerald-400 font-medium block truncate" id="sidebarUserRole">Super Administrator</span>
+            </div>
+          </div>
+          <a href="login.html" class="p-2 text-slate-400 hover:text-rose-400 hover:bg-slate-800/80 rounded-lg transition" title="Logout">
+            <i class="fas fa-sign-out-alt"></i>
+          </a>
+        </div>
+      </div>
+
+    </aside>
+
+    <!-- Mobile Backdrop Overlay -->
+    <div id="sidebarBackdrop" class="fixed inset-0 bg-slate-900/50 backdrop-blur-xs z-40 hidden lg:hidden"></div>
+
+    <!-- ================= RIGHT MAIN WRAPPER ================= -->
+    <div class="flex-1 flex flex-col min-w-0 overflow-hidden">
+      
+      <!-- Top Header Navbar -->
+      <header class="h-20 bg-white border-b border-slate-200/80 flex items-center justify-between px-4 sm:px-6 z-30 shrink-0">
+        
+        <!-- Left Section: Toggle Button & Global Search -->
+        <div class="flex items-center gap-3 sm:gap-4 flex-1 max-w-xl">
+          <button type="button" id="toggleSidebarBtn" class="p-2.5 rounded-xl text-slate-600 hover:bg-slate-100 focus:outline-none transition" title="Toggle Navigation Sidebar">
+            <i class="fas fa-bars text-lg"></i>
+          </button>
+
+          <!-- Search Bar -->
+          <div class="relative w-full max-w-sm hidden sm:block">
+            <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center text-slate-400 pointer-events-none text-xs">
+              <i class="fas fa-search"></i>
+            </span>
+            <input 
+              type="text" 
+              id="globalSearchInput" 
+              placeholder="Search students, roll, teachers, receipts..." 
+              data-en-placeholder="Search students, roll, teachers, receipts..."
+              data-bn-placeholder="শিক্ষার্থী, রোল, শিক্ষক বা রসিদ খুঁজুন..."
+              class="w-full pl-9 pr-4 py-2 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:ring-2 focus:ring-indigo-600 focus:border-indigo-600 text-xs outline-none transition"
+            >
+          </div>
+        </div>
+
+        <!-- Right Section: Session, Language Switcher, Notifications, User Menu -->
+        <div class="flex items-center gap-2 sm:gap-3">
+          
+          <!-- Academic Session Badge -->
+          <div class="hidden md:flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-indigo-50 border border-indigo-100 text-indigo-700 text-xs font-bold">
+            <i class="fas fa-calendar-check text-indigo-500"></i>
+            <span data-en="Session 2026-27" data-bn="সেশন ২০২৬-২৭">Session 2026-27</span>
+          </div>
+
+          <!-- Bilingual Toggle Button -->
+          <button 
+            type="button" 
+            class="lang-toggle-btn inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-slate-300 hover:border-indigo-400 bg-slate-50 hover:bg-indigo-50/50 text-slate-700 text-xs font-bold shadow-xs transition cursor-pointer"
+            title="Switch Language / ভাষা পরিবর্তন করুন"
+          >
+            <i class="fas fa-globe text-indigo-600"></i>
+            <span class="lang-text">বাংলা</span>
+            <span class="lang-badge text-[10px] px-1.5 py-0.5 rounded bg-indigo-100 text-indigo-800 font-mono">BN</span>
+          </button>
+
+          <!-- Notifications Dropdown Button -->
+          <div class="relative">
+            <button type="button" id="notificationBtn" class="p-2.5 rounded-xl text-slate-600 hover:bg-slate-100 hover:text-indigo-600 relative transition cursor-pointer">
+              <i class="fas fa-bell text-base"></i>
+              <span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-rose-500 animate-pulse"></span>
+            </button>
+
+            <!-- Notifications Dropdown Box -->
+            <div id="notificationDropdown" class="hidden absolute right-0 mt-2 w-80 bg-white rounded-2xl shadow-xl border border-slate-200 py-3 z-50 animate-scale-up">
+              <div class="px-4 pb-2 border-b border-slate-100 flex items-center justify-between">
+                <span class="text-xs font-bold text-slate-900" data-en="Notifications" data-bn="বিজ্ঞপ্তিসমূহ">Notifications</span>
+                <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-indigo-50 text-indigo-600 font-mono">3 Unread</span>
+              </div>
+              <div class="divide-y divide-slate-100 text-xs">
+                <div class="p-3 hover:bg-slate-50 transition cursor-pointer flex gap-3">
+                  <div class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0">
+                    <i class="fas fa-user-plus text-xs"></i>
+                  </div>
+                  <div>
+                    <p class="font-bold text-slate-800" data-en="New Admission Request" data-bn="নতুন ভর্তি আবেদন এসেছে">New Admission Request</p>
+                    <p class="text-[11px] text-slate-500" data-en="Tanvir Ahmed applied for Class 9 (Science)" data-bn="তানভীর আহমেদ ৯ম শ্রেণিতে আবেদন করেছে">Tanvir Ahmed applied for Class 9 (Science)</p>
+                    <span class="text-[10px] text-slate-400">10 mins ago</span>
+                  </div>
+                </div>
+                <div class="p-3 hover:bg-slate-50 transition cursor-pointer flex gap-3">
+                  <div class="w-8 h-8 rounded-lg bg-amber-100 text-amber-600 flex items-center justify-center shrink-0">
+                    <i class="fas fa-file-invoice text-xs"></i>
+                  </div>
+                  <div>
+                    <p class="font-bold text-slate-800" data-en="Fee Payment Received" data-bn="টিউশন ফি আদায় সম্পন্ন">Fee Payment Received</p>
+                    <p class="text-[11px] text-slate-500">৳ 3,500 collected for Inv #INV-1029</p>
+                    <span class="text-[10px] text-slate-400">1 hour ago</span>
+                  </div>
+                </div>
+                <div class="p-3 hover:bg-slate-50 transition cursor-pointer flex gap-3">
+                  <div class="w-8 h-8 rounded-lg bg-indigo-100 text-indigo-600 flex items-center justify-center shrink-0">
+                    <i class="fas fa-calendar-alt text-xs"></i>
+                  </div>
+                  <div>
+                    <p class="font-bold text-slate-800" data-en="Exam Schedule Ready" data-bn="মডেল টেস্ট পরীক্ষার রুটিন প্রস্তুত">Exam Schedule Ready</p>
+                    <p class="text-[11px] text-slate-500" data-en="HSC Model Test routine published" data-bn="এইচএসসি মডেল টেস্ট সময়সূচি প্রকাশিত">HSC Model Test routine published</p>
+                    <span class="text-[10px] text-slate-400">Yesterday</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- User Menu Dropdown Button -->
+          <div class="relative">
+            <button type="button" id="userMenuBtn" class="flex items-center gap-2 p-1.5 rounded-xl hover:bg-slate-100 transition cursor-pointer">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=150&auto=format&fit=crop" alt="Avatar" class="w-8 h-8 rounded-xl object-cover ring-2 ring-indigo-600">
+              <div class="hidden sm:block text-left">
+                <span class="text-xs font-bold text-slate-800 block leading-tight">Admin Rayhan</span>
+                <span class="text-[10px] text-slate-400 block font-medium">Principal Office</span>
+              </div>
+              <i class="fas fa-chevron-down text-slate-400 text-xs hidden sm:inline-block"></i>
+            </button>
+
+            <!-- User Menu Dropdown -->
+            <div id="userMenuDropdown" class="hidden absolute right-0 mt-2 w-52 bg-white rounded-2xl shadow-xl border border-slate-200 py-2 z-50 text-xs animate-scale-up">
+              <div class="px-4 py-2 border-b border-slate-100">
+                <p class="font-bold text-slate-800">Engr. Rayhan Ahmed</p>
+                <p class="text-[11px] text-slate-400 font-mono">admin@school.edu</p>
+              </div>
+              <a href="#settings" class="px-4 py-2 hover:bg-slate-50 text-slate-700 flex items-center gap-2" onclick="$('.sidebar-item[data-module=settings]').click();">
+                <i class="fas fa-user-cog text-slate-400"></i>
+                <span data-en="Account Settings" data-bn="অ্যাকাউন্ট সেটিংস">Account Settings</span>
+              </a>
+              <a href="index.html" class="px-4 py-2 hover:bg-slate-50 text-slate-700 flex items-center gap-2">
+                <i class="fas fa-globe text-slate-400"></i>
+                <span data-en="Public Portal" data-bn="পাবলিক পোর্টাল">Public Portal</span>
+              </a>
+              <div class="border-t border-slate-100 my-1"></div>
+              <a href="login.html" class="px-4 py-2 hover:bg-rose-50 text-rose-600 flex items-center gap-2 font-bold">
+                <i class="fas fa-sign-out-alt"></i>
+                <span data-en="Sign Out" data-bn="লগআউট">Sign Out</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </header>
+
+      <!-- Dynamic Content Workspace Container -->
+      <main class="flex-1 overflow-y-auto custom-scrollbar p-4 sm:p-6 lg:p-8 bg-slate-100">
+
+        <!-- ======================================================== -->
+        <!-- MODULE 1: DASHBOARD OVERVIEW -->
+        <!-- ======================================================== -->
+        <section id="module-dashboard" class="module-view space-y-6">
+          
+          <!-- Welcome Banner -->
+          <div class="bg-gradient-to-r from-primary-950 via-slate-900 to-indigo-950 rounded-3xl p-6 sm:p-8 text-white shadow-xl relative overflow-hidden">
+            <div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
+              <div class="space-y-2">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/20 text-indigo-300 text-xs font-semibold border border-indigo-400/30">
+                  <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                  <span data-en="Institutional Cockpit Active" data-bn="সিস্টেম অনলাইন ও সচল রয়েছে">Institutional Cockpit Active</span>
+                </div>
+                <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">
+                  <span data-en="Welcome Back, Administrator!" data-bn="স্বাগতম, অ্যাডমিনিস্ট্রেটর!">Welcome Back, Administrator!</span>
+                </h2>
+                <p class="text-slate-300 text-xs sm:text-sm max-w-2xl leading-relaxed" data-en="Here is today's real-time academic pulse, attendance metrics, and financial collection breakdown." data-bn="এখানে আজকের সার্বিক উপস্থিতি হার, আর্থিক লেনদেন এবং একাডেমিক অগ্রগতির রিয়েল-টাইম তথ্য প্রদর্শিত হচ্ছে।">
+                  Here is today's real-time academic pulse, attendance metrics, and financial collection breakdown.
+                </p>
+              </div>
+
+              <!-- Quick Action Pills -->
+              <div class="flex items-center flex-wrap gap-2.5 shrink-0">
+                <button type="button" class="btn-open-student-modal px-4 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs shadow-md transition flex items-center gap-2 cursor-pointer">
+                  <i class="fas fa-user-plus text-amber-300"></i>
+                  <span data-en="Add Student" data-bn="নতুন শিক্ষার্থী">Add Student</span>
+                </button>
+                <button type="button" onclick="$('.sidebar-item[data-module=attendance]').click();" class="px-4 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs border border-white/20 transition flex items-center gap-2 cursor-pointer">
+                  <i class="fas fa-clipboard-check text-emerald-400"></i>
+                  <span data-en="Take Attendance" data-bn="হাজিরা নিন">Take Attendance</span>
+                </button>
+                <button type="button" onclick="$('.sidebar-item[data-module=fees]').click();" class="px-4 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs border border-white/20 transition flex items-center gap-2 cursor-pointer">
+                  <i class="fas fa-hand-holding-usd text-sky-400"></i>
+                  <span data-en="Collect Fees" data-bn="ফি আদায়">Collect Fees</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Top 4 Summary Stat Cards -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            
+            <!-- Card 1: Total Students -->
+            <div class="bg-white p-5 rounded-3xl shadow-sm border border-slate-200/80 hover:shadow-md transition">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-slate-500 uppercase tracking-wider" data-en="Total Students" data-bn="মোট শিক্ষার্থী">Total Students</span>
+                <div class="w-10 h-10 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center text-lg">
+                  <i class="fas fa-user-graduate"></i>
+                </div>
+              </div>
+              <div class="text-3xl font-extrabold text-slate-900 mt-3 font-mono">2,540</div>
+              <div class="mt-2 flex items-center gap-1.5 text-xs text-emerald-600 font-semibold">
+                <i class="fas fa-arrow-trend-up"></i>
+                <span>+5.2%</span>
+                <span class="text-slate-400 font-normal" data-en="vs last month" data-bn="গত মাসের চেয়ে বেশি">vs last month</span>
+              </div>
+            </div>
+
+            <!-- Card 2: Faculty & Staff -->
+            <div class="bg-white p-5 rounded-3xl shadow-sm border border-slate-200/80 hover:shadow-md transition">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-slate-500 uppercase tracking-wider" data-en="Teachers & Staff" data-bn="শিক্ষক ও কর্মী">Teachers & Staff</span>
+                <div class="w-10 h-10 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-lg">
+                  <i class="fas fa-chalkboard-teacher"></i>
+                </div>
+              </div>
+              <div class="text-3xl font-extrabold text-slate-900 mt-3 font-mono">112</div>
+              <div class="mt-2 flex items-center gap-1.5 text-xs text-indigo-600 font-semibold">
+                <i class="fas fa-user-check"></i>
+                <span>98 Active Today</span>
+              </div>
+            </div>
+
+            <!-- Card 3: Today's Attendance -->
+            <div class="bg-white p-5 rounded-3xl shadow-sm border border-slate-200/80 hover:shadow-md transition">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-slate-500 uppercase tracking-wider" data-en="Today's Attendance" data-bn="আজকের উপস্থিতি">Today's Attendance</span>
+                <div class="w-10 h-10 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center text-lg">
+                  <i class="fas fa-user-clock"></i>
+                </div>
+              </div>
+              <div class="text-3xl font-extrabold text-slate-900 mt-3 font-mono">94.6%</div>
+              <div class="mt-2 flex items-center gap-1.5 text-xs text-emerald-600 font-semibold">
+                <i class="fas fa-circle-check"></i>
+                <span>2,402 Present</span>
+                <span class="text-rose-500 ml-1">138 Absent</span>
+              </div>
+            </div>
+
+            <!-- Card 4: Fee Collection -->
+            <div class="bg-white p-5 rounded-3xl shadow-sm border border-slate-200/80 hover:shadow-md transition">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-slate-500 uppercase tracking-wider" data-en="Monthly Collection" data-bn="চলতি মাসের আদায়">Monthly Collection</span>
+                <div class="w-10 h-10 rounded-2xl bg-sky-50 text-sky-600 flex items-center justify-center text-lg">
+                  <i class="fas fa-wallet"></i>
+                </div>
+              </div>
+              <div class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-3 font-mono">৳ 14.85 L</div>
+              <div class="mt-2 flex items-center gap-1.5 text-xs text-sky-600 font-semibold">
+                <i class="fas fa-chart-pie"></i>
+                <span>82% of Target Met</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Middle Grid: Attendance Trends & Today's Schedule -->
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+            
+            <!-- Attendance Weekly Visual Bar Chart (7 Cols) -->
+            <div class="lg:col-span-7 bg-white p-6 rounded-3xl shadow-sm border border-slate-200/80 space-y-4">
+              <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+                <div>
+                  <h3 class="text-sm font-bold text-slate-900" data-en="Weekly Attendance Trend" data-bn="সাপ্তাহিক উপস্থিতির পরিসংখ্যান">Weekly Attendance Trend</h3>
+                  <p class="text-xs text-slate-400">Class 1 to Class 12 Combined</p>
+                </div>
+                <span class="text-xs font-bold px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 font-mono">Avg: 93.8%</span>
+              </div>
+
+              <!-- CSS/SVG Visual Bar Chart -->
+              <div class="pt-4 space-y-3">
+                
+                <div class="space-y-1">
+                  <div class="flex justify-between text-xs font-semibold">
+                    <span data-en="Sunday (রবিবার)" data-bn="রবিবার">Sunday (রবিবার)</span>
+                    <span class="font-mono text-indigo-600 font-bold">96.2% (2,443)</span>
+                  </div>
+                  <div class="w-full h-3 bg-slate-100 rounded-full overflow-hidden">
+                    <div class="h-full bg-indigo-600 rounded-full" style="width: 96.2%"></div>
+                  </div>
+                </div>
+
+                <div class="space-y-1">
+                  <div class="flex justify-between text-xs font-semibold">
+                    <span data-en="Monday (সোমবার)" data-bn="সোমবার">Monday (সোমবার)</span>
+                    <span class="font-mono text-indigo-600 font-bold">95.0% (2,413)</span>
+                  </div>
+                  <div class="w-full h-3 bg-slate-100 rounded-full overflow-hidden">
+                    <div class="h-full bg-indigo-500 rounded-full" style="width: 95.0%"></div>
+                  </div>
+                </div>
+
+                <div class="space-y-1">
+                  <div class="flex justify-between text-xs font-semibold">
+                    <span data-en="Tuesday (মঙ্গলবার)" data-bn="মঙ্গলবার">Tuesday (মঙ্গলবার)</span>
+                    <span class="font-mono text-indigo-600 font-bold">93.4% (2,372)</span>
+                  </div>
+                  <div class="w-full h-3 bg-slate-100 rounded-full overflow-hidden">
+                    <div class="h-full bg-indigo-500 rounded-full" style="width: 93.4%"></div>
+                  </div>
+                </div>
+
+                <div class="space-y-1">
+                  <div class="flex justify-between text-xs font-semibold">
+                    <span data-en="Wednesday (বুধবার)" data-bn="বুধবার">Wednesday (বুধবার)</span>
+                    <span class="font-mono text-indigo-600 font-bold">94.6% (2,402)</span>
+                  </div>
+                  <div class="w-full h-3 bg-slate-100 rounded-full overflow-hidden">
+                    <div class="h-full bg-indigo-600 rounded-full" style="width: 94.6%"></div>
+                  </div>
+                </div>
+
+                <div class="space-y-1">
+                  <div class="flex justify-between text-xs font-semibold">
+                    <span data-en="Thursday (বৃহস্পতিবার)" data-bn="বৃহস্পতিবার">Thursday (বৃহস্পতিবার)</span>
+                    <span class="font-mono text-indigo-600 font-bold">91.8% (2,331)</span>
+                  </div>
+                  <div class="w-full h-3 bg-slate-100 rounded-full overflow-hidden">
+                    <div class="h-full bg-indigo-400 rounded-full" style="width: 91.8%"></div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Today's Schedule & Routine (5 Cols) -->
+            <div class="lg:col-span-5 bg-white p-6 rounded-3xl shadow-sm border border-slate-200/80 space-y-4">
+              <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+                <h3 class="text-sm font-bold text-slate-900" data-en="Upcoming Classes & Bell" data-bn="আজকের ক্লাস শিডিউল">Upcoming Classes & Bell</h3>
+                <span class="text-[10px] text-slate-400 font-mono">Period 4 / 7</span>
+              </div>
+
+              <div class="space-y-3">
+                <div class="p-3 rounded-2xl bg-indigo-50/60 border border-indigo-100 flex items-center justify-between">
+                  <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-indigo-600 text-white flex items-center justify-center text-xs font-bold font-mono">11:00</div>
+                    <div>
+                      <h5 class="text-xs font-bold text-slate-800">Higher Mathematics</h5>
+                      <p class="text-[10px] text-slate-500">Class 10 (A) • Room 302 • Mr. Masud</p>
+                    </div>
+                  </div>
+                  <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-indigo-100 text-indigo-700">Ongoing</span>
+                </div>
+
+                <div class="p-3 rounded-2xl bg-slate-50 border border-slate-200/80 flex items-center justify-between">
+                  <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-slate-200 text-slate-700 flex items-center justify-center text-xs font-bold font-mono">11:50</div>
+                    <div>
+                      <h5 class="text-xs font-bold text-slate-800">Physics Lab</h5>
+                      <p class="text-[10px] text-slate-500">HSC 1st Yr (Sci) • STEM Lab 1</p>
+                    </div>
+                  </div>
+                  <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-slate-200 text-slate-600">Next</span>
+                </div>
+
+                <div class="p-3 rounded-2xl bg-slate-50 border border-slate-200/80 flex items-center justify-between">
+                  <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-slate-200 text-slate-700 flex items-center justify-center text-xs font-bold font-mono">12:40</div>
+                    <div>
+                      <h5 class="text-xs font-bold text-slate-800">Lunch & Dhuhr Prayer</h5>
+                      <p class="text-[10px] text-slate-500">Break • Central Mosque & Cafeteria</p>
+                    </div>
+                  </div>
+                  <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-amber-100 text-amber-700">Break</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Bottom Table: Quick Online Inquiries Preview -->
+          <div class="bg-white rounded-3xl p-6 shadow-sm border border-slate-200/80 space-y-4">
+            <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+              <div>
+                <h3 class="text-sm font-bold text-slate-900" data-en="Recent Online Admission Inquiries" data-bn="সাম্প্রতিক অনলাইন ভর্তি আবেদন">Recent Online Admission Inquiries</h3>
+                <p class="text-xs text-slate-400">Applications received through public website</p>
+              </div>
+              <button type="button" onclick="$('.sidebar-item[data-module=admissions]').click();" class="text-xs font-bold text-indigo-600 hover:underline">
+                <span data-en="View All Requests" data-bn="সকল আবেদন দেখুন">View All Requests</span> &rarr;
+              </button>
+            </div>
+
+            <div class="overflow-x-auto">
+              <table class="w-full text-left text-xs">
+                <thead class="bg-slate-50 text-slate-500 uppercase text-[10px] font-bold">
+                  <tr>
+                    <th class="p-3">App ID</th>
+                    <th class="p-3">Applicant Name</th>
+                    <th class="p-3">Class/Program</th>
+                    <th class="p-3">Guardian Mobile</th>
+                    <th class="p-3">Date</th>
+                    <th class="p-3">Status</th>
+                    <th class="p-3 text-right">Action</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-100 font-medium" id="dashboardAdmissionTableBody">
+                  <!-- Populated by jQuery -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </section>
+
+        <!-- ======================================================== -->
+        <!-- MODULE 2: STUDENT MANAGEMENT -->
+        <!-- ======================================================== -->
+        <section id="module-students" class="module-view hidden space-y-6">
+          
+          <!-- Header Bar -->
+          <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200/80 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div>
+              <h2 class="text-xl font-black text-slate-900" data-en="Student Directory & Profiles" data-bn="শিক্ষার্থী ব্যবস্থাপনা ও তথ্যভাণ্ডার">Student Directory & Profiles</h2>
+              <p class="text-xs text-slate-500">Manage, register, filter, and review comprehensive student academic profiles.</p>
+            </div>
+            <button type="button" class="btn-open-student-modal px-4 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs shadow-md transition flex items-center gap-2 cursor-pointer">
+              <i class="fas fa-plus-circle text-amber-300"></i>
+              <span data-en="Register New Student" data-bn="নতুন শিক্ষার্থী ভর্তি">Register New Student</span>
+            </button>
+          </div>
+
+          <!-- Filter & Search Toolbar -->
+          <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-200/80 flex flex-col md:flex-row items-center justify-between gap-3">
+            <div class="flex items-center gap-2 w-full md:w-auto flex-wrap">
+              <!-- Class Filter -->
+              <select id="studentClassFilter" class="px-3 py-2 rounded-xl border border-slate-200 text-xs font-semibold outline-none bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-600">
+                <option value="all">All Classes (সকল শ্রেণি)</option>
+                <option value="Class 6">Class 6</option>
+                <option value="Class 7">Class 7</option>
+                <option value="Class 8">Class 8</option>
+                <option value="Class 9">Class 9</option>
+                <option value="Class 10">Class 10</option>
+                <option value="HSC 1st">HSC 1st Year</option>
+                <option value="HSC 2nd">HSC 2nd Year</option>
+              </select>
+
+              <!-- Section Filter -->
+              <select id="studentSectionFilter" class="px-3 py-2 rounded-xl border border-slate-200 text-xs font-semibold outline-none bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-600">
+                <option value="all">All Sections (সব শাখা)</option>
+                <option value="A">Section A</option>
+                <option value="B">Section B</option>
+                <option value="C">Section C</option>
+              </select>
+            </div>
+
+            <!-- Table Search Input -->
+            <div class="relative w-full md:w-72">
+              <span class="absolute inset-y-0 left-0 pl-3 flex items-center text-slate-400 pointer-events-none text-xs">
+                <i class="fas fa-search"></i>
+              </span>
+              <input 
+                type="text" 
+                id="studentTableSearch" 
+                placeholder="Search by name, roll, or mobile..." 
+                class="w-full pl-8 pr-3 py-2 rounded-xl border border-slate-200 text-xs outline-none bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-600"
+              >
+            </div>
+          </div>
+
+          <!-- Students Data Table -->
+          <div class="bg-white rounded-3xl shadow-sm border border-slate-200/80 overflow-hidden">
+            <div class="overflow-x-auto">
+              <table class="w-full text-left text-xs" id="studentsTable">
+                <thead class="bg-slate-50 text-slate-600 uppercase text-[10px] font-bold border-b border-slate-100">
+                  <tr>
+                    <th class="p-3.5">Roll</th>
+                    <th class="p-3.5">Student Details</th>
+                    <th class="p-3.5">Class & Section</th>
+                    <th class="p-3.5">Guardian Contact</th>
+                    <th class="p-3.5">Blood Group</th>
+                    <th class="p-3.5">Status</th>
+                    <th class="p-3.5 text-right">Actions</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-100 font-medium" id="studentsTableBody">
+                  <!-- Populated by jQuery -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </section>
+
+        <!-- ======================================================== -->
+        <!-- MODULE 3: TEACHER & STAFF MANAGEMENT -->
+        <!-- ======================================================== -->
+        <section id="module-teachers" class="module-view hidden space-y-6">
+          
+          <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200/80 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div>
+              <h2 class="text-xl font-black text-slate-900" data-en="Faculty & Staff Directory" data-bn="শিক্ষক ও কর্মকর্তা তালিকা">Faculty & Staff Directory</h2>
+              <p class="text-xs text-slate-500">Manage academic departments, designations, qualifications, and teacher profiles.</p>
+            </div>
+            <button type="button" id="btnOpenTeacherModal" class="px-4 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs shadow-md transition flex items-center gap-2 cursor-pointer">
+              <i class="fas fa-user-plus text-amber-300"></i>
+              <span data-en="Add Faculty Member" data-bn="নতুন শিক্ষক যোগ করুন">Add Faculty Member</span>
+            </button>
+          </div>
+
+          <!-- Teachers Grid Cards -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="teacherCardsGrid">
+            <!-- Populated by jQuery -->
+          </div>
+
+        </section>
+
+        <!-- ======================================================== -->
+        <!-- MODULE 4: ADMISSION REQUESTS -->
+        <!-- ======================================================== -->
+        <section id="module-admissions" class="module-view hidden space-y-6">
+          
+          <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200/80 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div>
+              <h2 class="text-xl font-black text-slate-900" data-en="Online Admission Applications" data-bn="অনলাইন ভর্তি আবেদন তালিকা">Online Admission Applications</h2>
+              <p class="text-xs text-slate-500">Review, verify, approve, or reject student inquiries submitted via the website.</p>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-xs font-bold text-slate-500" data-en="Filter Status:" data-bn="ফিল্টার:">Filter:</span>
+              <select id="admissionStatusFilter" class="px-3 py-1.5 rounded-xl border border-slate-200 text-xs font-semibold outline-none bg-slate-50">
+                <option value="all">All Applications (সকল)</option>
+                <option value="pending">Pending (অপেক্ষমাণ)</option>
+                <option value="approved">Approved (অনুমোদিত)</option>
+                <option value="rejected">Rejected (বাতিলকৃত)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Applications Table -->
+          <div class="bg-white rounded-3xl shadow-sm border border-slate-200/80 overflow-hidden">
+            <div class="overflow-x-auto">
+              <table class="w-full text-left text-xs" id="admissionsFullTable">
+                <thead class="bg-slate-50 text-slate-600 uppercase text-[10px] font-bold border-b border-slate-100">
+                  <tr>
+                    <th class="p-3.5">App ID</th>
+                    <th class="p-3.5">Student Name</th>
+                    <th class="p-3.5">Target Class</th>
+                    <th class="p-3.5">Guardian & Mobile</th>
+                    <th class="p-3.5">Previous School / GPA</th>
+                    <th class="p-3.5">Date</th>
+                    <th class="p-3.5">Status</th>
+                    <th class="p-3.5 text-right">Approve / Reject</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-100 font-medium" id="admissionsFullTableBody">
+                  <!-- Populated by jQuery -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </section>
+
+        <!-- ======================================================== -->
+        <!-- MODULE 5: ACADEMIC MANAGEMENT (CLASSES & ROUTINE) -->
+        <!-- ======================================================== -->
+        <section id="module-academics" class="module-view hidden space-y-6">
+          
+          <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200/80 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div>
+              <h2 class="text-xl font-black text-slate-900" data-en="Classes, Subjects & Timetables" data-bn="ক্লাস, বিষয় ও রুটিন ব্যবস্থাপনা">Classes, Subjects & Timetables</h2>
+              <p class="text-xs text-slate-500">Configure class routine periods, subject teachers, and section distributions.</p>
+            </div>
+            
+            <!-- Sub-tabs -->
+            <div class="flex items-center gap-1.5 bg-slate-100 p-1.5 rounded-2xl border border-slate-200">
+              <button class="academic-subtab active px-3.5 py-1.5 rounded-xl text-xs font-bold bg-white text-indigo-600 shadow-xs cursor-pointer" data-subtab="routine">Class Routine</button>
+              <button class="academic-subtab px-3.5 py-1.5 rounded-xl text-xs font-bold text-slate-600 hover:text-indigo-600 cursor-pointer" data-subtab="classes">Class Directory</button>
+              <button class="academic-subtab px-3.5 py-1.5 rounded-xl text-xs font-bold text-slate-600 hover:text-indigo-600 cursor-pointer" data-subtab="subjects">Subject Catalog</button>
+            </div>
+          </div>
+
+          <!-- Routine View -->
+          <div id="subtab-routine" class="academic-subtab-pane space-y-4">
+            <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-200/80 flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <span class="text-xs font-bold text-slate-600">Select Class Routine:</span>
+                <select class="px-3 py-1.5 rounded-xl border border-slate-200 text-xs font-semibold bg-slate-50">
+                  <option>Class 10 (Section A)</option>
+                  <option>Class 9 (Section A)</option>
+                  <option>HSC 1st Year (Science)</option>
+                </select>
+              </div>
+              <button onclick="window.print()" class="px-3 py-1.5 bg-slate-100 hover:bg-slate-200 rounded-xl text-xs font-bold text-slate-700 flex items-center gap-1.5">
+                <i class="fas fa-print"></i> Print Routine
+              </button>
+            </div>
+
+            <!-- Routine Grid -->
+            <div class="bg-white rounded-3xl p-6 shadow-sm border border-slate-200/80 overflow-x-auto">
+              <table class="w-full text-center text-xs border-collapse">
+                <thead>
+                  <tr class="bg-slate-50 text-slate-700 font-bold uppercase text-[10px]">
+                    <th class="p-3 border border-slate-200">Day</th>
+                    <th class="p-3 border border-slate-200">1st Period (9:00 - 9:45)</th>
+                    <th class="p-3 border border-slate-200">2nd Period (9:50 - 10:35)</th>
+                    <th class="p-3 border border-slate-200">3rd Period (10:40 - 11:25)</th>
+                    <th class="p-3 border border-slate-200 bg-amber-50 text-amber-800">Tiffin Break (11:25 - 12:00)</th>
+                    <th class="p-3 border border-slate-200">4th Period (12:00 - 12:45)</th>
+                    <th class="p-3 border border-slate-200">5th Period (12:50 - 1:35)</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-100">
+                  <tr>
+                    <td class="p-3 border border-slate-200 font-bold bg-slate-50 text-left">Sunday</td>
+                    <td class="p-3 border border-slate-200"><span class="font-bold block text-indigo-700">Bangla 1st</span>Mr. Masud</td>
+                    <td class="p-3 border border-slate-200"><span class="font-bold block text-indigo-700">English 1st</span>Ms. Nasrin</td>
+                    <td class="p-3 border border-slate-200"><span class="font-bold block text-indigo-700">Physics</span>Mr. Rafiqul</td>
+                    <td rowspan="5" class="p-3 border border-slate-200 bg-amber-50/50 font-bold text-amber-700 writing-vertical">TIFFIN & PRAYER</td>
+                    <td class="p-3 border border-slate-200"><span class="font-bold block text-indigo-700">Higher Math</span>Mr. Masud</td>
+                    <td class="p-3 border border-slate-200"><span class="font-bold block text-indigo-700">ICT Lab</span>Engr. Rafiq</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 border border-slate-200 font-bold bg-slate-50 text-left">Monday</td>
+                    <td class="p-3 border border-slate-200"><span class="font-bold block text-indigo-700">English 2nd</span>Ms. Nasrin</td>
+                    <td class="p-3 border border-slate-200"><span class="font-bold block text-indigo-700">Chemistry</span>Dr. M. Masud</td>
+                    <td class="p-3 border border-slate-200"><span class="font-bold block text-indigo-700">Biology</span>Ms. Afroza</td>
+                    <td class="p-3 border border-slate-200"><span class="font-bold block text-indigo-700">General Math</span>Mr. Masud</td>
+                    <td class="p-3 border border-slate-200"><span class="font-bold block text-indigo-700">Islam Studies</span>Moulana Ali</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 border border-slate-200 font-bold bg-slate-50 text-left">Tuesday</td>
+                    <td class="p-3 border border-slate-200"><span class="font-bold block text-indigo-700">Physics Lab</span>Mr. Rafiqul</td>
+                    <td class="p-3 border border-slate-200"><span class="font-bold block text-indigo-700">Chemistry</span>Dr. Masud</td>
+                    <td class="p-3 border border-slate-200"><span class="font-bold block text-indigo-700">Bangla 2nd</span>Mr. Masud</td>
+                    <td class="p-3 border border-slate-200"><span class="font-bold block text-indigo-700">English 1st</span>Ms. Nasrin</td>
+                    <td class="p-3 border border-slate-200"><span class="font-bold block text-indigo-700">Social Science</span>Ms. Afroza</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 border border-slate-200 font-bold bg-slate-50 text-left">Wednesday</td>
+                    <td class="p-3 border border-slate-200"><span class="font-bold block text-indigo-700">Higher Math</span>Mr. Masud</td>
+                    <td class="p-3 border border-slate-200"><span class="font-bold block text-indigo-700">Biology Lab</span>Ms. Afroza</td>
+                    <td class="p-3 border border-slate-200"><span class="font-bold block text-indigo-700">English 2nd</span>Ms. Nasrin</td>
+                    <td class="p-3 border border-slate-200"><span class="font-bold block text-indigo-700">Physics</span>Mr. Rafiqul</td>
+                    <td class="p-3 border border-slate-200"><span class="font-bold block text-indigo-700">Library Period</span>Librarian</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 border border-slate-200 font-bold bg-slate-50 text-left">Thursday</td>
+                    <td class="p-3 border border-slate-200"><span class="font-bold block text-indigo-700">Bangla 1st</span>Mr. Masud</td>
+                    <td class="p-3 border border-slate-200"><span class="font-bold block text-indigo-700">General Math</span>Mr. Masud</td>
+                    <td class="p-3 border border-slate-200"><span class="font-bold block text-indigo-700">Physical Edu</span>Sports Teacher</td>
+                    <td class="p-3 border border-slate-200"><span class="font-bold block text-indigo-700">Chemistry Lab</span>Dr. Masud</td>
+                    <td class="p-3 border border-slate-200"><span class="font-bold block text-indigo-700">Moral Science</span>Moulana Ali</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Classes Directory Tab Pane -->
+          <div id="subtab-classes" class="academic-subtab-pane hidden space-y-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+              <div class="bg-white p-5 rounded-3xl border border-slate-200">
+                <div class="flex items-center justify-between mb-2">
+                  <h4 class="text-base font-bold text-slate-900">Class 10 (Secondary)</h4>
+                  <span class="text-xs px-2.5 py-0.5 rounded-full bg-indigo-50 text-indigo-700 font-bold">SSC Batch</span>
+                </div>
+                <p class="text-xs text-slate-500">Sections: A (Science), B (Commerce) • 140 Students</p>
+                <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-semibold">
+                  <span>Class Teacher: Mr. Rafiqul Islam</span>
+                  <a href="#" class="text-indigo-600 hover:underline">Manage</a>
+                </div>
+              </div>
+              <div class="bg-white p-5 rounded-3xl border border-slate-200">
+                <div class="flex items-center justify-between mb-2">
+                  <h4 class="text-base font-bold text-slate-900">HSC 1st Year</h4>
+                  <span class="text-xs px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 font-bold">College</span>
+                </div>
+                <p class="text-xs text-slate-500">Science, Business & Humanities • 220 Students</p>
+                <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-semibold">
+                  <span>Coordinator: Ms. Nasrin Sultana</span>
+                  <a href="#" class="text-indigo-600 hover:underline">Manage</a>
+                </div>
+              </div>
+              <div class="bg-white p-5 rounded-3xl border border-slate-200">
+                <div class="flex items-center justify-between mb-2">
+                  <h4 class="text-base font-bold text-slate-900">Class 8 (Junior)</h4>
+                  <span class="text-xs px-2.5 py-0.5 rounded-full bg-amber-50 text-amber-700 font-bold">Junior Sec</span>
+                </div>
+                <p class="text-xs text-slate-500">Sections: A, B, C • 165 Students</p>
+                <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-semibold">
+                  <span>Class Teacher: Ms. Afroza Khatun</span>
+                  <a href="#" class="text-indigo-600 hover:underline">Manage</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Subjects Tab Pane -->
+          <div id="subtab-subjects" class="academic-subtab-pane hidden space-y-4">
+            <div class="bg-white rounded-3xl p-6 border border-slate-200">
+              <table class="w-full text-left text-xs">
+                <thead class="bg-slate-50 text-slate-600 uppercase text-[10px] font-bold">
+                  <tr>
+                    <th class="p-3">Code</th>
+                    <th class="p-3">Subject Name</th>
+                    <th class="p-3">Level / Group</th>
+                    <th class="p-3">Marks (Written + MCQ + Prac)</th>
+                    <th class="p-3">Assigned Faculty</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-100 font-medium">
+                  <tr>
+                    <td class="p-3 font-mono font-bold text-indigo-600">SUB-101</td>
+                    <td class="p-3 font-bold">Bangla First Paper</td>
+                    <td class="p-3">Class 9 - 10</td>
+                    <td class="p-3">70 + 30 + 0 = 100</td>
+                    <td class="p-3">Prof. Dr. M. Masud Rana</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 font-mono font-bold text-indigo-600">SUB-107</td>
+                    <td class="p-3 font-bold">English First Paper</td>
+                    <td class="p-3">Class 9 - 10</td>
+                    <td class="p-3">100 + 0 + 0 = 100</td>
+                    <td class="p-3">Syeda Nasrin Sultana</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 font-mono font-bold text-indigo-600">SUB-136</td>
+                    <td class="p-3 font-bold">Physics (Theory & Practical)</td>
+                    <td class="p-3">Class 10 (Science)</td>
+                    <td class="p-3">50 + 25 + 25 = 100</td>
+                    <td class="p-3">Engr. Rafiqul Islam</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </section>
+
+        <!-- ======================================================== -->
+        <!-- MODULE 6: ATTENDANCE SYSTEM -->
+        <!-- ======================================================== -->
+        <section id="module-attendance" class="module-view hidden space-y-6">
+          
+          <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200/80 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div>
+              <h2 class="text-xl font-black text-slate-900" data-en="Daily Digital Attendance Sheet" data-bn="দৈনিক ডিজিটাল হাজিরা গ্রহণ">Daily Digital Attendance Sheet</h2>
+              <p class="text-xs text-slate-500">Record and sync biometric/manual student presence with automated parent SMS alerts.</p>
+            </div>
+            <div class="flex items-center gap-2">
+              <button type="button" id="markAllPresentBtn" class="px-3.5 py-2 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-700 font-bold text-xs border border-emerald-200 transition cursor-pointer">
+                <i class="fas fa-check-double mr-1"></i> <span data-en="Mark All Present" data-bn="সবাইকে উপস্থিত করুন">Mark All Present</span>
+              </button>
+              <button type="button" id="saveAttendanceBtn" class="px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs shadow-md transition cursor-pointer">
+                <i class="fas fa-save mr-1 text-amber-300"></i> <span data-en="Save Attendance" data-bn="হাজিরা সংরক্ষণ করুন">Save Attendance</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Date & Class Selector Strip -->
+          <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-200/80 flex flex-wrap items-center justify-between gap-4">
+            <div class="flex items-center gap-3 flex-wrap">
+              <div>
+                <label class="block text-[10px] font-bold text-slate-400 uppercase mb-1">Date</label>
+                <input type="date" id="attendanceDate" class="px-3 py-1.5 rounded-xl border border-slate-200 text-xs font-semibold bg-slate-50">
+              </div>
+              <div>
+                <label class="block text-[10px] font-bold text-slate-400 uppercase mb-1">Class</label>
+                <select id="attendanceClassSelect" class="px-3 py-1.5 rounded-xl border border-slate-200 text-xs font-semibold bg-slate-50">
+                  <option value="Class 10">Class 10 (SSC)</option>
+                  <option value="Class 9">Class 9</option>
+                  <option value="HSC 1st">HSC 1st Year (Science)</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-[10px] font-bold text-slate-400 uppercase mb-1">Section</label>
+                <select class="px-3 py-1.5 rounded-xl border border-slate-200 text-xs font-semibold bg-slate-50">
+                  <option value="A">Section A</option>
+                  <option value="B">Section B</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Attendance Stats Badges -->
+            <div class="flex items-center gap-2">
+              <span class="px-3 py-1 rounded-xl bg-slate-100 text-slate-700 text-xs font-bold font-mono">Total: <span id="attCountTotal">10</span></span>
+              <span class="px-3 py-1 rounded-xl bg-emerald-100 text-emerald-800 text-xs font-bold font-mono">Present: <span id="attCountPresent">9</span></span>
+              <span class="px-3 py-1 rounded-xl bg-amber-100 text-amber-800 text-xs font-bold font-mono">Late: <span id="attCountLate">1</span></span>
+              <span class="px-3 py-1 rounded-xl bg-rose-100 text-rose-800 text-xs font-bold font-mono">Absent: <span id="attCountAbsent">0</span></span>
+            </div>
+          </div>
+
+          <!-- Attendance Sheet Table -->
+          <div class="bg-white rounded-3xl shadow-sm border border-slate-200/80 overflow-hidden">
+            <div class="overflow-x-auto">
+              <table class="w-full text-left text-xs" id="attendanceTable">
+                <thead class="bg-slate-50 text-slate-600 uppercase text-[10px] font-bold border-b border-slate-100">
+                  <tr>
+                    <th class="p-3.5">Roll</th>
+                    <th class="p-3.5">Student Name</th>
+                    <th class="p-3.5">Guardian Contact</th>
+                    <th class="p-3.5 text-center">Status (উপস্থিতি নির্বাচন)</th>
+                    <th class="p-3.5 text-right">Remarks</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-100 font-medium" id="attendanceTableBody">
+                  <!-- Populated by jQuery -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </section>
+
+        <!-- ======================================================== -->
+        <!-- MODULE 7: EXAMS & RESULTS -->
+        <!-- ======================================================== -->
+        <section id="module-exams" class="module-view hidden space-y-6">
+          
+          <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200/80 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div>
+              <h2 class="text-xl font-black text-slate-900" data-en="Examinations & GPA Result Generator" data-bn="পরীক্ষা ও জিপিএ ফলাফল ব্যবস্থাপনা">Examinations & GPA Result Generator</h2>
+              <p class="text-xs text-slate-500">Manage term exam marks, calculate letter grades, and print authentic academic transcripts.</p>
+            </div>
+            <button type="button" id="openReportCardModalBtn" class="px-4 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs shadow-md transition flex items-center gap-2 cursor-pointer">
+              <i class="fas fa-file-invoice text-amber-300"></i>
+              <span data-en="Generate Sample Transcript" data-bn="নম্বরপত্র / রেজাল্ট কার্ড প্রিন্ট">Generate Sample Transcript</span>
+            </button>
+          </div>
+
+          <!-- Marks Entry Filter Strip -->
+          <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-200/80 flex items-center justify-between flex-wrap gap-3">
+            <div class="flex items-center gap-3 flex-wrap">
+              <select class="px-3 py-1.5 rounded-xl border border-slate-200 text-xs font-semibold bg-slate-50">
+                <option>Half-Yearly Examination 2026</option>
+                <option>Model Test Exam 2026</option>
+                <option>Annual Examination 2026</option>
+              </select>
+              <select class="px-3 py-1.5 rounded-xl border border-slate-200 text-xs font-semibold bg-slate-50">
+                <option>Class 10 (Section A)</option>
+                <option>Class 9 (Section A)</option>
+              </select>
+              <select class="px-3 py-1.5 rounded-xl border border-slate-200 text-xs font-semibold bg-slate-50">
+                <option>Physics (Theory & Practical)</option>
+                <option>Higher Mathematics</option>
+                <option>English 1st Paper</option>
+              </select>
+            </div>
+            <span class="text-xs text-slate-500 font-mono">Max Marks: 100 (Pass: 33)</span>
+          </div>
+
+          <!-- Marks Table -->
+          <div class="bg-white rounded-3xl shadow-sm border border-slate-200/80 overflow-hidden">
+            <div class="overflow-x-auto">
+              <table class="w-full text-left text-xs">
+                <thead class="bg-slate-50 text-slate-600 uppercase text-[10px] font-bold border-b border-slate-100">
+                  <tr>
+                    <th class="p-3.5">Roll</th>
+                    <th class="p-3.5">Student Name</th>
+                    <th class="p-3.5">Written (50)</th>
+                    <th class="p-3.5">MCQ (25)</th>
+                    <th class="p-3.5">Practical (25)</th>
+                    <th class="p-3.5">Total (100)</th>
+                    <th class="p-3.5">Letter Grade</th>
+                    <th class="p-3.5">GPA</th>
+                    <th class="p-3.5 text-right">Transcript</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-100 font-medium" id="examMarksTableBody">
+                  <!-- Populated by jQuery -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </section>
+
+        <!-- ======================================================== -->
+        <!-- MODULE 8: FEES & ACCOUNTING -->
+        <!-- ======================================================== -->
+        <section id="module-fees" class="module-view hidden space-y-6">
+          
+          <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200/80 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div>
+              <h2 class="text-xl font-black text-slate-900" data-en="Student Fees & Accounting" data-bn="টিউশন ফি আদায় ও ইনভয়েস">Student Fees & Accounting</h2>
+              <p class="text-xs text-slate-500">Collect monthly tuition, generate official invoice slips, and track dues.</p>
+            </div>
+            <button type="button" id="btnCollectFeeModal" class="px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-md transition flex items-center gap-2 cursor-pointer">
+              <i class="fas fa-hand-holding-usd text-amber-300"></i>
+              <span data-en="Collect Fee / New Invoice" data-bn="ফি সংগ্রহ / নতুন রসিদ">Collect Fee / New Invoice</span>
+            </button>
+          </div>
+
+          <!-- Fee Stat Mini Cards -->
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
+            <div class="bg-white p-5 rounded-3xl border border-slate-200 shadow-sm">
+              <span class="text-xs font-bold text-slate-400 uppercase">Total Billed This Month</span>
+              <div class="text-2xl font-black text-slate-900 mt-2 font-mono">৳ 18,10,000</div>
+              <p class="text-xs text-slate-500 mt-1">2,540 Students Billed</p>
+            </div>
+            <div class="bg-white p-5 rounded-3xl border border-slate-200 shadow-sm">
+              <span class="text-xs font-bold text-emerald-600 uppercase">Total Collected</span>
+              <div class="text-2xl font-black text-emerald-700 mt-2 font-mono">৳ 14,85,000</div>
+              <p class="text-xs text-emerald-600 mt-1">82% Realized to Bank</p>
+            </div>
+            <div class="bg-white p-5 rounded-3xl border border-slate-200 shadow-sm">
+              <span class="text-xs font-bold text-rose-500 uppercase">Outstanding Dues</span>
+              <div class="text-2xl font-black text-rose-600 mt-2 font-mono">৳ 3,25,000</div>
+              <p class="text-xs text-rose-500 mt-1">456 Students Pending</p>
+            </div>
+          </div>
+
+          <!-- Invoices Data Table -->
+          <div class="bg-white rounded-3xl shadow-sm border border-slate-200/80 overflow-hidden">
+            <div class="overflow-x-auto">
+              <table class="w-full text-left text-xs" id="feesTable">
+                <thead class="bg-slate-50 text-slate-600 uppercase text-[10px] font-bold border-b border-slate-100">
+                  <tr>
+                    <th class="p-3.5">Invoice #</th>
+                    <th class="p-3.5">Student Details</th>
+                    <th class="p-3.5">Class</th>
+                    <th class="p-3.5">Fee Category</th>
+                    <th class="p-3.5">Amount</th>
+                    <th class="p-3.5">Payment Date</th>
+                    <th class="p-3.5">Status</th>
+                    <th class="p-3.5 text-right">Receipt</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-100 font-medium" id="feesTableBody">
+                  <!-- Populated by jQuery -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </section>
+
+        <!-- ======================================================== -->
+        <!-- MODULE 9: NOTICE BOARD & EVENTS MANAGER -->
+        <!-- ======================================================== -->
+        <section id="module-notices" class="module-view hidden space-y-6">
+          
+          <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200/80 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div>
+              <h2 class="text-xl font-black text-slate-900" data-en="Notice Board & Events Manager" data-bn="নোটিশ বোর্ড ও ইভেন্ট কন্ট্রোল">Notice Board & Events Manager</h2>
+              <p class="text-xs text-slate-500">Publish, schedule, or archive institutional announcements visible on the school portal.</p>
+            </div>
+            <button type="button" id="btnPublishNoticeModal" class="px-4 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs shadow-md transition flex items-center gap-2 cursor-pointer">
+              <i class="fas fa-bullhorn text-amber-300"></i>
+              <span data-en="Publish New Notice" data-bn="নতুন নোটিশ প্রকাশ করুন">Publish New Notice</span>
+            </button>
+          </div>
+
+          <!-- Notice Items Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="dashboardNoticesGrid">
+            <!-- Populated by jQuery -->
+          </div>
+
+        </section>
+
+        <!-- ======================================================== -->
+        <!-- MODULE 10: LIBRARY, HOSTEL & TRANSPORT -->
+        <!-- ======================================================== -->
+        <section id="module-facilities" class="module-view hidden space-y-6">
+          
+          <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200/80 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div>
+              <h2 class="text-xl font-black text-slate-900" data-en="Campus Logistics & Facilities" data-bn="গ্রন্থাগার, পরিবহন ও হোস্টেল">Campus Logistics & Facilities</h2>
+              <p class="text-xs text-slate-500">Track library book issues, campus bus fleet routes, and dormitory allotments.</p>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            
+            <!-- Library Overview -->
+            <div class="bg-white rounded-3xl p-6 border border-slate-200 shadow-sm space-y-4">
+              <div class="flex items-center gap-3">
+                <div class="w-12 h-12 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center text-xl">
+                  <i class="fas fa-book"></i>
+                </div>
+                <div>
+                  <h4 class="text-base font-bold text-slate-900">Central Library</h4>
+                  <p class="text-xs text-slate-400">20,500 Total Volumes</p>
+                </div>
+              </div>
+              <div class="space-y-2 text-xs">
+                <div class="flex justify-between py-1 border-b border-slate-100">
+                  <span class="text-slate-500">Available Books:</span>
+                  <span class="font-bold text-slate-800">18,240</span>
+                </div>
+                <div class="flex justify-between py-1 border-b border-slate-100">
+                  <span class="text-slate-500">Issued Books:</span>
+                  <span class="font-bold text-indigo-600">2,260</span>
+                </div>
+                <div class="flex justify-between py-1">
+                  <span class="text-slate-500">Overdue Returns:</span>
+                  <span class="font-bold text-rose-500">42</span>
+                </div>
+              </div>
+              <button class="w-full py-2 rounded-xl bg-indigo-50 text-indigo-600 font-bold text-xs hover:bg-indigo-100 transition">View Catalog & Issue Book</button>
+            </div>
+
+            <!-- Transport Overview -->
+            <div class="bg-white rounded-3xl p-6 border border-slate-200 shadow-sm space-y-4">
+              <div class="flex items-center gap-3">
+                <div class="w-12 h-12 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center text-xl">
+                  <i class="fas fa-bus"></i>
+                </div>
+                <div>
+                  <h4 class="text-base font-bold text-slate-900">Transport Fleet</h4>
+                  <p class="text-xs text-slate-400">8 Active Campus Buses</p>
+                </div>
+              </div>
+              <div class="space-y-2 text-xs">
+                <div class="flex justify-between py-1 border-b border-slate-100">
+                  <span class="text-slate-500">Routes Covered:</span>
+                  <span class="font-bold text-slate-800">Uttara, Mirpur, Tongi</span>
+                </div>
+                <div class="flex justify-between py-1 border-b border-slate-100">
+                  <span class="text-slate-500">Student Subscribers:</span>
+                  <span class="font-bold text-amber-600">480 Students</span>
+                </div>
+                <div class="flex justify-between py-1">
+                  <span class="text-slate-500">GPS Tracker:</span>
+                  <span class="font-bold text-emerald-600">Active Online</span>
+                </div>
+              </div>
+              <button class="w-full py-2 rounded-xl bg-amber-50 text-amber-700 font-bold text-xs hover:bg-amber-100 transition">Manage Routes & Drivers</button>
+            </div>
+
+            <!-- Hostel Overview -->
+            <div class="bg-white rounded-3xl p-6 border border-slate-200 shadow-sm space-y-4">
+              <div class="flex items-center gap-3">
+                <div class="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-xl">
+                  <i class="fas fa-hotel"></i>
+                </div>
+                <div>
+                  <h4 class="text-base font-bold text-slate-900">Residential Hostel</h4>
+                  <p class="text-xs text-slate-400">Boys & Girls Dormitories</p>
+                </div>
+              </div>
+              <div class="space-y-2 text-xs">
+                <div class="flex justify-between py-1 border-b border-slate-100">
+                  <span class="text-slate-500">Total Capacity:</span>
+                  <span class="font-bold text-slate-800">300 Seats</span>
+                </div>
+                <div class="flex justify-between py-1 border-b border-slate-100">
+                  <span class="text-slate-500">Occupied:</span>
+                  <span class="font-bold text-emerald-600">265 Seats</span>
+                </div>
+                <div class="flex justify-between py-1">
+                  <span class="text-slate-500">Vacant Rooms:</span>
+                  <span class="font-bold text-slate-800">35 Seats</span>
+                </div>
+              </div>
+              <button class="w-full py-2 rounded-xl bg-emerald-50 text-emerald-700 font-bold text-xs hover:bg-emerald-100 transition">Room Allocation Plan</button>
+            </div>
+
+          </div>
+
+        </section>
+
+        <!-- ======================================================== -->
+        <!-- MODULE 11: SETTINGS & SCHOOL PROFILE -->
+        <!-- ======================================================== -->
+        <section id="module-settings" class="module-view hidden space-y-6">
+          
+          <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200/80">
+            <h2 class="text-xl font-black text-slate-900" data-en="Institutional Profile & Settings" data-bn="স্কুল প্রোফাইল ও সেটিংস">Institutional Profile & Settings</h2>
+            <p class="text-xs text-slate-500">Update school identity, contact information, academic year, and administrator password.</p>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+            
+            <!-- School Info Form (8 Cols) -->
+            <div class="lg:col-span-8 bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm space-y-6">
+              <h3 class="text-sm font-bold text-slate-900 uppercase tracking-wider pb-3 border-b border-slate-100">General Information</h3>
+              
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+                <div>
+                  <label class="block font-bold text-slate-700 mb-1">Institution Name (English)</label>
+                  <input type="text" value="ABCD Model School & College" class="w-full p-2.5 rounded-xl border border-slate-300 font-medium">
+                </div>
+                <div>
+                  <label class="block font-bold text-slate-700 mb-1">Institution Name (বাংলা)</label>
+                  <input type="text" value="এবিসিডি মডেল স্কুল অ্যান্ড কলেজ" class="w-full p-2.5 rounded-xl border border-slate-300 font-medium">
+                </div>
+                <div>
+                  <label class="block font-bold text-slate-700 mb-1">EIIN Code</label>
+                  <input type="text" value="108422" class="w-full p-2.5 rounded-xl border border-slate-300 font-mono">
+                </div>
+                <div>
+                  <label class="block font-bold text-slate-700 mb-1">College Code</label>
+                  <input type="text" value="2315" class="w-full p-2.5 rounded-xl border border-slate-300 font-mono">
+                </div>
+                <div>
+                  <label class="block font-bold text-slate-700 mb-1">Official Email</label>
+                  <input type="email" value="info@abcd.edu.bd" class="w-full p-2.5 rounded-xl border border-slate-300">
+                </div>
+                <div>
+                  <label class="block font-bold text-slate-700 mb-1">Hotline Phone</label>
+                  <input type="text" value="+880 1712-345678" class="w-full p-2.5 rounded-xl border border-slate-300">
+                </div>
+              </div>
+
+              <div>
+                <label class="block font-bold text-slate-700 text-xs mb-1">Campus Physical Address</label>
+                <textarea rows="2" class="w-full p-2.5 rounded-xl border border-slate-300 text-xs">House 42, Road 11, Sector 4, Uttara, Dhaka-1230, Bangladesh</textarea>
+              </div>
+
+              <button type="button" class="px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs transition">Save Profile Changes</button>
+            </div>
+
+            <!-- Password Change Card (4 Cols) -->
+            <div class="lg:col-span-4 bg-white p-6 rounded-3xl border border-slate-200 shadow-sm space-y-4">
+              <h3 class="text-sm font-bold text-slate-900 uppercase tracking-wider pb-3 border-b border-slate-100">Change Admin Password</h3>
+              
+              <div class="space-y-3 text-xs">
+                <div>
+                  <label class="block font-bold text-slate-700 mb-1">Current Password</label>
+                  <input type="password" value="admin123" class="w-full p-2.5 rounded-xl border border-slate-300 font-mono">
+                </div>
+                <div>
+                  <label class="block font-bold text-slate-700 mb-1">New Password</label>
+                  <input type="password" placeholder="••••••••" class="w-full p-2.5 rounded-xl border border-slate-300 font-mono">
+                </div>
+                <div>
+                  <label class="block font-bold text-slate-700 mb-1">Confirm New Password</label>
+                  <input type="password" placeholder="••••••••" class="w-full p-2.5 rounded-xl border border-slate-300 font-mono">
+                </div>
+              </div>
+
+              <button type="button" class="w-full py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs transition">Update Password</button>
+
+              <div class="mt-4 pt-4 border-t border-slate-100 text-[11px] text-slate-400 space-y-1">
+                <p><i class="fas fa-shield-alt text-emerald-500 mr-1"></i> Two-Factor Authentication: Enabled</p>
+                <p><i class="fas fa-database text-indigo-500 mr-1"></i> Automated Cloud Backup: 03:00 AM</p>
+              </div>
+            </div>
+
+          </div>
+
+        </section>
+
+      </main>
+
+    </div>
+
+  </div>
+
+  <!-- ======================================================== -->
+  <!-- MODAL: ADD / EDIT STUDENT -->
+  <!-- ======================================================== -->
+  <div id="studentModal" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl border border-slate-200 space-y-5 animate-scale-up max-h-[90vh] overflow-y-auto custom-scrollbar">
+      <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-indigo-100 text-indigo-700 flex items-center justify-center text-lg">
+            <i class="fas fa-user-graduate"></i>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-slate-900" id="studentModalTitle" data-en="Register New Student" data-bn="নতুন শিক্ষার্থী ভর্তি ফরম">Register New Student</h3>
+            <p class="text-xs text-slate-400">Enter complete student and guardian academic profile</p>
+          </div>
+        </div>
+        <button type="button" class="close-student-modal text-slate-400 hover:text-slate-600 p-1.5 rounded-lg">
+          <i class="fas fa-times text-lg"></i>
+        </button>
+      </div>
+
+      <form id="studentForm" class="space-y-4 text-xs">
+        <input type="hidden" id="studentEditIndex" value="-1">
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block font-bold text-slate-700 mb-1">Student Full Name *</label>
+            <input type="text" id="mStudentName" required placeholder="e.g. Tanvir Hasan" class="w-full p-3 rounded-xl border border-slate-300 text-xs">
+          </div>
+          <div>
+            <label class="block font-bold text-slate-700 mb-1">Roll Number *</label>
+            <input type="number" id="mStudentRoll" required placeholder="e.g. 101" class="w-full p-3 rounded-xl border border-slate-300 text-xs font-mono">
+          </div>
+          <div>
+            <label class="block font-bold text-slate-700 mb-1">Class *</label>
+            <select id="mStudentClass" required class="w-full p-3 rounded-xl border border-slate-300 text-xs bg-white">
+              <option value="Class 6">Class 6</option>
+              <option value="Class 7">Class 7</option>
+              <option value="Class 8">Class 8</option>
+              <option value="Class 9">Class 9</option>
+              <option value="Class 10" selected>Class 10</option>
+              <option value="HSC 1st">HSC 1st Year</option>
+              <option value="HSC 2nd">HSC 2nd Year</option>
+            </select>
+          </div>
+          <div>
+            <label class="block font-bold text-slate-700 mb-1">Section *</label>
+            <select id="mStudentSection" required class="w-full p-3 rounded-xl border border-slate-300 text-xs bg-white">
+              <option value="A">Section A</option>
+              <option value="B">Section B</option>
+              <option value="C">Section C</option>
+            </select>
+          </div>
+          <div>
+            <label class="block font-bold text-slate-700 mb-1">Guardian Name *</label>
+            <input type="text" id="mStudentGuardian" required placeholder="e.g. Md. Shahidul Islam" class="w-full p-3 rounded-xl border border-slate-300 text-xs">
+          </div>
+          <div>
+            <label class="block font-bold text-slate-700 mb-1">Guardian Mobile *</label>
+            <input type="tel" id="mStudentMobile" required placeholder="01712345678" class="w-full p-3 rounded-xl border border-slate-300 text-xs">
+          </div>
+          <div>
+            <label class="block font-bold text-slate-700 mb-1">Blood Group</label>
+            <select id="mStudentBlood" class="w-full p-3 rounded-xl border border-slate-300 text-xs bg-white">
+              <option value="A+">A+</option>
+              <option value="A-">A-</option>
+              <option value="B+">B+</option>
+              <option value="B-">B-</option>
+              <option value="O+">O+</option>
+              <option value="O-">O-</option>
+              <option value="AB+">AB+</option>
+              <option value="AB-">AB-</option>
+            </select>
+          </div>
+          <div>
+            <label class="block font-bold text-slate-700 mb-1">Gender</label>
+            <select id="mStudentGender" class="w-full p-3 rounded-xl border border-slate-300 text-xs bg-white">
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="pt-4 border-t border-slate-100 flex items-center justify-end gap-3">
+          <button type="button" class="close-student-modal px-4 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs transition">Cancel</button>
+          <button type="submit" class="px-6 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs shadow-md transition">Save Student Record</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ======================================================== -->
+  <!-- MODAL: ADD TEACHER -->
+  <!-- ======================================================== -->
+  <div id="teacherModal" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl border border-slate-200 space-y-4 animate-scale-up">
+      <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+        <h3 class="text-lg font-bold text-slate-900">Add New Faculty Profile</h3>
+        <button type="button" id="closeTeacherModal" class="text-slate-400 hover:text-slate-600 p-1 rounded-lg">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <form id="teacherForm" class="space-y-4 text-xs">
+        <div>
+          <label class="block font-bold text-slate-700 mb-1">Faculty Name *</label>
+          <input type="text" id="tName" required placeholder="e.g. Dr. Mohammad Masud" class="w-full p-3 rounded-xl border border-slate-300">
+        </div>
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block font-bold text-slate-700 mb-1">Designation</label>
+            <input type="text" id="tDesignation" required placeholder="Senior Lecturer" class="w-full p-3 rounded-xl border border-slate-300">
+          </div>
+          <div>
+            <label class="block font-bold text-slate-700 mb-1">Department</label>
+            <select id="tDepartment" class="w-full p-3 rounded-xl border border-slate-300 bg-white">
+              <option value="Science">Science & ICT</option>
+              <option value="Business">Business Studies</option>
+              <option value="Humanities">Humanities</option>
+              <option value="Languages">Languages</option>
+            </select>
+          </div>
+        </div>
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block font-bold text-slate-700 mb-1">Phone</label>
+            <input type="text" id="tPhone" required placeholder="+880 1712-345678" class="w-full p-3 rounded-xl border border-slate-300">
+          </div>
+          <div>
+            <label class="block font-bold text-slate-700 mb-1">Email</label>
+            <input type="email" id="tEmail" required placeholder="teacher@school.edu" class="w-full p-3 rounded-xl border border-slate-300">
+          </div>
+        </div>
+        <div>
+          <label class="block font-bold text-slate-700 mb-1">Highest Degree / Qualifications</label>
+          <input type="text" id="tDegree" placeholder="M.Sc (Physics), DU" class="w-full p-3 rounded-xl border border-slate-300">
+        </div>
+        <div class="pt-3 border-t border-slate-100 flex justify-end gap-2">
+          <button type="button" id="cancelTeacherModal" class="px-4 py-2 bg-slate-100 text-slate-700 rounded-xl font-bold">Cancel</button>
+          <button type="submit" class="px-5 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl font-bold">Save Member</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ======================================================== -->
+  <!-- MODAL: ACADEMIC REPORT CARD / TRANSCRIPT (PRINTABLE) -->
+  <!-- ======================================================== -->
+  <div id="reportCardModal" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl border border-slate-200 space-y-6 animate-scale-up max-h-[90vh] overflow-y-auto custom-scrollbar">
+      
+      <!-- Top Action Bar (No Print) -->
+      <div class="no-print flex items-center justify-between pb-3 border-b border-slate-100">
+        <span class="text-xs font-bold text-slate-500 uppercase tracking-wider">Official Student Transcript Preview</span>
+        <div class="flex items-center gap-2">
+          <button type="button" onclick="window.print()" class="px-3.5 py-1.5 rounded-xl bg-indigo-600 text-white font-bold text-xs flex items-center gap-1.5 shadow-sm">
+            <i class="fas fa-print"></i> Print Transcript
+          </button>
+          <button type="button" id="closeReportCardModal" class="text-slate-400 hover:text-slate-600 p-1.5 rounded-lg">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Printable Transcript Paper Area -->
+      <div class="p-6 border-2 border-slate-200 rounded-2xl bg-white space-y-5">
+        <!-- School Crest Header -->
+        <div class="text-center pb-4 border-b-2 border-indigo-900">
+          <div class="w-12 h-12 rounded-2xl bg-indigo-900 text-amber-300 mx-auto flex items-center justify-center text-2xl shadow-sm mb-2">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+          <h2 class="text-xl font-black text-slate-900 tracking-tight">ABCD MODEL SCHOOL & COLLEGE</h2>
+          <p class="text-xs text-slate-500">Uttara Model Town, Dhaka • EIIN: 108422 • College Code: 2315</p>
+          <h4 class="text-xs font-extrabold uppercase tracking-widest text-indigo-700 mt-2 bg-indigo-50 inline-block px-3 py-1 rounded-full border border-indigo-100">
+            ACADEMIC TRANSCRIPT & REPORT CARD
+          </h4>
+        </div>
+
+        <!-- Student Bio Summary -->
+        <div class="grid grid-cols-2 gap-2 text-xs bg-slate-50 p-3 rounded-xl border border-slate-200">
+          <div><span class="text-slate-500">Student Name:</span> <strong class="text-slate-900">Tanvir Hasan</strong></div>
+          <div><span class="text-slate-500">Roll No:</span> <strong class="font-mono text-indigo-700">101</strong></div>
+          <div><span class="text-slate-500">Class:</span> <strong class="text-slate-900">Class 10 (Science)</strong></div>
+          <div><span class="text-slate-500">Section:</span> <strong class="text-slate-900">A</strong></div>
+          <div><span class="text-slate-500">Exam:</span> <strong class="text-slate-900">Model Test Examination 2026</strong></div>
+          <div><span class="text-slate-500">Date:</span> <strong class="font-mono text-slate-700">December 2026</strong></div>
+        </div>
+
+        <!-- Subjects Grade Table -->
+        <table class="w-full text-xs text-left border-collapse border border-slate-200">
+          <thead class="bg-slate-100 font-bold uppercase text-[10px]">
+            <tr>
+              <th class="p-2 border border-slate-200">Subject Name</th>
+              <th class="p-2 border border-slate-200 text-center">Marks (100)</th>
+              <th class="p-2 border border-slate-200 text-center">Grade</th>
+              <th class="p-2 border border-slate-200 text-center">Grade Point</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="p-2 border border-slate-200 font-semibold">Bangla (1st & 2nd)</td>
+              <td class="p-2 border border-slate-200 text-center font-mono">88</td>
+              <td class="p-2 border border-slate-200 text-center font-bold text-emerald-600">A+</td>
+              <td class="p-2 border border-slate-200 text-center font-mono">5.00</td>
+            </tr>
+            <tr>
+              <td class="p-2 border border-slate-200 font-semibold">English (1st & 2nd)</td>
+              <td class="p-2 border border-slate-200 text-center font-mono">82</td>
+              <td class="p-2 border border-slate-200 text-center font-bold text-emerald-600">A+</td>
+              <td class="p-2 border border-slate-200 text-center font-mono">5.00</td>
+            </tr>
+            <tr>
+              <td class="p-2 border border-slate-200 font-semibold">Physics</td>
+              <td class="p-2 border border-slate-200 text-center font-mono">94</td>
+              <td class="p-2 border border-slate-200 text-center font-bold text-emerald-600">A+</td>
+              <td class="p-2 border border-slate-200 text-center font-mono">5.00</td>
+            </tr>
+            <tr>
+              <td class="p-2 border border-slate-200 font-semibold">Chemistry</td>
+              <td class="p-2 border border-slate-200 text-center font-mono">85</td>
+              <td class="p-2 border border-slate-200 text-center font-bold text-emerald-600">A+</td>
+              <td class="p-2 border border-slate-200 text-center font-mono">5.00</td>
+            </tr>
+            <tr>
+              <td class="p-2 border border-slate-200 font-semibold">Higher Mathematics</td>
+              <td class="p-2 border border-slate-200 text-center font-mono">92</td>
+              <td class="p-2 border border-slate-200 text-center font-bold text-emerald-600">A+</td>
+              <td class="p-2 border border-slate-200 text-center font-mono">5.00</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- Summary & GPA Box -->
+        <div class="flex items-center justify-between p-4 bg-emerald-50 rounded-xl border border-emerald-200">
+          <div>
+            <span class="text-xs text-emerald-800 font-bold uppercase block">Final Result Status</span>
+            <span class="text-sm font-extrabold text-emerald-900">Passed with Distinction</span>
+          </div>
+          <div class="text-right">
+            <span class="text-xs text-emerald-800 font-bold uppercase block">Cumulative GPA</span>
+            <span class="text-2xl font-black text-emerald-700 font-mono">5.00 (A+)</span>
+          </div>
+        </div>
+
+        <!-- Official Signatures -->
+        <div class="pt-8 flex justify-between items-end text-xs text-slate-600">
+          <div class="text-center">
+            <div class="w-32 border-b border-slate-400 mb-1 mx-auto"></div>
+            <span>Class Teacher Signature</span>
+          </div>
+          <div class="text-center">
+            <div class="w-32 border-b border-slate-400 mb-1 mx-auto"></div>
+            <span>Controller of Examinations</span>
+          </div>
+          <div class="text-center">
+            <div class="w-32 border-b border-slate-400 mb-1 mx-auto"></div>
+            <span class="font-bold text-slate-800">Principal Signature</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ======================================================== -->
+  <!-- MODAL: COLLECT FEE / INVOICE -->
+  <!-- ======================================================== -->
+  <div id="feeModal" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 shadow-2xl border border-slate-200 space-y-4 animate-scale-up">
+      <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+        <h3 class="text-lg font-bold text-slate-900">Collect Student Fee</h3>
+        <button type="button" id="closeFeeModal" class="text-slate-400 hover:text-slate-600 p-1 rounded-lg">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <form id="feeForm" class="space-y-4 text-xs">
+        <div>
+          <label class="block font-bold text-slate-700 mb-1">Student Roll / Name</label>
+          <select id="fStudent" class="w-full p-3 rounded-xl border border-slate-300 bg-white">
+            <option value="Tanvir Hasan (Roll: 101)">Tanvir Hasan (Roll: 101) - Class 10</option>
+            <option value="Fatima Begum (Roll: 102)">Fatima Begum (Roll: 102) - Class 10</option>
+            <option value="Nafis Iqbal (Roll: 103)">Nafis Iqbal (Roll: 103) - Class 9</option>
+          </select>
+        </div>
+        <div>
+          <label class="block font-bold text-slate-700 mb-1">Fee Category</label>
+          <select id="fCategory" class="w-full p-3 rounded-xl border border-slate-300 bg-white">
+            <option value="Monthly Tuition Fee">Monthly Tuition Fee</option>
+            <option value="Exam Fee">Model Test Exam Fee</option>
+            <option value="Lab & ICT Fee">Science & ICT Lab Fee</option>
+            <option value="Transport Fee">Monthly Transport Fee</option>
+          </select>
+        </div>
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block font-bold text-slate-700 mb-1">Amount (৳)</label>
+            <input type="number" id="fAmount" required value="2500" class="w-full p-3 rounded-xl border border-slate-300 font-mono">
+          </div>
+          <div>
+            <label class="block font-bold text-slate-700 mb-1">Payment Method</label>
+            <select id="fMethod" class="w-full p-3 rounded-xl border border-slate-300 bg-white">
+              <option value="Cash">Cash (কাউন্টার)</option>
+              <option value="bKash / Nagad">bKash / Nagad</option>
+              <option value="Bank Deposit">Bank Deposit</option>
+            </select>
+          </div>
+        </div>
+        <div class="pt-3 border-t border-slate-100 flex justify-end gap-2">
+          <button type="button" id="cancelFeeModal" class="px-4 py-2 bg-slate-100 text-slate-700 rounded-xl font-bold">Cancel</button>
+          <button type="submit" class="px-5 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl font-bold">Receive & Print Slip</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ================= JQUERY CDN ================= -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <!-- ================= DASHBOARD APP LOGIC ================= -->
+  <script>
+    $(document).ready(function() {
+
+      // ================= BILINGUAL TRANSLATION (EN / BN) =================
+      const i18n = {
+        lang: localStorage.getItem('sms_lang') || 'en',
+        
+        apply: function(lang) {
+          this.lang = lang;
+          localStorage.setItem('sms_lang', lang);
+          $('html').attr('lang', lang);
+
+          // Update texts
+          $('[data-en][data-bn]').each(function() {
+            const text = (lang === 'bn') ? $(this).attr('data-bn') : $(this).attr('data-en');
+            $(this).html(text);
+          });
+
+          // Update placeholders
+          $('[data-en-placeholder][data-bn-placeholder]').each(function() {
+            const ph = (lang === 'bn') ? $(this).attr('data-bn-placeholder') : $(this).attr('data-en-placeholder');
+            $(this).attr('placeholder', ph);
+          });
+
+          // Update toggle button states
+          $('.lang-toggle-btn').each(function() {
+            if (lang === 'bn') {
+              $(this).find('.lang-text').text('English');
+              $(this).find('.lang-badge').text('EN');
+            } else {
+              $(this).find('.lang-text').text('বাংলা');
+              $(this).find('.lang-badge').text('BN');
+            }
+          });
+        },
+
+        toggle: function() {
+          const next = (this.lang === 'en') ? 'bn' : 'en';
+          this.apply(next);
+        }
+      };
+
+      // Apply saved language
+      i18n.apply(i18n.lang);
+
+      $(document).on('click', '.lang-toggle-btn', function(e) {
+        e.preventDefault();
+        i18n.toggle();
+      });
+
+      // ================= USER SESSION RECOVERY =================
+      const authUser = JSON.parse(localStorage.getItem('sms_auth_user') || 'null');
+      if (authUser) {
+        $('#sidebarUserName').text(authUser.name);
+        $('#sidebarUserRole').text(authUser.role);
+      }
+
+      // ================= SIDEBAR RESPONSIVE & COLLAPSE =================
+      $('#toggleSidebarBtn').on('click', function() {
+        if ($(window).width() < 1024) {
+          $('#sidebar').removeClass('-translate-x-full');
+          $('#sidebarBackdrop').removeClass('hidden');
+        } else {
+          // Desktop toggle collapse
+          $('#sidebar').toggleClass('w-64 w-20');
+          $('.sidebar-text').toggleClass('hidden');
+        }
+      });
+
+      $('#closeSidebarBtn, #sidebarBackdrop').on('click', function() {
+        $('#sidebar').addClass('-translate-x-full');
+        $('#sidebarBackdrop').addClass('hidden');
+      });
+
+      // ================= DROPDOWN TOGGLES =================
+      $('#notificationBtn').on('click', function(e) {
+        e.stopPropagation();
+        $('#notificationDropdown').toggleClass('hidden');
+        $('#userMenuDropdown').addClass('hidden');
+      });
+
+      $('#userMenuBtn').on('click', function(e) {
+        e.stopPropagation();
+        $('#userMenuDropdown').toggleClass('hidden');
+        $('#notificationDropdown').addClass('hidden');
+      });
+
+      $(document).on('click', function() {
+        $('#notificationDropdown, #userMenuDropdown').addClass('hidden');
+      });
+
+      // ================= DYNAMIC MODULE / VIEW SWITCHING =================
+      $('.sidebar-item').on('click', function(e) {
+        e.preventDefault();
+        const moduleName = $(this).data('module');
+        if (!moduleName) return;
+
+        $('.sidebar-item').removeClass('active');
+        $(this).addClass('active');
+
+        $('.module-view').addClass('hidden');
+        $(`#module-${moduleName}`).removeClass('hidden');
+
+        // Close sidebar on mobile after clicking
+        if ($(window).width() < 1024) {
+          $('#sidebar').addClass('-translate-x-full');
+          $('#sidebarBackdrop').addClass('hidden');
+        }
+      });
+
+      // Subtabs in Academic module
+      $('.academic-subtab').on('click', function() {
+        $('.academic-subtab').removeClass('active bg-white text-indigo-600 shadow-xs').addClass('text-slate-600');
+        $(this).addClass('active bg-white text-indigo-600 shadow-xs').removeClass('text-slate-600');
+
+        const tab = $(this).data('subtab');
+        $('.academic-subtab-pane').addClass('hidden');
+        $(`#subtab-${tab}`).removeClass('hidden');
+      });
+
+      // ================= SEED INITIAL DATA =================
+      // Students list
+      let students = JSON.parse(localStorage.getItem('sms_students') || 'null');
+      if (!students) {
+        students = [
+          { roll: 101, name: 'Tanvir Hasan', class: 'Class 10', section: 'A', guardian: 'Md. Shahidul Islam', mobile: '01711223344', blood: 'A+', gender: 'Male', status: 'Active' },
+          { roll: 102, name: 'Fatima Begum', class: 'Class 10', section: 'A', guardian: 'Abdur Rahim', mobile: '01811223344', blood: 'O+', gender: 'Female', status: 'Active' },
+          { roll: 103, name: 'Nafis Iqbal', class: 'Class 9', section: 'B', guardian: 'Iqbal Hossain', mobile: '01911223344', blood: 'B+', gender: 'Male', status: 'Active' },
+          { roll: 104, name: 'Sadia Sultana', class: 'Class 10', section: 'B', guardian: 'M. A. Mannan', mobile: '01611223344', blood: 'AB+', gender: 'Female', status: 'Active' },
+          { roll: 105, name: 'Arifur Rahman', class: 'HSC 1st', section: 'A', guardian: 'Lutfor Rahman', mobile: '01755443322', blood: 'O-', gender: 'Male', status: 'Active' },
+          { roll: 106, name: 'Anika Tabassum', class: 'Class 8', section: 'A', guardian: 'Enamul Haque', mobile: '01833445566', blood: 'A+', gender: 'Female', status: 'Active' },
+          { roll: 107, name: 'Zubair Hossain', class: 'Class 10', section: 'A', guardian: 'Hossain Ahmed', mobile: '01799887766', blood: 'B-', gender: 'Male', status: 'Active' },
+          { roll: 108, name: 'Mehzabin Chowdhury', class: 'HSC 2nd', section: 'A', guardian: 'Chowdhury Kamal', mobile: '01922334455', blood: 'AB-', gender: 'Female', status: 'Active' }
+        ];
+        localStorage.setItem('sms_students', JSON.stringify(students));
+      }
+
+      // Teachers list
+      const teachers = [
+        { name: 'Prof. Dr. M. Masud Rana', designation: 'Principal & Head', dept: 'Science', phone: '+880 1712-345678', email: 'principal@school.edu', qualification: 'Ph.D. in Education (DU), M.Sc', img: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=300&auto=format&fit=crop' },
+        { name: 'Syeda Nasrin Sultana', designation: 'Vice Principal', dept: 'Languages', phone: '+880 1812-345678', email: 'nasrin@school.edu', qualification: 'M.A. in English (JU), B.Ed', img: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=300&auto=format&fit=crop' },
+        { name: 'Engr. Rafiqul Islam', designation: 'Head, STEM Labs', dept: 'Science', phone: '+880 1912-345678', email: 'rafiqul@school.edu', qualification: 'B.Sc Engr. (BUET), ICT Master Trainer', img: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=300&auto=format&fit=crop' },
+        { name: 'Afroza Khatun', designation: 'Head of Commerce', dept: 'Business', phone: '+880 1612-345678', email: 'afroza@school.edu', qualification: 'M.Com in Accounting (RU), CA', img: 'https://images.unsplash.com/photo-1580894732444-8ecded7900cd?q=80&w=300&auto=format&fit=crop' }
+      ];
+
+      // Invoices
+      let invoices = [
+        { id: 'INV-1029', student: 'Tanvir Hasan', roll: 101, class: 'Class 10', category: 'Monthly Tuition (Dec)', amount: '৳ 2,500', date: '2026-12-05', status: 'Paid' },
+        { id: 'INV-1030', student: 'Fatima Begum', roll: 102, class: 'Class 10', category: 'Exam Fee (Model Test)', amount: '৳ 1,200', date: '2026-12-06', status: 'Paid' },
+        { id: 'INV-1031', student: 'Nafis Iqbal', roll: 103, class: 'Class 9', category: 'Transport Fee', amount: '৳ 1,500', date: '2026-12-07', status: 'Unpaid' },
+        { id: 'INV-1032', student: 'Sadia Sultana', roll: 104, class: 'Class 10', category: 'Lab & ICT Fee', amount: '৳ 800', date: '2026-12-07', status: 'Paid' }
+      ];
+
+      // ================= RENDER STUDENTS TABLE =================
+      function renderStudentsTable(filterClass = 'all', filterSection = 'all', searchKeyword = '') {
+        const tbody = $('#studentsTableBody');
+        tbody.empty();
+
+        let filtered = students;
+
+        if (filterClass !== 'all') {
+          filtered = filtered.filter(s => s.class === filterClass);
+        }
+        if (filterSection !== 'all') {
+          filtered = filtered.filter(s => s.section === filterSection);
+        }
+        if (searchKeyword) {
+          const kw = searchKeyword.toLowerCase();
+          filtered = filtered.filter(s => 
+            s.name.toLowerCase().includes(kw) || 
+            String(s.roll).includes(kw) || 
+            s.mobile.includes(kw)
+          );
+        }
+
+        if (filtered.length === 0) {
+          tbody.append(`<tr><td colspan="7" class="p-6 text-center text-slate-400">No students found matching your criteria.</td></tr>`);
+          return;
+        }
+
+        filtered.forEach((s, idx) => {
+          tbody.append(`
+            <tr class="hover:bg-slate-50 transition">
+              <td class="p-3.5 font-mono font-bold text-indigo-700">${s.roll}</td>
+              <td class="p-3.5">
+                <div class="font-bold text-slate-900">${s.name}</div>
+                <div class="text-[10px] text-slate-400">Guardian: ${s.guardian}</div>
+              </td>
+              <td class="p-3.5">
+                <span class="font-bold text-slate-800">${s.class}</span>
+                <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 font-mono ml-1">Sec: ${s.section}</span>
+              </td>
+              <td class="p-3.5 font-mono text-slate-600">${s.mobile}</td>
+              <td class="p-3.5"><span class="px-2 py-0.5 rounded bg-rose-50 text-rose-700 font-bold text-[10px]">${s.blood}</span></td>
+              <td class="p-3.5"><span class="px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 font-bold text-[10px]">${s.status}</span></td>
+              <td class="p-3.5 text-right space-x-1.5">
+                <button type="button" class="btn-edit-student p-1.5 rounded-lg bg-indigo-50 text-indigo-600 hover:bg-indigo-100" data-index="${idx}" title="Edit Profile"><i class="fas fa-edit"></i></button>
+                <button type="button" class="btn-delete-student p-1.5 rounded-lg bg-rose-50 text-rose-600 hover:bg-rose-100" data-index="${idx}" title="Delete Record"><i class="fas fa-trash"></i></button>
+              </td>
+            </tr>
+          `);
+        });
+
+        $('#sidebarStudentCount').text(students.length + 2530);
+      }
+
+      renderStudentsTable();
+
+      // Filters
+      $('#studentClassFilter, #studentSectionFilter').on('change', function() {
+        renderStudentsTable($('#studentClassFilter').val(), $('#studentSectionFilter').val(), $('#studentTableSearch').val().trim());
+      });
+
+      $('#studentTableSearch').on('keyup', function() {
+        renderStudentsTable($('#studentClassFilter').val(), $('#studentSectionFilter').val(), $(this).val().trim());
+      });
+
+      // Global search bar handler
+      $('#globalSearchInput').on('keyup', function() {
+        const query = $(this).val().trim();
+        if (query) {
+          $('.sidebar-item[data-module=students]').click();
+          $('#studentTableSearch').val(query);
+          renderStudentsTable('all', 'all', query);
+        }
+      });
+
+      // Add / Edit Student Modal Handlers
+      $('.btn-open-student-modal').on('click', function() {
+        $('#studentModalTitle').text('Register New Student');
+        $('#studentEditIndex').val('-1');
+        $('#studentForm')[0].reset();
+        $('#studentModal').removeClass('hidden').addClass('flex');
+      });
+
+      $('.close-student-modal').on('click', function() {
+        $('#studentModal').addClass('hidden').removeClass('flex');
+      });
+
+      $(document).on('click', '.btn-edit-student', function() {
+        const index = $(this).data('index');
+        const st = students[index];
+        if (!st) return;
+
+        $('#studentModalTitle').text('Edit Student Profile');
+        $('#studentEditIndex').val(index);
+        $('#mStudentName').val(st.name);
+        $('#mStudentRoll').val(st.roll);
+        $('#mStudentClass').val(st.class);
+        $('#mStudentSection').val(st.section);
+        $('#mStudentGuardian').val(st.guardian);
+        $('#mStudentMobile').val(st.mobile);
+        $('#mStudentBlood').val(st.blood);
+        $('#mStudentGender').val(st.gender);
+
+        $('#studentModal').removeClass('hidden').addClass('flex');
+      });
+
+      $(document).on('click', '.btn-delete-student', function() {
+        const index = $(this).data('index');
+        if (confirm('Are you sure you want to delete this student record?')) {
+          students.splice(index, 1);
+          localStorage.setItem('sms_students', JSON.stringify(students));
+          renderStudentsTable($('#studentClassFilter').val(), $('#studentSectionFilter').val(), $('#studentTableSearch').val().trim());
+        }
+      });
+
+      $('#studentForm').on('submit', function(e) {
+        e.preventDefault();
+        const editIdx = parseInt($('#studentEditIndex').val());
+
+        const newStudent = {
+          name: $('#mStudentName').val().trim(),
+          roll: parseInt($('#mStudentRoll').val()),
+          class: $('#mStudentClass').val(),
+          section: $('#mStudentSection').val(),
+          guardian: $('#mStudentGuardian').val().trim(),
+          mobile: $('#mStudentMobile').val().trim(),
+          blood: $('#mStudentBlood').val(),
+          gender: $('#mStudentGender').val(),
+          status: 'Active'
+        };
+
+        if (editIdx >= 0) {
+          students[editIdx] = newStudent;
+        } else {
+          students.unshift(newStudent);
+        }
+
+        localStorage.setItem('sms_students', JSON.stringify(students));
+        $('#studentModal').addClass('hidden').removeClass('flex');
+        renderStudentsTable();
+      });
+
+      // ================= RENDER TEACHERS =================
+      function renderTeachers() {
+        const grid = $('#teacherCardsGrid');
+        grid.empty();
+
+        teachers.forEach(t => {
+          grid.append(`
+            <div class="bg-white rounded-3xl p-6 border border-slate-200/80 shadow-sm text-center group hover:shadow-md transition">
+              <img src="${t.img}" class="w-24 h-24 rounded-2xl object-cover mx-auto ring-4 ring-indigo-50 shadow-sm mb-3">
+              <h4 class="text-sm font-bold text-slate-900">${t.name}</h4>
+              <p class="text-xs text-indigo-600 font-semibold">${t.designation}</p>
+              <span class="inline-block mt-1 text-[10px] font-mono px-2 py-0.5 rounded bg-slate-100 text-slate-600">${t.dept}</span>
+              <p class="text-[11px] text-slate-500 mt-2">${t.qualification}</p>
+              <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-center gap-3 text-xs text-slate-400">
+                <a href="tel:${t.phone}" class="hover:text-indigo-600"><i class="fas fa-phone"></i></a>
+                <a href="mailto:${t.email}" class="hover:text-indigo-600"><i class="fas fa-envelope"></i></a>
+              </div>
+            </div>
+          `);
+        });
+      }
+
+      renderTeachers();
+
+      $('#btnOpenTeacherModal').on('click', function() {
+        $('#teacherModal').removeClass('hidden').addClass('flex');
+      });
+      $('#closeTeacherModal, #cancelTeacherModal').on('click', function() {
+        $('#teacherModal').addClass('hidden').removeClass('flex');
+      });
+      $('#teacherForm').on('submit', function(e) {
+        e.preventDefault();
+        teachers.unshift({
+          name: $('#tName').val().trim(),
+          designation: $('#tDesignation').val().trim(),
+          dept: $('#tDepartment').val(),
+          phone: $('#tPhone').val().trim(),
+          email: $('#tEmail').val().trim(),
+          qualification: $('#tDegree').val().trim() || 'Graduate',
+          img: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=300&auto=format&fit=crop'
+        });
+        $('#teacherModal').addClass('hidden').removeClass('flex');
+        renderTeachers();
+      });
+
+      // ================= RENDER ADMISSIONS =================
+      function renderAdmissions() {
+        let appRequests = JSON.parse(localStorage.getItem('sms_admission_requests') || 'null');
+        if (!appRequests) {
+          appRequests = [
+            { id: 'APP-9842', name: 'Tanvir Ahmed', guardian: 'Rafiqul Islam', mobile: '01712345678', class: 'Class 9 (Science)', previous: 'Dhaka Collegiate (GPA 5.0)', date: '2026-12-05', status: 'pending' },
+            { id: 'APP-9843', name: 'Sumaiya Akter', guardian: 'M. M. Rahman', mobile: '01819988776', class: 'HSC 1st Year (Science)', previous: 'Viqarunnisa Noon (GPA 5.0)', date: '2026-12-06', status: 'pending' },
+            { id: 'APP-9844', name: 'Farhan Kabir', guardian: 'Kabir Chowdhury', mobile: '01911445566', class: 'Class 6', previous: 'ABCD Primary (GPA 4.90)', date: '2026-12-06', status: 'approved' }
+          ];
+          localStorage.setItem('sms_admission_requests', JSON.stringify(appRequests));
+        }
+
+        const fullTbody = $('#admissionsFullTableBody');
+        const dashTbody = $('#dashboardAdmissionTableBody');
+        fullTbody.empty();
+        dashTbody.empty();
+
+        const filter = $('#admissionStatusFilter').val() || 'all';
+
+        appRequests.forEach((req, idx) => {
+          if (filter !== 'all' && req.status !== filter) return;
+
+          let badge = '';
+          if (req.status === 'approved') badge = '<span class="px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 font-bold text-[10px]">Approved</span>';
+          else if (req.status === 'rejected') badge = '<span class="px-2.5 py-0.5 rounded-full bg-rose-50 text-rose-700 font-bold text-[10px]">Rejected</span>';
+          else badge = '<span class="px-2.5 py-0.5 rounded-full bg-amber-50 text-amber-700 font-bold text-[10px]">Pending</span>';
+
+          fullTbody.append(`
+            <tr class="hover:bg-slate-50 transition">
+              <td class="p-3.5 font-mono font-bold text-indigo-700">${req.id}</td>
+              <td class="p-3.5 font-bold text-slate-900">${req.name}</td>
+              <td class="p-3.5 font-semibold text-slate-800">${req.class}</td>
+              <td class="p-3.5"><div>${req.guardian}</div><div class="font-mono text-slate-400">${req.mobile}</div></td>
+              <td class="p-3.5 text-slate-600">${req.previous || 'N/A'}</td>
+              <td class="p-3.5 font-mono text-slate-500">${req.date}</td>
+              <td class="p-3.5">${badge}</td>
+              <td class="p-3.5 text-right space-x-1.5">
+                <button type="button" class="btn-app-action px-2 py-1 bg-emerald-50 text-emerald-700 hover:bg-emerald-100 rounded-lg font-bold text-[11px]" data-index="${idx}" data-action="approved">Approve</button>
+                <button type="button" class="btn-app-action px-2 py-1 bg-rose-50 text-rose-700 hover:bg-rose-100 rounded-lg font-bold text-[11px]" data-index="${idx}" data-action="rejected">Reject</button>
+              </td>
+            </tr>
+          `);
+
+          // Dashboard preview (limit to top 3)
+          if (idx < 3) {
+            dashTbody.append(`
+              <tr>
+                <td class="p-3 font-mono font-bold text-indigo-700">${req.id}</td>
+                <td class="p-3 font-bold text-slate-900">${req.name}</td>
+                <td class="p-3">${req.class}</td>
+                <td class="p-3 font-mono">${req.mobile}</td>
+                <td class="p-3 font-mono text-slate-500">${req.date}</td>
+                <td class="p-3">${badge}</td>
+                <td class="p-3 text-right">
+                  <button type="button" class="btn-app-action px-2 py-1 bg-indigo-50 text-indigo-600 rounded-lg font-bold" data-index="${idx}" data-action="approved">Review</button>
+                </td>
+              </tr>
+            `);
+          }
+        });
+
+        const pendingCount = appRequests.filter(r => r.status === 'pending').length;
+        $('#sidebarAdmissionBadge').text(`${pendingCount} New`);
+      }
+
+      renderAdmissions();
+
+      $('#admissionStatusFilter').on('change', function() {
+        renderAdmissions();
+      });
+
+      $(document).on('click', '.btn-app-action', function() {
+        const idx = $(this).data('index');
+        const action = $(this).data('action');
+        let appRequests = JSON.parse(localStorage.getItem('sms_admission_requests') || '[]');
+        if (appRequests[idx]) {
+          appRequests[idx].status = action;
+          localStorage.setItem('sms_admission_requests', JSON.stringify(appRequests));
+          renderAdmissions();
+        }
+      });
+
+      // ================= ATTENDANCE MODULE LOGIC =================
+      const todayIso = new Date().toISOString().split('T')[0];
+      $('#attendanceDate').val(todayIso);
+
+      function renderAttendanceSheet() {
+        const tbody = $('#attendanceTableBody');
+        tbody.empty();
+
+        students.forEach((s, idx) => {
+          tbody.append(`
+            <tr class="hover:bg-slate-50 transition" data-roll="${s.roll}">
+              <td class="p-3.5 font-mono font-bold text-indigo-700">${s.roll}</td>
+              <td class="p-3.5">
+                <div class="font-bold text-slate-900">${s.name}</div>
+                <div class="text-[10px] text-slate-400">Class 10 (A)</div>
+              </td>
+              <td class="p-3.5 font-mono text-slate-600">${s.mobile}</td>
+              <td class="p-3.5 text-center">
+                <div class="inline-flex items-center gap-3 bg-slate-50 px-3 py-1.5 rounded-2xl border border-slate-200">
+                  <label class="flex items-center gap-1.5 text-emerald-700 font-bold cursor-pointer">
+                    <input type="radio" name="att_status_${s.roll}" value="present" checked class="att-radio text-emerald-600">
+                    <span>Present (উপস্থিত)</span>
+                  </label>
+                  <label class="flex items-center gap-1.5 text-amber-700 font-bold cursor-pointer">
+                    <input type="radio" name="att_status_${s.roll}" value="late" class="att-radio text-amber-600">
+                    <span>Late (দেরি)</span>
+                  </label>
+                  <label class="flex items-center gap-1.5 text-rose-700 font-bold cursor-pointer">
+                    <input type="radio" name="att_status_${s.roll}" value="absent" class="att-radio text-rose-600">
+                    <span>Absent (অনুপস্থিত)</span>
+                  </label>
+                </div>
+              </td>
+              <td class="p-3.5 text-right text-slate-400 font-mono text-[11px]">RFID #RF-${9000 + idx}</td>
+            </tr>
+          `);
+        });
+
+        updateAttendanceCounters();
+      }
+
+      function updateAttendanceCounters() {
+        const total = students.length;
+        let present = 0;
+        let late = 0;
+        let absent = 0;
+
+        $('input[type="radio"]:checked').each(function() {
+          const val = $(this).val();
+          if (val === 'present') present++;
+          else if (val === 'late') late++;
+          else if (val === 'absent') absent++;
+        });
+
+        $('#attCountTotal').text(total);
+        $('#attCountPresent').text(present);
+        $('#attCountLate').text(late);
+        $('#attCountAbsent').text(absent);
+      }
+
+      renderAttendanceSheet();
+
+      $(document).on('change', '.att-radio', function() {
+        updateAttendanceCounters();
+      });
+
+      $('#markAllPresentBtn').on('click', function() {
+        $('input[value="present"]').prop('checked', true);
+        updateAttendanceCounters();
+      });
+
+      $('#saveAttendanceBtn').on('click', function() {
+        updateAttendanceCounters();
+        alert('Daily digital attendance for ' + $('#attendanceDate').val() + ' saved successfully! Automated SMS dispatched to absent student guardians.');
+      });
+
+      // ================= EXAMS & RESULTS LOGIC =================
+      function renderExamMarks() {
+        const tbody = $('#examMarksTableBody');
+        tbody.empty();
+
+        const examData = [
+          { roll: 101, name: 'Tanvir Hasan', written: 48, mcq: 23, prac: 23, total: 94, grade: 'A+', gpa: '5.00' },
+          { roll: 102, name: 'Fatima Begum', written: 46, mcq: 24, prac: 22, total: 92, grade: 'A+', gpa: '5.00' },
+          { roll: 103, name: 'Nafis Iqbal', written: 38, mcq: 20, prac: 20, total: 78, grade: 'A', gpa: '4.00' },
+          { roll: 104, name: 'Sadia Sultana', written: 42, mcq: 22, prac: 21, total: 85, grade: 'A+', gpa: '5.00' },
+          { roll: 105, name: 'Arifur Rahman', written: 35, mcq: 18, prac: 19, total: 72, grade: 'A', gpa: '4.00' }
+        ];
+
+        examData.forEach(d => {
+          tbody.append(`
+            <tr class="hover:bg-slate-50 transition">
+              <td class="p-3.5 font-mono font-bold text-indigo-700">${d.roll}</td>
+              <td class="p-3.5 font-bold text-slate-900">${d.name}</td>
+              <td class="p-3.5 font-mono">${d.written}</td>
+              <td class="p-3.5 font-mono">${d.mcq}</td>
+              <td class="p-3.5 font-mono">${d.prac}</td>
+              <td class="p-3.5 font-mono font-bold text-slate-900">${d.total}</td>
+              <td class="p-3.5"><span class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 font-bold">${d.grade}</span></td>
+              <td class="p-3.5 font-mono font-bold text-indigo-700">${d.gpa}</td>
+              <td class="p-3.5 text-right">
+                <button type="button" class="btn-open-transcript px-2.5 py-1 rounded-lg bg-indigo-50 hover:bg-indigo-100 text-indigo-600 font-bold text-xs" data-name="${d.name}" data-roll="${d.roll}">
+                  <i class="fas fa-print mr-1"></i> Card
+                </button>
+              </td>
+            </tr>
+          `);
+        });
+      }
+
+      renderExamMarks();
+
+      $(document).on('click', '.btn-open-transcript, #openReportCardModalBtn', function() {
+        $('#reportCardModal').removeClass('hidden').addClass('flex');
+      });
+      $('#closeReportCardModal').on('click', function() {
+        $('#reportCardModal').addClass('hidden').removeClass('flex');
+      });
+
+      // ================= FEES & ACCOUNTS LOGIC =================
+      function renderFees() {
+        const tbody = $('#feesTableBody');
+        tbody.empty();
+
+        invoices.forEach(inv => {
+          const badge = (inv.status === 'Paid') 
+            ? '<span class="px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 font-bold text-[10px]">Paid</span>'
+            : '<span class="px-2.5 py-0.5 rounded-full bg-rose-50 text-rose-700 font-bold text-[10px]">Unpaid</span>';
+
+          tbody.append(`
+            <tr class="hover:bg-slate-50 transition">
+              <td class="p-3.5 font-mono font-bold text-indigo-700">${inv.id}</td>
+              <td class="p-3.5">
+                <div class="font-bold text-slate-900">${inv.student}</div>
+                <div class="text-[10px] text-slate-400 font-mono">Roll: ${inv.roll}</div>
+              </td>
+              <td class="p-3.5">${inv.class}</td>
+              <td class="p-3.5 font-semibold text-slate-700">${inv.category}</td>
+              <td class="p-3.5 font-mono font-bold text-slate-900">${inv.amount}</td>
+              <td class="p-3.5 font-mono text-slate-500">${inv.date}</td>
+              <td class="p-3.5">${badge}</td>
+              <td class="p-3.5 text-right">
+                <button type="button" onclick="window.print()" class="px-2.5 py-1 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg font-bold text-xs">
+                  <i class="fas fa-receipt mr-1 text-slate-400"></i> Slip
+                </button>
+              </td>
+            </tr>
+          `);
+        });
+      }
+
+      renderFees();
+
+      $('#btnCollectFeeModal').on('click', function() {
+        $('#feeModal').removeClass('hidden').addClass('flex');
+      });
+      $('#closeFeeModal, #cancelFeeModal').on('click', function() {
+        $('#feeModal').addClass('hidden').removeClass('flex');
+      });
+
+      $('#feeForm').on('submit', function(e) {
+        e.preventDefault();
+        const stdInfo = $('#fStudent').val();
+        const cat = $('#fCategory').val();
+        const amt = $('#fAmount').val();
+
+        invoices.unshift({
+          id: 'INV-' + Math.floor(1040 + Math.random() * 500),
+          student: stdInfo.split(' (')[0],
+          roll: 101,
+          class: 'Class 10',
+          category: cat,
+          amount: '৳ ' + amt,
+          date: new Date().toISOString().split('T')[0],
+          status: 'Paid'
+        });
+
+        $('#feeModal').addClass('hidden').removeClass('flex');
+        renderFees();
+        alert('Payment received and invoice generated successfully!');
+      });
+
+      // ================= NOTICE BOARD MANAGER =================
+      const notices = [
+        { titleEn: 'HSC Model Test Examination Routine 2026', titleBn: 'এইচএসসি মডেল টেস্ট পরীক্ষা ২০২৬ এর সময়সূচি', category: 'Exam', date: '2026-12-15' },
+        { titleEn: 'Online Admission Application Open for Classes 1 to 11', titleBn: '১ম থেকে একাদশ শ্রেণিতে অনলাইন ভর্তি কার্যক্রম', category: 'General', date: '2026-12-01' },
+        { titleEn: 'Annual Sports & Cultural Festival 2026', titleBn: 'বার্ষিক ক্রীড়া ও সাংস্কৃতিক প্রতিযোগিতা ২০২৬', category: 'Events', date: '2026-12-16' },
+        { titleEn: 'Smart RFID Digital ID Card Mandatory Distribution', titleBn: 'স্মার্ট ডিজিটাল আইডি কার্ড বিতরণ সংক্রান্ত নোটিশ', category: 'General', date: '2026-11-20' }
+      ];
+
+      function renderNotices() {
+        const grid = $('#dashboardNoticesGrid');
+        grid.empty();
+
+        notices.forEach((n, idx) => {
+          grid.append(`
+            <div class="bg-white p-5 rounded-3xl border border-slate-200/80 shadow-sm space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-indigo-50 text-indigo-700">${n.category}</span>
+                <span class="text-xs font-mono text-slate-400">${n.date}</span>
+              </div>
+              <h4 class="text-sm font-bold text-slate-900">${n.titleEn}</h4>
+              <p class="text-xs text-slate-500 font-bangla">${n.titleBn}</p>
+              <div class="pt-3 border-t border-slate-100 flex items-center justify-between">
+                <span class="text-emerald-600 text-xs font-semibold"><i class="fas fa-check-circle mr-1"></i> Published</span>
+                <button type="button" class="btn-delete-notice text-xs text-rose-500 hover:text-rose-700 font-bold" data-index="${idx}">Delete</button>
+              </div>
+            </div>
+          `);
+        });
+      }
+
+      renderNotices();
+
+      $(document).on('click', '.btn-delete-notice', function() {
+        const idx = $(this).data('index');
+        if (confirm('Delete this notice?')) {
+          notices.splice(idx, 1);
+          renderNotices();
+        }
+      });
+
+      $('#btnPublishNoticeModal').on('click', function() {
+        const title = prompt('Enter notice title in English:');
+        if (title) {
+          notices.unshift({
+            titleEn: title,
+            titleBn: title,
+            category: 'General',
+            date: new Date().toISOString().split('T')[0]
+          });
+          renderNotices();
+        }
+      });
+
+    });
+  </script>
+</body>
+</html>
